@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C62D697F-F2CB-4BBC-A647-3CCB0134B80F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AgenciaDeAutos</RootNamespace>
+    <AssemblyName>AgenciaDeAutos</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\Cliente.cs" />
+    <Compile Include="Business\DetalleService.cs" />
+    <Compile Include="Business\DetalleVenta.cs" />
+    <Compile Include="Business\Fabricante.cs" />
+    <Compile Include="Business\Generacion.cs" />
+    <Compile Include="Business\Perfil.cs" />
+    <Compile Include="Business\Serie.cs" />
+    <Compile Include="Business\Service.cs" />
+    <Compile Include="Business\StockModelo.cs" />
+    <Compile Include="Business\Trabajo.cs" />
+    <Compile Include="Business\Venta.cs" />
+    <Compile Include="Data\Dao\ClienteDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
+    <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="Data\Interfaces\IDaoCliente.cs" />
+    <Compile Include="Data\Interfaces\IDaoUsuario.cs" />
+    <Compile Include="GUI\Clientes\frm_edit_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Clientes\frm_edit_cliente.Designer.cs">
+      <DependentUpon>frm_edit_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Clientes\frm_nuevo_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Clientes\frm_nuevo_cliente.Designer.cs">
+      <DependentUpon>frm_nuevo_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Clientes\main_cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Clientes\main_cliente.Designer.cs">
+      <DependentUpon>main_cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Fabricantes\frm_menu_fabricantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Fabricantes\frm_menu_fabricantes.Designer.cs">
+      <DependentUpon>frm_menu_fabricantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Otros\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Otros\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_edit_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_edit_user.Designer.cs">
+      <DependentUpon>frm_edit_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_gerencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_gerencial.Designer.cs">
+      <DependentUpon>frm_main_gerencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_admin.Designer.cs">
+      <DependentUpon>frm_main_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_normal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_main_normal.Designer.cs">
+      <DependentUpon>frm_main_normal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_new_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Usuarios\frm_new_user.Designer.cs">
+      <DependentUpon>frm_new_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Fabricantes\frm_modelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Fabricantes\frm_modelo.Designer.cs">
+      <DependentUpon>frm_modelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Business\Usuario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\UsuarioService.cs" />
+    <Compile Include="Support\Support.cs" />
+    <EmbeddedResource Include="GUI\Clientes\frm_edit_cliente.resx">
+      <DependentUpon>frm_edit_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Clientes\frm_nuevo_cliente.resx">
+      <DependentUpon>frm_nuevo_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Clientes\main_cliente.resx">
+      <DependentUpon>main_cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Fabricantes\frm_menu_fabricantes.resx">
+      <DependentUpon>frm_menu_fabricantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Otros\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usuarios\frm_edit_user.resx">
+      <DependentUpon>frm_edit_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usuarios\frm_main_admin.resx">
+      <DependentUpon>frm_main_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usuarios\frm_main_normal.resx">
+      <DependentUpon>frm_main_normal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usuarios\frm_new_user.resx">
+      <DependentUpon>frm_new_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Fabricantes\frm_modelo.resx">
+      <DependentUpon>frm_modelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\PostVenta\" />
+    <Folder Include="GUI\Unidades\" />
+    <Folder Include="GUI\Ventas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_online_48px_3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

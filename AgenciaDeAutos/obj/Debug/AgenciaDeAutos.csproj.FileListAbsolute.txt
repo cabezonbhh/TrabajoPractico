@@ -1,0 +1,58 @@
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.config
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.frm_login.resources
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main.resources
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.Properties.Resources.resources
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.GenerateResource.cache
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\AgenciaDeAutos\AgenciaDeAutos\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.config
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.frm_login.resources
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.Properties.Resources.resources
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.GenerateResource.cache
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_admin.resources
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_normal.resources
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_new_user.resources
+T:\PROGRAMACION\C#\Agencia de autos\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_edit_user.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.config
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.pdb
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.frm_login.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_edit_user.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_admin.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_normal.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_new_user.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.Properties.Resources.resources
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.GenerateResource.cache
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
+D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.config
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.pdb
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.frm_login.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_edit_user.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_admin.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_normal.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_new_user.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.Properties.Resources.resources
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.GenerateResource.cache
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
+T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Fabricantes.frm_menu_fabricantes.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Vehiculos.frm_modelo.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Clientes.frm_edit_cliente.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Clientes.frm_nuevo_cliente.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Clientes.main_cliente.resources
