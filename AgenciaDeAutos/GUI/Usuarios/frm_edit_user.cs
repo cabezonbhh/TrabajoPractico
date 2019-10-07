@@ -41,8 +41,7 @@ namespace AgenciaDeAutos.GUI.Usuarios
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        {
-              
+        {             
             if(String.IsNullOrEmpty(txt_name.Text) || String.IsNullOrEmpty(txt_pass.Text))
             {
                 MessageBox.Show("Ha dejado vacio el campo nombre o contraseña","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);

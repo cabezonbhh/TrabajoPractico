@@ -17,7 +17,7 @@ namespace AgenciaDeAutos.Data.Dao
             throw new NotImplementedException();
         }
 
-        public bool buscarClientePorDNI(int dni)
+        public bool buscarClientePorDNI(long dni)
         {
             string sql = "exec buscarClientePorDNI " + dni;
             DataTable tabla = new DataTable();
@@ -27,12 +27,26 @@ namespace AgenciaDeAutos.Data.Dao
 
         public Cliente buscarClientePorID(int id)
         {
-            throw new NotImplementedException();
+            DataTable tabla = helper.ConsultaSQL("exec buscarClientePorID " + id);
+            Cliente cliente = new Cliente();
+            foreach(DataRow fila in tabla.Rows)
+            {
+                cliente = mapper(fila);
+            }
+            return cliente;
         }
 
-        public bool editarCliente(Cliente obj)
+        public bool editarCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            string sql = @"exec actualizarCliente " + cliente.IdCliente +", " +
+                                               cliente.Dni + ", '" +
+                                               cliente.Nombre.ToString() + "', '" +
+                                               cliente.Apellido.ToString() + "', '" +
+                                               cliente.Calle.ToString() + "', " +
+                                               cliente.NroCalle + ", " +
+                                               cliente.Telefono + ", " +
+                                               cliente.Celular;
+            return helper.ejecutarSQL(sql) == 1;
         }
 
         public IList<Cliente> getClientes()
@@ -50,7 +64,6 @@ namespace AgenciaDeAutos.Data.Dao
 
         public bool nuevoCliente(Cliente cliente)
         {
-
             // para en este orden: dni,nombre,apellido,calle,nrocalle,telefono,celular
             string sql = @"exec nuevoCliente " + cliente.Dni + ", '" +
                                                cliente.Nombre.ToString() + "', '" +
@@ -59,7 +72,6 @@ namespace AgenciaDeAutos.Data.Dao
                                                cliente.NroCalle + ", " +
                                                cliente.Telefono + ", " +
                                                cliente.Celular;
-            //exec nuevoCliente
             return helper.ejecutarSQL(sql)==1;
         }
 

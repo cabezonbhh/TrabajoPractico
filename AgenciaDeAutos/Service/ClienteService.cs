@@ -12,8 +12,8 @@ namespace AgenciaDeAutos.Service
     public class ClienteService
     {
         private IDaoCliente <Cliente> dao;
-        
-
+        public int ClienteSeleccionado { get; set; }
+       
         public ClienteService()
         {
             dao = new ClienteDaoSqlImp();
@@ -24,7 +24,7 @@ namespace AgenciaDeAutos.Service
             return dao.getClientes();
         }
 
-        public bool nuevoUsuario(string[] vec, long dni,int nroCalle,long telefono, long celular)
+        public bool nuevoUsuario(string[] vec, long dni, int nroCalle, long telefono, long celular)
         {
             //vec: 0 - nombre / 1 - apellido / 2 - calle 
             Cliente cliente = new Cliente
@@ -42,9 +42,19 @@ namespace AgenciaDeAutos.Service
             return dao.nuevoCliente(cliente);
         }
 
-        public bool buscarClientePorDni(int dni)
+        public Cliente buscarClientePorID(int id)
+        {
+            return dao.buscarClientePorID(id);
+        }
+
+        public bool buscarClientePorDni(long dni)
         {
             return dao.buscarClientePorDNI(dni);
+        }
+
+        internal bool editarUsuario(Cliente cliente)
+        {
+            return dao.editarCliente(cliente);
         }
     }
 }

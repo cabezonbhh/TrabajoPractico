@@ -14,6 +14,6 @@ namespace AgenciaDeAutos.Data.Interfaces
         bool nuevoCliente(C obj);
         bool editarCliente(C obj);
         bool borrarCliente(int id);
-        bool buscarClientePorDNI(int dni);
+        bool buscarClientePorDNI(long dni);
     }
 }

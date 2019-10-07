@@ -45,6 +45,8 @@
             this.lbl_address = new System.Windows.Forms.Label();
             this.lbl_lastName = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.lbl_dni_warning = new System.Windows.Forms.Label();
+            this.check_dni = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(72, 305);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 288);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(463, 269);
@@ -62,16 +64,17 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(72, 580);
+            this.btn_save.Location = new System.Drawing.Point(18, 563);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 48;
             this.btn_save.Text = "Guardar";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(460, 580);
+            this.btn_exit.Location = new System.Drawing.Point(406, 563);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 47;
@@ -80,7 +83,7 @@
             // 
             // txt_mobile
             // 
-            this.txt_mobile.Location = new System.Drawing.Point(72, 235);
+            this.txt_mobile.Location = new System.Drawing.Point(68, 241);
             this.txt_mobile.MaxLength = 10;
             this.txt_mobile.Name = "txt_mobile";
             this.txt_mobile.Size = new System.Drawing.Size(181, 20);
@@ -88,7 +91,7 @@
             // 
             // txt_phone
             // 
-            this.txt_phone.Location = new System.Drawing.Point(72, 203);
+            this.txt_phone.Location = new System.Drawing.Point(68, 209);
             this.txt_phone.MaxLength = 10;
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(181, 20);
@@ -96,7 +99,7 @@
             // 
             // txt_nro
             // 
-            this.txt_nro.Location = new System.Drawing.Point(72, 166);
+            this.txt_nro.Location = new System.Drawing.Point(68, 172);
             this.txt_nro.MaxLength = 6;
             this.txt_nro.Name = "txt_nro";
             this.txt_nro.Size = new System.Drawing.Size(104, 20);
@@ -104,23 +107,25 @@
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(74, 131);
+            this.txt_address.Location = new System.Drawing.Point(68, 108);
             this.txt_address.MaxLength = 50;
+            this.txt_address.Multiline = true;
             this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(461, 20);
+            this.txt_address.Size = new System.Drawing.Size(413, 45);
             this.txt_address.TabIndex = 43;
             // 
             // txt_dni
             // 
-            this.txt_dni.Location = new System.Drawing.Point(74, 101);
+            this.txt_dni.Location = new System.Drawing.Point(68, 78);
             this.txt_dni.MaxLength = 12;
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(102, 20);
             this.txt_dni.TabIndex = 42;
+
             // 
             // txt_lastName
             // 
-            this.txt_lastName.Location = new System.Drawing.Point(74, 69);
+            this.txt_lastName.Location = new System.Drawing.Point(68, 46);
             this.txt_lastName.MaxLength = 30;
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(181, 20);
@@ -128,7 +133,7 @@
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(74, 39);
+            this.txt_name.Location = new System.Drawing.Point(68, 16);
             this.txt_name.MaxLength = 30;
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(181, 20);
@@ -137,7 +142,7 @@
             // lbl_dni
             // 
             this.lbl_dni.AutoSize = true;
-            this.lbl_dni.Location = new System.Drawing.Point(39, 104);
+            this.lbl_dni.Location = new System.Drawing.Point(33, 81);
             this.lbl_dni.Name = "lbl_dni";
             this.lbl_dni.Size = new System.Drawing.Size(29, 13);
             this.lbl_dni.TabIndex = 39;
@@ -146,7 +151,7 @@
             // lbl_mobile
             // 
             this.lbl_mobile.AutoSize = true;
-            this.lbl_mobile.Location = new System.Drawing.Point(26, 238);
+            this.lbl_mobile.Location = new System.Drawing.Point(22, 244);
             this.lbl_mobile.Name = "lbl_mobile";
             this.lbl_mobile.Size = new System.Drawing.Size(42, 13);
             this.lbl_mobile.TabIndex = 38;
@@ -155,7 +160,7 @@
             // lbl_phone
             // 
             this.lbl_phone.AutoSize = true;
-            this.lbl_phone.Location = new System.Drawing.Point(16, 206);
+            this.lbl_phone.Location = new System.Drawing.Point(12, 212);
             this.lbl_phone.Name = "lbl_phone";
             this.lbl_phone.Size = new System.Drawing.Size(52, 13);
             this.lbl_phone.TabIndex = 37;
@@ -164,7 +169,7 @@
             // lbl_nro
             // 
             this.lbl_nro.AutoSize = true;
-            this.lbl_nro.Location = new System.Drawing.Point(39, 169);
+            this.lbl_nro.Location = new System.Drawing.Point(35, 175);
             this.lbl_nro.Name = "lbl_nro";
             this.lbl_nro.Size = new System.Drawing.Size(27, 13);
             this.lbl_nro.TabIndex = 36;
@@ -173,7 +178,7 @@
             // lbl_address
             // 
             this.lbl_address.AutoSize = true;
-            this.lbl_address.Location = new System.Drawing.Point(13, 134);
+            this.lbl_address.Location = new System.Drawing.Point(7, 111);
             this.lbl_address.Name = "lbl_address";
             this.lbl_address.Size = new System.Drawing.Size(55, 13);
             this.lbl_address.TabIndex = 35;
@@ -182,7 +187,7 @@
             // lbl_lastName
             // 
             this.lbl_lastName.AutoSize = true;
-            this.lbl_lastName.Location = new System.Drawing.Point(21, 72);
+            this.lbl_lastName.Location = new System.Drawing.Point(15, 49);
             this.lbl_lastName.Name = "lbl_lastName";
             this.lbl_lastName.Size = new System.Drawing.Size(47, 13);
             this.lbl_lastName.TabIndex = 34;
@@ -191,17 +196,38 @@
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(21, 42);
+            this.lbl_name.Location = new System.Drawing.Point(15, 19);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(47, 13);
             this.lbl_name.TabIndex = 33;
             this.lbl_name.Text = "Nombre:";
             // 
+            // lbl_dni_warning
+            // 
+            this.lbl_dni_warning.AutoSize = true;
+            this.lbl_dni_warning.Location = new System.Drawing.Point(176, 81);
+            this.lbl_dni_warning.Name = "lbl_dni_warning";
+            this.lbl_dni_warning.Size = new System.Drawing.Size(35, 13);
+            this.lbl_dni_warning.TabIndex = 50;
+            this.lbl_dni_warning.Text = "label1";
+            // 
+            // check_dni
+            // 
+            this.check_dni.AutoSize = true;
+            this.check_dni.Location = new System.Drawing.Point(15, 81);
+            this.check_dni.Name = "check_dni";
+            this.check_dni.Size = new System.Drawing.Size(15, 14);
+            this.check_dni.TabIndex = 51;
+            this.check_dni.UseVisualStyleBackColor = true;
+            this.check_dni.CheckedChanged += new System.EventHandler(this.check_dni_CheckedChanged);
+            // 
             // frm_edit_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 682);
+            this.ClientSize = new System.Drawing.Size(503, 599);
+            this.Controls.Add(this.check_dni);
+            this.Controls.Add(this.lbl_dni_warning);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_exit);
@@ -221,6 +247,7 @@
             this.Controls.Add(this.lbl_name);
             this.Name = "frm_edit_cliente";
             this.Text = "frm_edit_cliente";
+            this.Load += new System.EventHandler(this.frm_edit_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -246,5 +273,7 @@
         private System.Windows.Forms.Label lbl_address;
         private System.Windows.Forms.Label lbl_lastName;
         private System.Windows.Forms.Label lbl_name;
+        private System.Windows.Forms.Label lbl_dni_warning;
+        private System.Windows.Forms.CheckBox check_dni;
     }
 }

@@ -66,6 +66,7 @@
             this.btn_edit.TabIndex = 12;
             this.btn_edit.Text = "Editar";
             this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_new
             // 
@@ -91,6 +92,7 @@
             this.dgv_clientes.Location = new System.Drawing.Point(99, 24);
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.ReadOnly = true;
+            this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(444, 252);
             this.dgv_clientes.TabIndex = 10;
             // 

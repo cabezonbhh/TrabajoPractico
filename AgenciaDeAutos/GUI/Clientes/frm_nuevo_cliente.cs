@@ -87,7 +87,7 @@ namespace AgenciaDeAutos.GUI.Clientes
             bool retorno = false;
             if(validarCampos() != null)
             {
-                MessageBox.Show("Ha dejado el campo: " + validarCampos() + " vacio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha dejado el campo " + validarCampos() + " vacio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -113,9 +113,7 @@ namespace AgenciaDeAutos.GUI.Clientes
                         MessageBox.Show("Hubo un problema al registrar el cliente, intente nuevamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-            }
-           
-                
+            }               
         }
 
         private void txt_dni_TextChanged(object sender, EventArgs e)

@@ -42,5 +42,16 @@ namespace AgenciaDeAutos.GUI.Clientes
             aux.ShowDialog();
             this.Dispose();
         }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            if(dgv_clientes.CurrentRow != null)
+            {
+                service.ClienteSeleccionado = Convert.ToInt32(dgv_clientes.CurrentRow.Cells["col_id_cliente"].Value.ToString());
+                this.Dispose();
+                new frm_edit_cliente(service).ShowDialog();
+            }
+            
+        }
     }
 }
