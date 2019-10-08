@@ -45,13 +45,39 @@ namespace AgenciaDeAutos.GUI.Clientes
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            if(dgv_clientes.CurrentRow != null)
+            if (dgv_clientes.CurrentRow != null)
             {
                 service.ClienteSeleccionado = Convert.ToInt32(dgv_clientes.CurrentRow.Cells["col_id_cliente"].Value.ToString());
                 this.Dispose();
                 new frm_edit_cliente(service).ShowDialog();
             }
-            
+            else
+                MessageBox.Show("No ha seleccionado ningun cliente","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (dgv_clientes.CurrentRow != null)
+            {
+                if (MessageBox.Show("Seguro que desea eliminar el cliente?", "ALETA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(dgv_clientes.CurrentRow.Cells["col_id_cliente"].Value);
+                    bool respuesta = service.borrarCliente(id);
+                    if (respuesta == true)
+                    {
+                        MessageBox.Show("Se borro exitosamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al borrar");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono ningun cliente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            this.cargarGrilla();
         }
     }
 }
