@@ -14,7 +14,7 @@ namespace AgenciaDeAutos.Data.Dao
         DBHelper helper = DBHelper.getDBHelper();
         public bool borrarCliente(int id)
         {
-            throw new NotImplementedException();
+            return helper.ejecutarSQL("exec borrarCliente "+id)==1;
         }
 
         public bool buscarClientePorDNI(long dni)
@@ -51,7 +51,7 @@ namespace AgenciaDeAutos.Data.Dao
 
         public IList<Cliente> getClientes()
         {
-            string sql = "select * from Clientes where borrado = 0";
+            string sql = "exec getClientesActivos";
             List <Cliente> lista = new List<Cliente>();
             DataTable tabla = DBHelper.getDBHelper().ConsultaSQL(sql);
 

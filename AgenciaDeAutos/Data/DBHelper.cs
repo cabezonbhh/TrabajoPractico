@@ -16,12 +16,12 @@ namespace AgenciaDeAutos
     {
         private string string_conexion;
         private static DBHelper instance = new DBHelper();
-        private readonly string notebook = "Data Source=NOTEBOOK-PC;Initial Catalog=AgenciaDeAutos;Integrated Security=True";
+        private readonly string notebook = "Data Source=Notebook-PC;Initial Catalog=AgenciaDeAutos;Integrated Security=True";
         private readonly string pc = "Data Source=FRANCO-PC;Initial Catalog=AgenciaDeAutos;Integrated Security=True";
 
         private DBHelper()
         {
-            string_conexion = pc;
+            string_conexion = notebook;
         }
 
         public static DBHelper getDBHelper()

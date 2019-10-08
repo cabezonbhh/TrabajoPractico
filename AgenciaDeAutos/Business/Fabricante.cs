@@ -11,7 +11,7 @@ namespace AgenciaDeAutos.Business
     {
         int IdFabricante { get; set; }
         string Nombre { get; set; }
-        List<Serie> series { get; set; }
+        IList<Serie> series { get; set; }
 
         public Fabricante()
         {
