@@ -121,7 +121,7 @@
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(102, 20);
             this.txt_dni.TabIndex = 42;
-
+            this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
             // txt_lastName
             // 

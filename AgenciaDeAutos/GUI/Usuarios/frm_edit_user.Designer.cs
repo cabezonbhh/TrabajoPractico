@@ -41,6 +41,7 @@
             this.lbl_profile = new System.Windows.Forms.Label();
             this.check_profile = new System.Windows.Forms.CheckBox();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.check_name = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_save
@@ -57,7 +58,7 @@
             // 
             this.lbl_info_pass.AutoSize = true;
             this.lbl_info_pass.ForeColor = System.Drawing.Color.Red;
-            this.lbl_info_pass.Location = new System.Drawing.Point(256, 66);
+            this.lbl_info_pass.Location = new System.Drawing.Point(256, 74);
             this.lbl_info_pass.Name = "lbl_info_pass";
             this.lbl_info_pass.Size = new System.Drawing.Size(111, 13);
             this.lbl_info_pass.TabIndex = 17;
@@ -75,7 +76,7 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(93, 63);
+            this.txt_pass.Location = new System.Drawing.Point(93, 71);
             this.txt_pass.MaxLength = 50;
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(157, 20);
@@ -95,7 +96,7 @@
             // combo_perfil
             // 
             this.combo_perfil.FormattingEnabled = true;
-            this.combo_perfil.Location = new System.Drawing.Point(93, 155);
+            this.combo_perfil.Location = new System.Drawing.Point(93, 163);
             this.combo_perfil.Name = "combo_perfil";
             this.combo_perfil.Size = new System.Drawing.Size(157, 21);
             this.combo_perfil.TabIndex = 13;
@@ -103,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 158);
+            this.label3.Location = new System.Drawing.Point(54, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 12;
@@ -112,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 66);
+            this.label2.Location = new System.Drawing.Point(23, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 11;
@@ -129,7 +130,7 @@
             // 
             // txt_profile
             // 
-            this.txt_profile.Location = new System.Drawing.Point(93, 108);
+            this.txt_profile.Location = new System.Drawing.Point(93, 116);
             this.txt_profile.MaxLength = 50;
             this.txt_profile.Name = "txt_profile";
             this.txt_profile.Size = new System.Drawing.Size(157, 20);
@@ -138,7 +139,7 @@
             // lbl_profile
             // 
             this.lbl_profile.AutoSize = true;
-            this.lbl_profile.Location = new System.Drawing.Point(54, 111);
+            this.lbl_profile.Location = new System.Drawing.Point(54, 119);
             this.lbl_profile.Name = "lbl_profile";
             this.lbl_profile.Size = new System.Drawing.Size(33, 13);
             this.lbl_profile.TabIndex = 21;
@@ -147,7 +148,7 @@
             // check_profile
             // 
             this.check_profile.AutoSize = true;
-            this.check_profile.Location = new System.Drawing.Point(256, 158);
+            this.check_profile.Location = new System.Drawing.Point(256, 166);
             this.check_profile.Name = "check_profile";
             this.check_profile.Size = new System.Drawing.Size(90, 17);
             this.check_profile.TabIndex = 22;
@@ -165,11 +166,23 @@
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
+            // check_name
+            // 
+            this.check_name.AutoSize = true;
+            this.check_name.Location = new System.Drawing.Point(93, 48);
+            this.check_name.Name = "check_name";
+            this.check_name.Size = new System.Drawing.Size(53, 17);
+            this.check_name.TabIndex = 24;
+            this.check_name.Text = "Editar";
+            this.check_name.UseVisualStyleBackColor = true;
+            this.check_name.CheckedChanged += new System.EventHandler(this.check_name_CheckedChanged);
+            // 
             // frm_edit_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 252);
+            this.Controls.Add(this.check_name);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.check_profile);
             this.Controls.Add(this.lbl_profile);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Label lbl_profile;
         private System.Windows.Forms.CheckBox check_profile;
         private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.CheckBox check_name;
     }
 }

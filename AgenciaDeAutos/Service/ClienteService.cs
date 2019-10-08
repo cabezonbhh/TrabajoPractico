@@ -52,7 +52,7 @@ namespace AgenciaDeAutos.Service
             return dao.buscarClientePorDNI(dni);
         }
 
-        internal bool editarUsuario(Cliente cliente)
+        internal bool editarCliente(Cliente cliente)
         {
             return dao.editarCliente(cliente);
         }

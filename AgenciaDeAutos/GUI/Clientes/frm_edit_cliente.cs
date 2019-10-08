@@ -116,7 +116,7 @@ namespace AgenciaDeAutos.GUI.Clientes
                         if (service.buscarClientePorDni(Convert.ToInt64(txt_dni.Text)) == false)
                         {
                             cliente.Dni = Convert.ToInt64(txt_dni.Text);
-                            retorno = service.editarUsuario(cliente);
+                            retorno = service.editarCliente(cliente);
                             if (retorno == true)
                                 MessageBox.Show("Datos del cliente modificados con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             else
@@ -134,7 +134,7 @@ namespace AgenciaDeAutos.GUI.Clientes
                 }
                 else
                 {
-                    retorno = service.editarUsuario(cliente);
+                    retorno = service.editarCliente(cliente);
                     if (retorno == true)
                         MessageBox.Show("Datos del cliente modificados con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
@@ -149,6 +149,25 @@ namespace AgenciaDeAutos.GUI.Clientes
                 txt_dni.Enabled = true;
             else
                 txt_dni.Enabled = false;
+        }
+
+        private void txt_dni_TextChanged(object sender, EventArgs e)
+        {
+            if (service.buscarClientePorDni(Convert.ToInt64(txt_dni.Text)) == true)
+            {
+                lbl_dni_warning.Visible = true;
+                lbl_dni_warning.Text = "Usuario existente";
+                lbl_dni_warning.ForeColor = Color.Red;
+                txt_dni.BackColor = Color.LightPink;
+                txt_dni.Focus();
+            }
+            else
+            {
+                lbl_dni_warning.Text = "Para modificar el DNI tilde la opcion";
+                lbl_dni_warning.ForeColor = Color.Red;
+                txt_dni.BackColor = Color.White;
+                lbl_dni_warning.Visible = false;
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ namespace AgenciaDeAutos.GUI.Usuarios
             combo_perfil.Enabled = false;
             int id = service.UsuarioSeleccionado;
             Usuario usuario = service.buscarUsuarioPorID(id);
-            txt_name.Text = usuario.Nombre;
+            txt_name.Enabled = false;
             txt_pass.Text = usuario.Contraseña;
             txt_profile.Text = usuario.Perfil.Nombre;
             Support.Support.GetSupport().cargarCombo(combo_perfil,"Perfiles","idPerfil","nombre");
@@ -41,35 +41,57 @@ namespace AgenciaDeAutos.GUI.Usuarios
         }
 
         private void btn_save_Click(object sender, EventArgs e)
-        {             
-            if(String.IsNullOrEmpty(txt_name.Text) || String.IsNullOrEmpty(txt_pass.Text))
+        {
+            bool retorno = false;
+            if(String.IsNullOrEmpty(txt_pass.Text)==true)
             {
-                MessageBox.Show("Ha dejado vacio el campo nombre o contraseña","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha dejado vacio el campo contraseña","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
             else
             {
-                if (service.buscarUsuarioPorNombre(txt_name.Text) == true)
+                int id = service.UsuarioSeleccionado;
+                Usuario usuario = service.buscarUsuarioPorID(id);
+                usuario.Contraseña = txt_pass.Text;
+                usuario.Perfil.IdPerfil = usuario.Perfil.IdPerfil;
+                if (check_profile.Checked == true)
+                    usuario.Perfil.IdPerfil = (int)combo_perfil.SelectedValue;
+
+                if (check_name.Checked == true)
                 {
-                    MessageBox.Show("Ese nombre de usuario ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_name.Enabled = true;
+                    usuario.Nombre = txt_name.Text;
+                    if (String.IsNullOrWhiteSpace(txt_name.Text) == false)
+                    {
+                        if (service.buscarUsuarioPorNombre(txt_name.Text) == false)
+                        {
+                            usuario.Nombre = txt_name.Text;
+                            retorno = service.editarUsuario(usuario);
+                            if (retorno == true)
+                                MessageBox.Show("Datos modificados con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show("Hubo un problema al modificar los datos, revise e intente nuevamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe un usuario con ese nombre", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ingreso un nombre de usuario", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
                 else
                 {
-                    int id = service.UsuarioSeleccionado;
-                    Usuario usuario = service.buscarUsuarioPorID(id);
-                    usuario.Nombre = txt_name.Text;
-                    usuario.Contraseña = txt_pass.Text;
-                    usuario.Perfil.IdPerfil = usuario.Perfil.IdPerfil;
-                    if (check_profile.Checked == true)
-                        usuario.Perfil.IdPerfil = (int)combo_perfil.SelectedValue;
-                    bool retorno = service.editarUsuario(usuario);
-
+                    retorno = service.editarUsuario(usuario);
                     if (retorno == true)
-                        MessageBox.Show("El usuario fue modificado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Datos modificados con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("Ocurrio un error al modificar el usuario", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        MessageBox.Show("Hubo un problema al modificar los datos, revise e intente nuevamente", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+
+            }            
+            
         }
 
         private void check_profile_CheckedChanged(object sender, EventArgs e)
@@ -79,6 +101,13 @@ namespace AgenciaDeAutos.GUI.Usuarios
             else
             combo_perfil.Enabled = false;
 
+        }
+        private void check_name_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_name.Enabled == false)
+                txt_name.Enabled = true;
+            else
+                txt_name.Enabled = false;
         }
         private void validarNombre(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
@@ -117,5 +146,7 @@ namespace AgenciaDeAutos.GUI.Usuarios
                 txt_name.BackColor = Color.White;
             }
         }
+
+       
     }
 }
