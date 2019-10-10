@@ -9,9 +9,9 @@ namespace AgenciaDeAutos.Business
 {
     public class Fabricante
     {
-        int IdFabricante { get; set; }
-        string Nombre { get; set; }
-        IList<Serie> series { get; set; }
+        private int IdFabricante { get; set; }
+        private string Nombre { get; set; }
+        private IList<Serie> series { get; set; }
 
         public Fabricante()
         {
