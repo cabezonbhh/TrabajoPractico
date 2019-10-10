@@ -8,30 +8,44 @@ namespace AgenciaDeAutos.Business
 {
     public class Serie
     {
-        private int IdSerie { get; set; }
-        private string Nombre { get; set; }
-        private int IdFabricante { get; set; }
-        private IList<Generacion> generaciones { get; set; }
+        public int IdSerie { get; set; }
+        public string Nombre { get; set; }
+        public int IdFabricante { get; set; }
+        public IList<Generacion> Generaciones { get; set; }
 
         public Serie()
         {
             this.IdSerie = -99;
             this.Nombre = "N/D";
             this.IdFabricante = -99;
-            this.generaciones = null;
+            this.Generaciones = null;
         }
 
-        public void conocerFabricante(Fabricante fabricante)
+        public Generacion getGeneracion(int id)
         {
-            Fabricante aux = new Fabricante();
-            getFabricante(aux);
-            
+            foreach (Generacion gen in Generaciones)
+            {
+                if (gen.IdGeneracion == id)
+                    return gen;
+            }
+            return null;
         }
 
-        public Fabricante getFabricante(Fabricante aux)
+        public Generacion getGeneracion(string nombre)
         {
-            return aux;
+            foreach (Generacion gen in Generaciones)
+            {
+                if (gen.Nombre.Equals(nombre))
+                    return gen;
+            }
+            return null;
         }
+
+        public int getCantidadGeneraciones()
+        {
+            return Generaciones.Count();
+        }
+
 
     }
 }

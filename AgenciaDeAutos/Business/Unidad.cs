@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgenciaDeAutos.Business
 {
-    class StockModelo
+    public class Unidad
     {
-        
     }
 }

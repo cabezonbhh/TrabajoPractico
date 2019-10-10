@@ -6,19 +6,29 @@ using System.Threading.Tasks;
 
 namespace AgenciaDeAutos.Business
 {
-    class Generacion
+    public class Generacion
     {
-        private int IdGeneracion { get; set; }
-        private string Nombre { get; set; }
-        private int IdSerie { get; set; }
-        private IList<StockModelo> Stock { get; set; }
+        public int IdGeneracion { get; set; }
+        public string Nombre { get; set; }
+        public int IdSerie { get; set; }
+        public IList<Modelo> Modelos { get; set; }
 
         public Generacion()
         {
             this.IdGeneracion = -99;
             this.Nombre = "";
             this.IdSerie = -99;
-            this.Stock = null;
+            this.Modelos = null;
+        }
+
+        public Modelo getModelo(string nombre)
+        {
+            foreach (Modelo modelo in Modelos)
+            {
+                if (modelo.Nombre.Equals(nombre))
+                    return modelo;
+            }
+            return null;
         }
     }
 }

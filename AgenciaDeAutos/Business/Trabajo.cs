@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace AgenciaDeAutos.Business
 {
-    class Trabajo
+    public class Trabajo
     {
+        public int IdTrabajo { get; set; }
+        public string Descripcion { get; set; }
+
+        public Trabajo(int id, string descripcion)
+        {
+            this.IdTrabajo = id;
+            this.Descripcion = descripcion;
+        }
     }
 }

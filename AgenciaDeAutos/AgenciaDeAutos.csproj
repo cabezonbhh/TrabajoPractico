@@ -55,8 +55,8 @@
     <Compile Include="Business\Perfil.cs" />
     <Compile Include="Business\Serie.cs" />
     <Compile Include="Business\Service.cs" />
-    <Compile Include="Business\StockModelo.cs" />
     <Compile Include="Business\Trabajo.cs" />
+    <Compile Include="Business\Unidad.cs" />
     <Compile Include="Business\Venta.cs" />
     <Compile Include="Data\Dao\ClienteDaoSqlImp.cs" />
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
