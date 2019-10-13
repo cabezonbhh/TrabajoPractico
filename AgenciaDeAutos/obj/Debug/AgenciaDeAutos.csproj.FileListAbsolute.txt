@@ -40,7 +40,6 @@ D:\Programacion\Proyectos\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeA
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.config
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.pdb
-T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.frm_login.resources
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_edit_user.resources
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_main_admin.resources
@@ -48,7 +47,6 @@ T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.O
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Otros.frm_new_user.resources
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.Properties.Resources.resources
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.GenerateResource.cache
-T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
 T:\PROGRAMACION\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Fabricantes.frm_menu_fabricantes.resources
@@ -75,3 +73,4 @@ D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.cspro
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.exe
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.pdb
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojResolveAssemblyReference.cache
