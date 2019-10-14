@@ -42,6 +42,7 @@
             this.btn_gerencial = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.pic_user_on = new System.Windows.Forms.PictureBox();
+            this.btn_unid = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user_on)).BeginInit();
@@ -136,7 +137,7 @@
             this.groupBox1.Controls.Add(this.dgv_usuarios);
             this.groupBox1.Controls.Add(this.btn_edit);
             this.groupBox1.Controls.Add(this.btn_delete);
-            this.groupBox1.Location = new System.Drawing.Point(15, 106);
+            this.groupBox1.Location = new System.Drawing.Point(12, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(763, 250);
             this.groupBox1.TabIndex = 5;
@@ -145,7 +146,7 @@
             // 
             // btn_main
             // 
-            this.btn_main.Location = new System.Drawing.Point(419, 21);
+            this.btn_main.Location = new System.Drawing.Point(413, 21);
             this.btn_main.Name = "btn_main";
             this.btn_main.Size = new System.Drawing.Size(75, 40);
             this.btn_main.TabIndex = 6;
@@ -155,7 +156,7 @@
             // 
             // btn_gerencial
             // 
-            this.btn_gerencial.Location = new System.Drawing.Point(509, 21);
+            this.btn_gerencial.Location = new System.Drawing.Point(505, 21);
             this.btn_gerencial.Name = "btn_gerencial";
             this.btn_gerencial.Size = new System.Drawing.Size(75, 40);
             this.btn_gerencial.TabIndex = 7;
@@ -165,7 +166,7 @@
             // 
             // btn_cliente
             // 
-            this.btn_cliente.Location = new System.Drawing.Point(601, 21);
+            this.btn_cliente.Location = new System.Drawing.Point(597, 21);
             this.btn_cliente.Name = "btn_cliente";
             this.btn_cliente.Size = new System.Drawing.Size(75, 40);
             this.btn_cliente.TabIndex = 8;
@@ -182,12 +183,23 @@
             this.pic_user_on.TabIndex = 9;
             this.pic_user_on.TabStop = false;
             // 
+            // btn_unid
+            // 
+            this.btn_unid.Location = new System.Drawing.Point(413, 77);
+            this.btn_unid.Name = "btn_unid";
+            this.btn_unid.Size = new System.Drawing.Size(75, 40);
+            this.btn_unid.TabIndex = 10;
+            this.btn_unid.Text = "Nueva Unidad";
+            this.btn_unid.UseVisualStyleBackColor = true;
+            this.btn_unid.Click += new System.EventHandler(this.btn_unid_Click);
+            // 
             // frm_main_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(790, 699);
+            this.Controls.Add(this.btn_unid);
             this.Controls.Add(this.pic_user_on);
             this.Controls.Add(this.btn_cliente);
             this.Controls.Add(this.btn_gerencial);
@@ -222,5 +234,6 @@
         private System.Windows.Forms.Button btn_gerencial;
         private System.Windows.Forms.Button btn_cliente;
         private System.Windows.Forms.PictureBox pic_user_on;
+        private System.Windows.Forms.Button btn_unid;
     }
 }

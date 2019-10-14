@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo_fab = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.combo_serie = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.combo_gen = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.combo_modelo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // combo_fab
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.combo_fab.FormattingEnabled = true;
+            this.combo_fab.Location = new System.Drawing.Point(102, 41);
+            this.combo_fab.Name = "combo_fab";
+            this.combo_fab.Size = new System.Drawing.Size(121, 21);
+            this.combo_fab.TabIndex = 0;
+           
             // 
             // label1
             // 
@@ -64,13 +65,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Serie:";
             // 
-            // comboBox2
+            // combo_serie
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(102, 87);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 2;
+            this.combo_serie.FormattingEnabled = true;
+            this.combo_serie.Location = new System.Drawing.Point(102, 87);
+            this.combo_serie.Name = "combo_serie";
+            this.combo_serie.Size = new System.Drawing.Size(121, 21);
+            this.combo_serie.TabIndex = 2;
             // 
             // label3
             // 
@@ -81,13 +82,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Generacion:";
             // 
-            // comboBox3
+            // combo_gen
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(102, 133);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 4;
+            this.combo_gen.FormattingEnabled = true;
+            this.combo_gen.Location = new System.Drawing.Point(102, 133);
+            this.combo_gen.Name = "combo_gen";
+            this.combo_gen.Size = new System.Drawing.Size(121, 21);
+            this.combo_gen.TabIndex = 4;
+           
             // 
             // label4
             // 
@@ -98,28 +100,30 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Modelo:";
             // 
-            // textBox1
+            // combo_modelo
             // 
-            this.textBox1.Location = new System.Drawing.Point(102, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 7;
+            this.combo_modelo.FormattingEnabled = true;
+            this.combo_modelo.Location = new System.Drawing.Point(102, 178);
+            this.combo_modelo.Name = "combo_modelo";
+            this.combo_modelo.Size = new System.Drawing.Size(121, 21);
+            this.combo_modelo.TabIndex = 7;
             // 
             // frm_new_unidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 454);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.combo_modelo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.combo_gen);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.combo_serie);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.combo_fab);
             this.Name = "frm_new_unidad";
             this.Text = "frm_new_unidad";
+            this.Load += new System.EventHandler(this.frm_new_unidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,13 +131,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox combo_fab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox combo_serie;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox combo_gen;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox combo_modelo;
     }
 }

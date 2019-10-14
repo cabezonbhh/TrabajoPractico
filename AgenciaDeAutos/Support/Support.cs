@@ -438,5 +438,26 @@ namespace AgenciaDeAutos.Support
             combo.ValueMember = value; // nombre del campo Id que se guarda en cada ítems de la lista
         }
 
+        public void cargarComboModelo(ComboBox combo, int idFabricante, int idSerie, int idGeneracion)
+        {
+            string sql = "exec cargarComboModelo "+idFabricante+", "+idSerie+", "+idGeneracion;
+            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql);
+            combo.DisplayMember = "nombre";
+        }
+
+        public void cargarComboSerie(ComboBox combo, int idFabricante)
+        {
+            string sql = "exec cargarComboSerie " + idFabricante;
+            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql); 
+            combo.DisplayMember = "nombre"; 
+            combo.ValueMember = "idSerie"; 
+        }
+        public void cargarComboGeneracion(ComboBox combo,int idSerie)
+        {
+            string sql = "exec cargarComboGeneracion " + idSerie;
+            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql); 
+            combo.DisplayMember = "nombre"; //
+            combo.ValueMember = ""; // 
+        }
     }
 }

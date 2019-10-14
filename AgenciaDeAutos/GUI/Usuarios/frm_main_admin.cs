@@ -1,5 +1,6 @@
 ﻿using AgenciaDeAutos.Business;
 using AgenciaDeAutos.GUI.Clientes;
+using AgenciaDeAutos.GUI.Unidades;
 using AgenciaDeAutos.GUI.Usuarios;
 using AgenciaDeAutos.GUI.Vehiculos;
 using AgenciaDeAutos.Service;
@@ -103,6 +104,12 @@ namespace AgenciaDeAutos.GUI.Otros
         private void btn_cliente_Click(object sender, EventArgs e)
         {
             Form aux = new main_cliente();
+            aux.ShowDialog();
+        }
+
+        private void btn_unid_Click(object sender, EventArgs e)
+        {
+            Form aux = new frm_new_unidad();
             aux.ShowDialog();
         }
     }
