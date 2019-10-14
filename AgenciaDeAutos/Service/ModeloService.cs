@@ -21,10 +21,6 @@ namespace AgenciaDeAutos.Service
         public IList<Modelo> getModelos(int fabricante, int serie, int generacion)
         {
             return dao.getModelos(fabricante,serie,generacion);
-        }
-        public IList<string> getModelosString(int fabricante, int serie, int generacion)
-        {
-            return dao.getModelosString(fabricante, serie, generacion);
-        }
+        }      
     }
 }

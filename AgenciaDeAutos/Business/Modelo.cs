@@ -13,11 +13,13 @@ namespace AgenciaDeAutos.Business
         public int IdGeneracion { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
+        public int NroModelo { get; set; }
 
         public double PrecioSugerido { get; set; }
 
         public Modelo()
         {
+            this.NroModelo = -99;
             this.Idfabricante = -99;
             this.IdSerie = -99;
             this.IdGeneracion = -99;

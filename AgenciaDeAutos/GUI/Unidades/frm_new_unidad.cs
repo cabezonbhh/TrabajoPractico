@@ -34,22 +34,12 @@ namespace AgenciaDeAutos.GUI.Unidades
             support.cargarComboGeneracion(combo_gen, Convert.ToInt32(combo_serie.SelectedValue));
         }
 
-        private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
+        private void combo_gen_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_serie.SelectedValue),
+            support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_fab.SelectedValue),
                                                     Convert.ToInt32(combo_serie.SelectedValue),
                                                     Convert.ToInt32(combo_gen.SelectedValue)
                                     );
         }
-
-
-
-        //private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_fab.SelectedValue),
-        //                                            Convert.ToInt32(combo_serie.SelectedValue),
-        //                                            Convert.ToInt32(combo_gen.SelectedValue)
-        //                                );
-        //}
     }
 }

@@ -10,6 +10,6 @@ namespace AgenciaDeAutos.Data.Interfaces
     {
         IList<M> getModelos(int fabricante, int serie, int generacion);
 
-        IList<string> getModelosString(int fabricante, int serie, int generacion);
+    
     }
 }

@@ -90,6 +90,7 @@
             this.combo_gen.Name = "combo_gen";
             this.combo_gen.Size = new System.Drawing.Size(121, 21);
             this.combo_gen.TabIndex = 4;
+            this.combo_gen.SelectionChangeCommitted += new System.EventHandler(this.combo_gen_SelectionChangeCommitted);
             // 
             // label4
             // 
@@ -107,7 +108,6 @@
             this.combo_modelo.Name = "combo_modelo";
             this.combo_modelo.Size = new System.Drawing.Size(121, 21);
             this.combo_modelo.TabIndex = 7;
-            this.combo_modelo.SelectionChangeCommitted += new System.EventHandler(this.combo_modelo_SelectionChangeCommitted);
             // 
             // frm_new_unidad
             // 
