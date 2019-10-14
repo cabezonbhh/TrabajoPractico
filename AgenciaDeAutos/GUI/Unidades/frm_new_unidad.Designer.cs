@@ -45,7 +45,7 @@
             this.combo_fab.Name = "combo_fab";
             this.combo_fab.Size = new System.Drawing.Size(121, 21);
             this.combo_fab.TabIndex = 0;
-           
+            this.combo_fab.SelectionChangeCommitted += new System.EventHandler(this.combo_fab_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -72,6 +72,7 @@
             this.combo_serie.Name = "combo_serie";
             this.combo_serie.Size = new System.Drawing.Size(121, 21);
             this.combo_serie.TabIndex = 2;
+            this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
             // 
             // label3
             // 
@@ -89,7 +90,6 @@
             this.combo_gen.Name = "combo_gen";
             this.combo_gen.Size = new System.Drawing.Size(121, 21);
             this.combo_gen.TabIndex = 4;
-           
             // 
             // label4
             // 
@@ -107,6 +107,7 @@
             this.combo_modelo.Name = "combo_modelo";
             this.combo_modelo.Size = new System.Drawing.Size(121, 21);
             this.combo_modelo.TabIndex = 7;
+            this.combo_modelo.SelectionChangeCommitted += new System.EventHandler(this.combo_modelo_SelectionChangeCommitted);
             // 
             // frm_new_unidad
             // 

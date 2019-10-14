@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgenciaDeAutos.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace AgenciaDeAutos.Support
 
         private Support()
         {
-            this.name = "Rylai";
+            this.name = "Support";
         }
 
         public static Support GetSupport()
@@ -438,26 +439,25 @@ namespace AgenciaDeAutos.Support
             combo.ValueMember = value; // nombre del campo Id que se guarda en cada ítems de la lista
         }
 
-        public void cargarComboModelo(ComboBox combo, int idFabricante, int idSerie, int idGeneracion)
+        public void cargarComboSerie(ComboBox combo, int serie)
         {
-            string sql = "exec cargarComboModelo "+idFabricante+", "+idSerie+", "+idGeneracion;
-            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql);
-            combo.DisplayMember = "nombre";
+            SerieService service = new SerieService();
+            combo.DataSource = service.getSeries(serie);
+            combo.DisplayMember = "Nombre";
+            combo.ValueMember = "IdSerie";
         }
-
-        public void cargarComboSerie(ComboBox combo, int idFabricante)
+        public void cargarComboGeneracion(ComboBox combo, int generacion)
         {
-            string sql = "exec cargarComboSerie " + idFabricante;
-            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql); 
-            combo.DisplayMember = "nombre"; 
-            combo.ValueMember = "idSerie"; 
+            GeneracionService service = new GeneracionService();
+            combo.DataSource = service.getGeneraciones(generacion);
+            combo.DisplayMember = "Nombre";
+            combo.ValueMember = "IdGeneracion";
         }
-        public void cargarComboGeneracion(ComboBox combo,int idSerie)
+        public void cargarComboModelo(ComboBox combo, int fabricante, int serie, int generacion)
         {
-            string sql = "exec cargarComboGeneracion " + idSerie;
-            combo.DataSource = DBHelper.getDBHelper().ConsultaSQL(sql); 
-            combo.DisplayMember = "nombre"; //
-            combo.ValueMember = ""; // 
+            ModeloService service = new ModeloService();
+            combo.DataSource = service.getModelos(fabricante,serie,generacion);
+            combo.DisplayMember = "Nombre";
         }
     }
 }

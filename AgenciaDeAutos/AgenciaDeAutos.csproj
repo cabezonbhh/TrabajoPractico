@@ -59,9 +59,17 @@
     <Compile Include="Business\Unidad.cs" />
     <Compile Include="Business\Venta.cs" />
     <Compile Include="Data\Dao\ClienteDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\FabricanteDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\GeneracionDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\ModeloDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\SerieDaoSqlImp.cs" />
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
     <Compile Include="Data\DBHelper.cs" />
     <Compile Include="Data\Interfaces\IDaoCliente.cs" />
+    <Compile Include="Data\Interfaces\IDaoFabricante.cs" />
+    <Compile Include="Data\Interfaces\IDaoGeneracion.cs" />
+    <Compile Include="Data\Interfaces\IDaoModelo.cs" />
+    <Compile Include="Data\Interfaces\IDaoSerie.cs" />
     <Compile Include="Data\Interfaces\IDaoUsuario.cs" />
     <Compile Include="GUI\Clientes\frm_edit_cliente.cs">
       <SubType>Form</SubType>
@@ -144,6 +152,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\FabricanteService.cs" />
+    <Compile Include="Service\GeneracionService.cs" />
+    <Compile Include="Service\ModeloService.cs" />
+    <Compile Include="Service\SerieService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
     <Compile Include="Support\Support.cs" />
     <EmbeddedResource Include="GUI\Clientes\frm_edit_cliente.resx">

@@ -22,10 +22,34 @@ namespace AgenciaDeAutos.GUI.Unidades
 
         private void frm_new_unidad_Load(object sender, EventArgs e)
         {
-           
             support.cargarCombo(combo_fab,"Fabricantes","idFabricante","nombre");
+        }
+
+        private void combo_fab_SelectionChangeCommitted(object sender, EventArgs e)
+        {
             support.cargarComboSerie(combo_serie, Convert.ToInt32(combo_fab.SelectedValue));
         }
-        
+        private void combo_serie_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            support.cargarComboGeneracion(combo_gen, Convert.ToInt32(combo_serie.SelectedValue));
+        }
+
+        private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_serie.SelectedValue),
+                                                    Convert.ToInt32(combo_serie.SelectedValue),
+                                                    Convert.ToInt32(combo_gen.SelectedValue)
+                                    );
+        }
+
+
+
+        //private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_fab.SelectedValue),
+        //                                            Convert.ToInt32(combo_serie.SelectedValue),
+        //                                            Convert.ToInt32(combo_gen.SelectedValue)
+        //                                );
+        //}
     }
 }

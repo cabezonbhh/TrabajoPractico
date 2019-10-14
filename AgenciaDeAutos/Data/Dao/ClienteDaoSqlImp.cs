@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AgenciaDeAutos.Data.Dao
 {
-    class ClienteDaoSqlImp : IDaoCliente<Cliente>
+    public class ClienteDaoSqlImp : IDaoCliente<Cliente>
     {
         DBHelper helper = DBHelper.getDBHelper();
         public bool borrarCliente(int id)
