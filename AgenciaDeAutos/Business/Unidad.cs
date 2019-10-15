@@ -9,7 +9,7 @@ namespace AgenciaDeAutos.Business
     public class Unidad
     {
         public int CodUnidad { get; set; }
-        public int IdFabricant { get; set; }
+        public int IdFabricante { get; set; }
         public int IdSerie { get; set; }
         public int IdGeneracion { get; set; }
         public string Nombre { get; set; }

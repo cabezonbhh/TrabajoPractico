@@ -41,5 +41,53 @@ namespace AgenciaDeAutos.GUI.Unidades
                                                     Convert.ToInt32(combo_gen.SelectedValue)
                                     );
         }
+        private string validarCampos()
+        {
+            if (String.IsNullOrWhiteSpace(txt_año_modelo.Text))
+            {
+                return "año";
+            }
+            if (String.IsNullOrWhiteSpace(txt_descripcion.Text))
+            {
+                return "descripcion";
+            }
+            if (String.IsNullOrWhiteSpace(txt_km.Text))
+            {
+                return "kilometros";
+            }
+            if (String.IsNullOrWhiteSpace(txt_potencia_cv.Text))
+            {
+                return "potencia";
+            }
+            if (String.IsNullOrWhiteSpace(txt_precio_compra.Text))
+            {
+                return "precio de compra";
+            }
+           
+            return null;
+        }
+
+        private void txt_potencia_cv_TextChanged(object sender, EventArgs e)
+        {
+            //int cv = Convert.ToInt32(txt_potencia_hp.Text);
+            //int hp = Convert.ToInt32(cv * 0.9863);
+            //txt_potencia_hp.Text = hp.ToString();
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            //public int CodUnidad { get; set; }
+            //public int IdFabricant { get; set; }
+            //public int IdSerie { get; set; }
+            //public int IdGeneracion { get; set; }
+            //public string Nombre { get; set; }
+            //public long PrecioCompra { get; set; }
+            //public int AñoModelo { get; set; }
+            //public long Kilometraje { get; set; }
+            //public string Descripcion { get; set; }
+            //public int Potencia { get; set; }
+
+
+        }
     }
 }

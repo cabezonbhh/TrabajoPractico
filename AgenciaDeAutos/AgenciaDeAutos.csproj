@@ -63,6 +63,7 @@
     <Compile Include="Data\Dao\GeneracionDaoSqlImp.cs" />
     <Compile Include="Data\Dao\ModeloDaoSqlImp.cs" />
     <Compile Include="Data\Dao\SerieDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\UnidadDaoSqlImp.cs" />
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
     <Compile Include="Data\DBHelper.cs" />
     <Compile Include="Data\Interfaces\IDaoCliente.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Data\Interfaces\IDaoGeneracion.cs" />
     <Compile Include="Data\Interfaces\IDaoModelo.cs" />
     <Compile Include="Data\Interfaces\IDaoSerie.cs" />
+    <Compile Include="Data\Interfaces\IDaoUnidad.cs" />
     <Compile Include="Data\Interfaces\IDaoUsuario.cs" />
     <Compile Include="GUI\Clientes\frm_edit_cliente.cs">
       <SubType>Form</SubType>
@@ -156,6 +158,7 @@
     <Compile Include="Service\GeneracionService.cs" />
     <Compile Include="Service\ModeloService.cs" />
     <Compile Include="Service\SerieService.cs" />
+    <Compile Include="Service\UnidadService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
     <Compile Include="Support\Support.cs" />
     <EmbeddedResource Include="GUI\Clientes\frm_edit_cliente.resx">

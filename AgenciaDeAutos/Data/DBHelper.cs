@@ -185,5 +185,43 @@ namespace AgenciaDeAutos
         {
             return this.ConsultaSQL("Select * from " + tabla + "where idPerfil > 0");
         }
+        public int registrarUnidad(string sql)
+        {
+            int filas = 0;
+
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand command = new SqlCommand();
+            SqlTransaction transact = null;
+
+            try
+            {
+                conexion.ConnectionString = string_conexion;
+                conexion.Open();
+           
+                transact = conexion.BeginTransaction();
+                command.Connection = conexion;
+                command.CommandType = CommandType.Text;
+                command.CommandText = sql;
+                command.Transaction = transact;
+                filas = command.ExecuteNonQuery();
+
+                transact.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (transact != null)
+                {
+                    transact.Rollback();
+                    filas = 0;
+                }
+                throw ex;
+            }
+            finally
+            {
+                this.CloseConnection(conexion);
+            }
+
+            return filas;
+        }
     }
 }
