@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AgenciaDeAutos.Service;
 using AgenciaDeAutos.Support;
 
 namespace AgenciaDeAutos.GUI.Unidades
@@ -14,6 +15,7 @@ namespace AgenciaDeAutos.GUI.Unidades
     public partial class frm_new_unidad : Form
     {
         Support.Support support = null;
+        UnidadService service = new UnidadService();
         public frm_new_unidad()
         {
             InitializeComponent();
@@ -69,25 +71,48 @@ namespace AgenciaDeAutos.GUI.Unidades
 
         private void txt_potencia_cv_TextChanged(object sender, EventArgs e)
         {
-            //int cv = Convert.ToInt32(txt_potencia_hp.Text);
-            //int hp = Convert.ToInt32(cv * 0.9863);
-            //txt_potencia_hp.Text = hp.ToString();
+            //double cv = Convert.ToDouble(((TextBox)sender).Text);
+            if(String.IsNullOrWhiteSpace(txt_potencia_cv.Text)!=true)
+            {
+                int cv = Convert.ToInt32(txt_potencia_cv.Text);
+                int hp = Convert.ToInt32(cv * 0.9863);
+                txt_potencia_hp.Text = hp.ToString();
+            }
+            
         }
+        
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            //public int CodUnidad { get; set; }
-            //public int IdFabricant { get; set; }
-            //public int IdSerie { get; set; }
-            //public int IdGeneracion { get; set; }
-            //public string Nombre { get; set; }
-            //public long PrecioCompra { get; set; }
-            //public int AñoModelo { get; set; }
-            //public long Kilometraje { get; set; }
-            //public string Descripcion { get; set; }
-            //public int Potencia { get; set; }
+            bool flag;
+            if (validarCampos() != null)
+            {
+                {
+                    MessageBox.Show("Ha dejado el campo " + validarCampos() + " vacio", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else
+            {
+                int fabricante = Convert.ToInt32(combo_fab.SelectedValue);
+                int serie = Convert.ToInt32(combo_serie.SelectedValue);
+                int generacion = Convert.ToInt32(combo_gen.SelectedValue);
+                string nombre = combo_modelo.Text;
+                long precio = Convert.ToInt64(txt_precio_compra.Text); 
+                int año = Convert.ToInt32(txt_año_modelo.Text);
+                int km = Convert.ToInt32(txt_km.Text);
+                int potencia = Convert.ToInt32(txt_potencia_cv.Text);
+                string descripcion = txt_descripcion.Text;
 
+                flag = service.nuevaUnidad(fabricante,serie,generacion,nombre,precio,año,km,potencia,descripcion);
+
+                if (flag == true)
+                    MessageBox.Show("Unidad registrada con exito", "Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    MessageBox.Show("Hubo un problema al registrar la unidad, revise los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
+
+        
     }
 }

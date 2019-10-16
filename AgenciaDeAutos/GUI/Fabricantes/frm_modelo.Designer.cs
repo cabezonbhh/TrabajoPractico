@@ -244,7 +244,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lbl_precio_arg);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(291, 179);
+            this.panel1.Location = new System.Drawing.Point(265, 179);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 100);
             this.panel1.TabIndex = 22;
@@ -257,7 +257,7 @@
             this.panel2.Controls.Add(this.lbl_modelo);
             this.panel2.Controls.Add(this.combo_serie);
             this.panel2.Controls.Add(this.lbl_generacion);
-            this.panel2.Location = new System.Drawing.Point(291, 30);
+            this.panel2.Location = new System.Drawing.Point(265, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
