@@ -22,6 +22,7 @@ namespace AgenciaDeAutos.Data.Dao
                                                         + unidad.Kilometraje + ", "
                                                         + unidad.Potencia + ", '"
                                                         + unidad.Descripcion.ToString()+"'";
+
             string sql2 = @"exec registrarUnidadUsada " + unidad.IdFabricante + ", "
                                                         + unidad.IdSerie + ", "
                                                         + unidad.IdGeneracion + ", '"

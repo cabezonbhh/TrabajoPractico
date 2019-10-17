@@ -103,11 +103,17 @@
     <Compile Include="GUI\Otros\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Unidades\frm_new_unidad.cs">
+    <Compile Include="GUI\Unidades\frm_main_unidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Unidades\frm_new_unidad.Designer.cs">
-      <DependentUpon>frm_new_unidad.cs</DependentUpon>
+    <Compile Include="GUI\Unidades\frm_main_unidades.Designer.cs">
+      <DependentUpon>frm_main_unidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Unidades\frm_new_edit_unidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Unidades\frm_new_edit_unidad.Designer.cs">
+      <DependentUpon>frm_new_edit_unidad.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Usuarios\frm_edit_user.cs">
       <SubType>Form</SubType>
@@ -176,8 +182,11 @@
     <EmbeddedResource Include="GUI\Otros\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Unidades\frm_new_unidad.resx">
-      <DependentUpon>frm_new_unidad.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Unidades\frm_main_unidades.resx">
+      <DependentUpon>frm_main_unidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Unidades\frm_new_edit_unidad.resx">
+      <DependentUpon>frm_new_edit_unidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usuarios\frm_edit_user.resx">
       <DependentUpon>frm_edit_user.cs</DependentUpon>

@@ -109,7 +109,7 @@ namespace AgenciaDeAutos.GUI.Otros
 
         private void btn_unid_Click(object sender, EventArgs e)
         {
-            Form aux = new frm_new_unidad();
+            Form aux = new frm_new_edit_unidad();
             aux.ShowDialog();
         }
     }

@@ -10,14 +10,7 @@ namespace AgenciaDeAutos.Support
 {
     public class Support
     {
-        private readonly string name;
         private static Support instance = new Support();
-
-
-        private Support()
-        {
-            this.name = "Support";
-        }
 
         public static Support GetSupport()
         {
