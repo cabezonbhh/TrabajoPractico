@@ -56,6 +56,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.add_shopping = new System.Windows.Forms.Button();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.gpBox_filters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +67,10 @@
             // 
             // gpBox_filters
             // 
+            this.gpBox_filters.Controls.Add(this.label6);
+            this.gpBox_filters.Controls.Add(this.label5);
+            this.gpBox_filters.Controls.Add(this.textBox9);
+            this.gpBox_filters.Controls.Add(this.textBox8);
             this.gpBox_filters.Controls.Add(this.textBox7);
             this.gpBox_filters.Controls.Add(this.lbl_año_hasta);
             this.gpBox_filters.Controls.Add(this.lbl_año_desde);
@@ -84,7 +92,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(346, 73);
+            this.textBox7.Location = new System.Drawing.Point(351, 85);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 26;
@@ -92,7 +100,7 @@
             // lbl_año_hasta
             // 
             this.lbl_año_hasta.AutoSize = true;
-            this.lbl_año_hasta.Location = new System.Drawing.Point(276, 76);
+            this.lbl_año_hasta.Location = new System.Drawing.Point(281, 88);
             this.lbl_año_hasta.Name = "lbl_año_hasta";
             this.lbl_año_hasta.Size = new System.Drawing.Size(64, 13);
             this.lbl_año_hasta.TabIndex = 25;
@@ -307,6 +315,38 @@
             this.add_shopping.Text = ".";
             this.add_shopping.UseVisualStyleBackColor = true;
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(351, 146);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 27;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(351, 200);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(276, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Precio (Desde)";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(276, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Precio (Hasta)";
+            // 
             // frm_main_unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,5 +410,9 @@
         private System.Windows.Forms.Button add_shopping;
         private System.Windows.Forms.Label lbl_año_hasta;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }
