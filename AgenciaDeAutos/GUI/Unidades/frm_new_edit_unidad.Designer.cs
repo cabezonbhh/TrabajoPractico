@@ -257,7 +257,7 @@
             this.lbl_cv.TabIndex = 22;
             this.lbl_cv.Text = "CV";
             // 
-            // frm_new_unidad
+            // frm_new_edit_unidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,8 +285,8 @@
             this.Controls.Add(this.combo_serie);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.combo_fab);
-            this.Name = "frm_new_unidad";
-            this.Text = "frm_new_unidad";
+            this.Name = "frm_new_edit_unidad";
+            this.Text = "Unidades";
             this.Load += new System.EventHandler(this.frm_new_unidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

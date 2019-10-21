@@ -50,17 +50,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pic_vehiculo
             // 
             this.pic_vehiculo.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
-            this.pic_vehiculo.Location = new System.Drawing.Point(746, 30);
+            this.pic_vehiculo.Location = new System.Drawing.Point(801, 21);
             this.pic_vehiculo.Name = "pic_vehiculo";
             this.pic_vehiculo.Size = new System.Drawing.Size(480, 320);
             this.pic_vehiculo.TabIndex = 0;
@@ -134,7 +136,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(596, 368);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 365);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(727, 278);
@@ -142,7 +144,7 @@
             // 
             // btn_stock
             // 
-            this.btn_stock.Location = new System.Drawing.Point(596, 652);
+            this.btn_stock.Location = new System.Drawing.Point(607, 661);
             this.btn_stock.Name = "btn_stock";
             this.btn_stock.Size = new System.Drawing.Size(132, 23);
             this.btn_stock.TabIndex = 11;
@@ -218,7 +220,7 @@
             // 
             // txt_cotizacion
             // 
-            this.txt_cotizacion.Location = new System.Drawing.Point(107, 63);
+            this.txt_cotizacion.Location = new System.Drawing.Point(107, 66);
             this.txt_cotizacion.Name = "txt_cotizacion";
             this.txt_cotizacion.Size = new System.Drawing.Size(133, 20);
             this.txt_cotizacion.TabIndex = 20;
@@ -244,7 +246,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.lbl_precio_arg);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(265, 179);
+            this.panel1.Location = new System.Drawing.Point(265, 208);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 100);
             this.panel1.TabIndex = 22;
@@ -262,11 +264,21 @@
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
+            this.pictureBox1.Location = new System.Drawing.Point(801, 355);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(480, 320);
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_modelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_back);
@@ -275,6 +287,7 @@
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.pic_vehiculo);
             this.Name = "frm_modelo";
+            this.Load += new System.EventHandler(this.frm_modelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -282,6 +295,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,5 +324,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

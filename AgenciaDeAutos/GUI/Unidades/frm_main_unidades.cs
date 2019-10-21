@@ -16,5 +16,10 @@ namespace AgenciaDeAutos.GUI.Unidades
         {
             InitializeComponent();
         }
+
+        private void frm_main_unidades_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

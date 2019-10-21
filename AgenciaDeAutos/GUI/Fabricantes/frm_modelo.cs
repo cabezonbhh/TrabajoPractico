@@ -36,5 +36,10 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         {
 
         }
+
+        private void frm_modelo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
