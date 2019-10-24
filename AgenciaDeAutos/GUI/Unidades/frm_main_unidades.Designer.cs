@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gpBox_filters = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lbl_año_hasta = new System.Windows.Forms.Label();
             this.lbl_año_desde = new System.Windows.Forms.Label();
@@ -56,10 +60,12 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.add_shopping = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_cotizacion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.gpBox_filters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,6 +95,38 @@
             this.gpBox_filters.TabIndex = 0;
             this.gpBox_filters.TabStop = false;
             this.gpBox_filters.Text = "Filtros";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(268, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Precio (Hasta):";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(265, 149);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Precio (Desde):";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(351, 200);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 28;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(351, 146);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 27;
             // 
             // textBox7
             // 
@@ -193,7 +231,7 @@
             // lbl_cv
             // 
             this.lbl_cv.AutoSize = true;
-            this.lbl_cv.Location = new System.Drawing.Point(444, 412);
+            this.lbl_cv.Location = new System.Drawing.Point(444, 436);
             this.lbl_cv.Name = "lbl_cv";
             this.lbl_cv.Size = new System.Drawing.Size(21, 13);
             this.lbl_cv.TabIndex = 24;
@@ -202,7 +240,7 @@
             // lbl_hp
             // 
             this.lbl_hp.AutoSize = true;
-            this.lbl_hp.Location = new System.Drawing.Point(447, 412);
+            this.lbl_hp.Location = new System.Drawing.Point(447, 436);
             this.lbl_hp.Name = "lbl_hp";
             this.lbl_hp.Size = new System.Drawing.Size(22, 13);
             this.lbl_hp.TabIndex = 23;
@@ -211,7 +249,7 @@
             // lbl_potencia
             // 
             this.lbl_potencia.AutoSize = true;
-            this.lbl_potencia.Location = new System.Drawing.Point(365, 392);
+            this.lbl_potencia.Location = new System.Drawing.Point(365, 416);
             this.lbl_potencia.Name = "lbl_potencia";
             this.lbl_potencia.Size = new System.Drawing.Size(52, 13);
             this.lbl_potencia.TabIndex = 16;
@@ -220,7 +258,7 @@
             // lbl_km
             // 
             this.lbl_km.AutoSize = true;
-            this.lbl_km.Location = new System.Drawing.Point(46, 389);
+            this.lbl_km.Location = new System.Drawing.Point(383, 362);
             this.lbl_km.Name = "lbl_km";
             this.lbl_km.Size = new System.Drawing.Size(58, 13);
             this.lbl_km.TabIndex = 15;
@@ -229,36 +267,36 @@
             // lbl_precio_venta
             // 
             this.lbl_precio_venta.AutoSize = true;
-            this.lbl_precio_venta.Location = new System.Drawing.Point(20, 437);
+            this.lbl_precio_venta.Location = new System.Drawing.Point(32, 416);
             this.lbl_precio_venta.Name = "lbl_precio_venta";
-            this.lbl_precio_venta.Size = new System.Drawing.Size(79, 13);
+            this.lbl_precio_venta.Size = new System.Drawing.Size(70, 13);
             this.lbl_precio_venta.TabIndex = 13;
-            this.lbl_precio_venta.Text = "Precio Compra:";
+            this.lbl_precio_venta.Text = "Precio venta:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(447, 442);
+            this.textBox5.Location = new System.Drawing.Point(447, 452);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 8;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(447, 389);
+            this.textBox4.Location = new System.Drawing.Point(447, 413);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 386);
+            this.textBox3.Location = new System.Drawing.Point(447, 359);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 6;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 434);
+            this.textBox1.Location = new System.Drawing.Point(108, 413);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
@@ -314,44 +352,69 @@
             this.add_shopping.TabIndex = 26;
             this.add_shopping.Text = ".";
             this.add_shopping.UseVisualStyleBackColor = true;
+            this.add_shopping.Click += new System.EventHandler(this.add_shopping_Click);
             // 
-            // textBox8
+            // textBox10
             // 
-            this.textBox8.Location = new System.Drawing.Point(351, 146);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 27;
+            this.textBox10.Location = new System.Drawing.Point(108, 452);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 27;
             // 
-            // textBox9
+            // label7
             // 
-            this.textBox9.Location = new System.Drawing.Point(351, 200);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 28;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(46, 362);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Cotizacion:";
             // 
-            // label5
+            // label8
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(276, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Precio (Desde)";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(214, 459);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 13);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "Potencia:";
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(276, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Precio (Hasta)";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(444, 475);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "CV";
+            // 
+            // txt_cotizacion
+            // 
+            this.txt_cotizacion.Location = new System.Drawing.Point(108, 359);
+            this.txt_cotizacion.Name = "txt_cotizacion";
+            this.txt_cotizacion.Size = new System.Drawing.Size(100, 20);
+            this.txt_cotizacion.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(214, 416);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Potencia:";
             // 
             // frm_main_unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txt_cotizacion);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.add_shopping);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.lbl_cv);
@@ -414,5 +477,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_cotizacion;
+        private System.Windows.Forms.Label label10;
     }
 }

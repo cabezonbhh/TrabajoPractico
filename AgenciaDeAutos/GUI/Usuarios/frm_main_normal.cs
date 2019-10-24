@@ -1,4 +1,5 @@
 ﻿using AgenciaDeAutos.GUI.Fabricantes;
+using AgenciaDeAutos.GUI.Unidades;
 using AgenciaDeAutos.GUI.Vehiculos;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,11 @@ namespace AgenciaDeAutos.GUI.Otros
         private void gestionNegocioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form aux = null;
+        }
+
+        private void btn_sale_Click(object sender, EventArgs e)
+        {
+            Form aux = new frm_main_unidades();
         }
     }
 }

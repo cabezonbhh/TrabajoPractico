@@ -18,6 +18,10 @@ namespace AgenciaDeAutos.Service
         {
             dao = new UnidadDaoSqlImp();
         }
+        public string[] getUnidadParaGrilla(int id)
+        {                  
+            return dao.GetUnidadParaGrilla(id); 
+        }
 
         public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion)
         {
@@ -26,11 +30,26 @@ namespace AgenciaDeAutos.Service
             unidad.IdSerie = serie;
             unidad.IdGeneracion = generacion;
             unidad.Nombre = nombre;
-            unidad.PrecioCompra = precio;
+            unidad.PrecioVenta = precio;
             unidad.AñoModelo = año;
             unidad.Kilometraje = km;
             unidad.Potencia = potencia;
             unidad.Descripcion = descripcion;
+            return dao.nuevaUnidad(unidad);
+        }
+        public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion,string patente)
+        {
+            Unidad unidad = new Unidad();
+            unidad.IdFabricante = fabricante;
+            unidad.IdSerie = serie;
+            unidad.IdGeneracion = generacion;
+            unidad.Nombre = nombre;
+            unidad.PrecioVenta = precio;
+            unidad.AñoModelo = año;
+            unidad.Kilometraje = km;
+            unidad.Potencia = potencia;
+            unidad.Descripcion = descripcion;
+            unidad.Patente = patente;
             return dao.nuevaUnidad(unidad);
         }
     }

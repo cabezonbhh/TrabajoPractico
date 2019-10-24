@@ -79,3 +79,5 @@ T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.cspro
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.CodeAnalysisLog.xml
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.lastcodeanalysissucceeded
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_main_unidades.resources

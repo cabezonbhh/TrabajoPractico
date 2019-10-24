@@ -106,7 +106,7 @@ namespace AgenciaDeAutos.GUI.Clientes
                     vec[0] = txt_name.Text;
                     vec[1] = txt_lastName.Text;
                     vec[2] = txt_address.Text;
-                    retorno = service.nuevoUsuario(vec,dni,nro,telefono,celular);
+                    retorno = service.nuevoCliente(vec,dni,nro,telefono,celular);
                     if(retorno == true)
                         MessageBox.Show("Cliente registrado con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else

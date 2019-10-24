@@ -1,5 +1,4 @@
-﻿using AgenciaDeAutos.Business;
-using AgenciaDeAutos.Service;
+﻿using AgenciaDeAutos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,16 +22,18 @@ namespace AgenciaDeAutos.GUI.Clientes
         }
 
         private void frm_edit_cliente_Load(object sender, EventArgs e)
-        {
-            int id = service.ClienteSeleccionado;
-            Cliente cliente = service.buscarClientePorID(id);
-            txt_name.Text = cliente.Nombre;
-            txt_lastName.Text = cliente.Apellido;
+        {            
             txt_dni.Enabled = false;
-            txt_address.Text = cliente.Calle;
-            txt_nro.Text = cliente.NroCalle.ToString();
-            txt_phone.Text = cliente.Telefono.ToString();
-            txt_mobile.Text = cliente.Celular.ToString();
+            int id = service.ClienteSeleccionado;
+            string[] cliente = service.buscarClientePorID(id);
+            //Orden del vector = DNI/Nombre/Apellido/Calle/NroCalle/Telefono/Celular
+            txt_dni.Text = cliente[0];
+            txt_name.Text = cliente[1];
+            txt_lastName.Text = cliente[2];
+            txt_address.Text = cliente[3];
+            txt_nro.Text = cliente[4];
+            txt_phone.Text = cliente[5];
+            txt_mobile.Text = cliente[6];
             lbl_dni_warning.Text = "Para modificar el DNI tilde la opcion";
         }
         private void validarNombre(object sender, System.Windows.Forms.KeyPressEventArgs e)
@@ -102,20 +103,22 @@ namespace AgenciaDeAutos.GUI.Clientes
             else
             {
                 int id = service.ClienteSeleccionado;
-                Cliente cliente = service.buscarClientePorID(id);
-                cliente.Nombre = txt_name.Text;
-                cliente.Apellido = txt_lastName.Text;
-                cliente.Calle = txt_address.Text;
-                cliente.NroCalle = Convert.ToInt32(txt_nro.Text);
-                cliente.Telefono = Convert.ToInt64(txt_phone.Text);
-                cliente.Celular = Convert.ToInt64(txt_mobile.Text);
+                string[] cliente = service.buscarClientePorID(id);
+                //Orden del vector = DNI/Nombre/Apellido/Calle/NroCalle/Telefono/Celular/idCliente
+                cliente[1] = txt_name.Text;
+                cliente[2] = txt_lastName.Text;
+                cliente[3] = txt_address.Text;
+                cliente[4] = txt_nro.Text;
+                cliente[5] = txt_phone.Text;
+                cliente[6] = txt_mobile.Text;
+                cliente[7] = id.ToString();
                 if (check_dni.Checked == true)
                 {
                     if (String.IsNullOrWhiteSpace(txt_dni.Text) == false)
                     {
                         if (service.buscarClientePorDni(Convert.ToInt64(txt_dni.Text)) == false)
                         {
-                            cliente.Dni = Convert.ToInt64(txt_dni.Text);
+                            cliente[0] = txt_dni.Text;
                             retorno = service.editarCliente(cliente);
                             if (retorno == true)
                                 MessageBox.Show("Datos del cliente modificados con exito", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);

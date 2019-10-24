@@ -24,7 +24,7 @@ namespace AgenciaDeAutos.Service
             return dao.getClientes();
         }
 
-        public bool nuevoUsuario(string[] vec, long dni, int nroCalle, long telefono, long celular)
+        public bool nuevoCliente(string[] vec, long dni, int nroCalle, long telefono, long celular)
         {
             //vec: 0 - nombre / 1 - apellido / 2 - calle 
             Cliente cliente = new Cliente
@@ -42,9 +42,20 @@ namespace AgenciaDeAutos.Service
             return dao.nuevoCliente(cliente);
         }
 
-        public Cliente buscarClientePorID(int id)
+        public string[] buscarClientePorID(int id)
         {
-            return dao.buscarClientePorID(id);
+            Cliente cliente = dao.buscarClientePorID(id);
+            string[] vec = new string[8];
+            vec[0] = cliente.Dni.ToString();
+            vec[1] = cliente.Nombre;
+            vec[2] = cliente.Apellido;
+            vec[3] = cliente.Calle;
+            vec[4] = cliente.NroCalle.ToString();
+            vec[5] = cliente.Telefono.ToString();
+            vec[6] = cliente.Celular.ToString();
+            vec[7] = cliente.IdCliente.ToString();
+            return vec;
+
         }
 
         public bool buscarClientePorDni(long dni)
@@ -52,8 +63,18 @@ namespace AgenciaDeAutos.Service
             return dao.buscarClientePorDNI(dni);
         }
 
-        public bool editarCliente(Cliente cliente)
+        public bool editarCliente(string[] vector)
         {
+            //Orden del vector = DNI/Nombre/Apellido/Calle/NroCalle/Telefono/Celular/idCliente
+            Cliente cliente = new Cliente();
+            cliente.IdCliente = Convert.ToInt32(vector[7]);
+            cliente.Dni = Convert.ToInt32(vector[0]);
+            cliente.Nombre = vector[1];
+            cliente.Apellido = vector[2];
+            cliente.Calle = vector[3];
+            cliente.NroCalle = Convert.ToInt32(vector[4]);
+            cliente.Telefono = Convert.ToInt64(vector[5]);
+            cliente.Celular = Convert.ToInt64(vector[6]);
             return dao.editarCliente(cliente);
         }
 

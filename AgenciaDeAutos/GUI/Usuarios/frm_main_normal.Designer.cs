@@ -30,7 +30,6 @@
         {
             this.menu_main = new System.Windows.Forms.MenuStrip();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionNegocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +52,6 @@
             // opcionesToolStripMenuItem
             // 
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarUsuarioToolStripMenuItem,
             this.gestionNegocioToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem,
             this.salirToolStripMenuItem});
@@ -61,29 +59,23 @@
             this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.opcionesToolStripMenuItem.Text = "Opciones";
             // 
-            // gestionarUsuarioToolStripMenuItem
-            // 
-            this.gestionarUsuarioToolStripMenuItem.Name = "gestionarUsuarioToolStripMenuItem";
-            this.gestionarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gestionarUsuarioToolStripMenuItem.Text = "Nueva venta";
-            // 
             // gestionNegocioToolStripMenuItem
             // 
             this.gestionNegocioToolStripMenuItem.Name = "gestionNegocioToolStripMenuItem";
-            this.gestionNegocioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gestionNegocioToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.gestionNegocioToolStripMenuItem.Text = "Nuevo cliente";
             this.gestionNegocioToolStripMenuItem.Click += new System.EventHandler(this.gestionNegocioToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // btn_brands
@@ -104,6 +96,7 @@
             this.btn_sale.TabIndex = 2;
             this.btn_sale.Text = "Ventas";
             this.btn_sale.UseVisualStyleBackColor = true;
+            this.btn_sale.Click += new System.EventHandler(this.btn_sale_Click);
             // 
             // btn_postVenta
             // 
@@ -137,7 +130,6 @@
 
         private System.Windows.Forms.MenuStrip menu_main;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionNegocioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;

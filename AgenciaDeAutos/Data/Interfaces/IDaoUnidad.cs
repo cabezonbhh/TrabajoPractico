@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgenciaDeAutos.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,7 @@ namespace AgenciaDeAutos.Data.Interfaces
     public interface IDaoUnidad <U>
     {
         bool nuevaUnidad(U unidad);
+
+        string[] GetUnidadParaGrilla(int id);
     }
 }
