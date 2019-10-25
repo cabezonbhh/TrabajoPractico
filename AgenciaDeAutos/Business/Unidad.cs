@@ -20,6 +20,8 @@ namespace AgenciaDeAutos.Business
         public int Potencia { get; set; }
         public string Patente { get; set; }
 
+        public Cliente Dueño { get; set; }
+
         public Unidad()
         {
             this.CodUnidad = -99;
@@ -33,6 +35,7 @@ namespace AgenciaDeAutos.Business
             this.Descripcion = "";
             this.Potencia = -99;
             this.Patente = "N/D";
+            this.Dueño = null;
         }
     }
 }

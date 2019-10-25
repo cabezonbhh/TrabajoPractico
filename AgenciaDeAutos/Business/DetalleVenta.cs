@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AgenciaDeAutos.Business
 {
-    class DetalleVenta
+    public class DetalleVenta
     {
+        public int CodUnidad { get; set; }
+        public long PrecioVenta { get; set; }
+
+
     }
 }

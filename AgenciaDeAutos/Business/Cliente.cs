@@ -17,6 +17,8 @@ namespace AgenciaDeAutos.Business
         public long Telefono { get; set; }
         public long Celular { get; set; }
 
+        public IList<Unidad> vehiculos { get; set; }
+
         public Cliente()
         {
             this.IdCliente = -99;
@@ -27,6 +29,7 @@ namespace AgenciaDeAutos.Business
             this.NroCalle = -99;
             this.Telefono = -99;
             this.Celular = -99;
+            this.vehiculos = null;
         }
     }
 
