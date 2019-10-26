@@ -1,4 +1,5 @@
-﻿using AgenciaDeAutos.Service;
+﻿using AgenciaDeAutos.Business;
+using AgenciaDeAutos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,26 +21,24 @@ namespace AgenciaDeAutos.GUI.Ventas
         public frm_venta(double cotizacion)
         {
             InitializeComponent();
+            service = new UnidadService();
             this.cotizacion = cotizacion;
         }
         public void addDetail(int idUnidad)
-        {   //Orden del vector: idUnidad/modelo/añoModelo/precioVenta/fabricante/generacion
-            //                      0       1       2           3           4           5
-            string[] unidad = service.getUnidadParaGrilla(idUnidad);
-            //orden grilla = id/fabricante/modelo/año/generacion/precio
-            //0      4       1      2        5       3
-            peso = Convert.ToInt64(unidad[3]) * (long)cotizacion;
+        {   
+            Unidad unidad = service.getUnidadPorId(idUnidad);
+            peso = Convert.ToInt64(unidad.PrecioVenta * (long)cotizacion);
             dgv_details.Rows.Add(new object[]
             {
-                unidad[0].ToString(),
-                unidad[4].ToString(),
-                unidad[1].ToString(),
-                unidad[2].ToString(),
-                unidad[5].ToString(),
-                unidad[3].ToString(),
+                unidad.CodUnidad.ToString(),
+                unidad.NombreFabricante.ToString(),
+                unidad.Nombre.ToString(),
+                unidad.AñoModelo.ToString(),
+                unidad.NombreGeneracion.ToString(),
+                unidad.PrecioVenta.ToString(),
                 peso.ToString()
             });
-            total+= Convert.ToInt64(unidad[3]);
+            total+= Convert.ToInt64(unidad.PrecioVenta);
             txt_total_dolar.Text = total.ToString();
             txt_total_peso.Text = (total * cotizacion).ToString();
         }
@@ -53,5 +52,6 @@ namespace AgenciaDeAutos.GUI.Ventas
             txt_total_dolar.Text = total.ToString();
         }
 
+       
     }
 }

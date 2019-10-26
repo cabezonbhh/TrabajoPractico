@@ -81,3 +81,4 @@ D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.C
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.lastcodeanalysissucceeded
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_main_unidades.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Ventas.frm_venta.resources

@@ -51,6 +51,8 @@
             this.txt_cotizacion = new System.Windows.Forms.TextBox();
             this.btn_new_venta = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lbl_fecha_entrega = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_details)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +169,7 @@
             // 
             // txt_total_peso
             // 
-            this.txt_total_peso.Location = new System.Drawing.Point(577, 347);
+            this.txt_total_peso.Location = new System.Drawing.Point(577, 410);
             this.txt_total_peso.Name = "txt_total_peso";
             this.txt_total_peso.Size = new System.Drawing.Size(100, 20);
             this.txt_total_peso.TabIndex = 7;
@@ -175,7 +177,7 @@
             // lbl_total_peso
             // 
             this.lbl_total_peso.AutoSize = true;
-            this.lbl_total_peso.Location = new System.Drawing.Point(510, 350);
+            this.lbl_total_peso.Location = new System.Drawing.Point(510, 413);
             this.lbl_total_peso.Name = "lbl_total_peso";
             this.lbl_total_peso.Size = new System.Drawing.Size(61, 13);
             this.lbl_total_peso.TabIndex = 8;
@@ -184,7 +186,7 @@
             // lbl_total_dolar
             // 
             this.lbl_total_dolar.AutoSize = true;
-            this.lbl_total_dolar.Location = new System.Drawing.Point(510, 397);
+            this.lbl_total_dolar.Location = new System.Drawing.Point(510, 460);
             this.lbl_total_dolar.Name = "lbl_total_dolar";
             this.lbl_total_dolar.Size = new System.Drawing.Size(61, 13);
             this.lbl_total_dolar.TabIndex = 9;
@@ -192,7 +194,7 @@
             // 
             // txt_total_dolar
             // 
-            this.txt_total_dolar.Location = new System.Drawing.Point(577, 397);
+            this.txt_total_dolar.Location = new System.Drawing.Point(577, 460);
             this.txt_total_dolar.Name = "txt_total_dolar";
             this.txt_total_dolar.Size = new System.Drawing.Size(100, 20);
             this.txt_total_dolar.TabIndex = 10;
@@ -209,15 +211,15 @@
             // lbl_cotizacion
             // 
             this.lbl_cotizacion.AutoSize = true;
-            this.lbl_cotizacion.Location = new System.Drawing.Point(328, 400);
+            this.lbl_cotizacion.Location = new System.Drawing.Point(512, 365);
             this.lbl_cotizacion.Name = "lbl_cotizacion";
-            this.lbl_cotizacion.Size = new System.Drawing.Size(56, 13);
+            this.lbl_cotizacion.Size = new System.Drawing.Size(59, 13);
             this.lbl_cotizacion.TabIndex = 13;
-            this.lbl_cotizacion.Text = "Cotizacion";
+            this.lbl_cotizacion.Text = "Cotizacion:";
             // 
             // txt_cotizacion
             // 
-            this.txt_cotizacion.Location = new System.Drawing.Point(395, 397);
+            this.txt_cotizacion.Location = new System.Drawing.Point(577, 362);
             this.txt_cotizacion.Name = "txt_cotizacion";
             this.txt_cotizacion.Size = new System.Drawing.Size(100, 20);
             this.txt_cotizacion.TabIndex = 12;
@@ -226,7 +228,7 @@
             // 
             this.btn_new_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_new_venta.ForeColor = System.Drawing.Color.Blue;
-            this.btn_new_venta.Location = new System.Drawing.Point(472, 462);
+            this.btn_new_venta.Location = new System.Drawing.Point(472, 506);
             this.btn_new_venta.Name = "btn_new_venta";
             this.btn_new_venta.Size = new System.Drawing.Size(89, 23);
             this.btn_new_venta.TabIndex = 14;
@@ -235,18 +237,36 @@
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(588, 462);
+            this.btn_salir.Location = new System.Drawing.Point(588, 506);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(89, 23);
             this.btn_salir.TabIndex = 15;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(262, 362);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 16;
+            // 
+            // lbl_fecha_entrega
+            // 
+            this.lbl_fecha_entrega.AutoSize = true;
+            this.lbl_fecha_entrega.Location = new System.Drawing.Point(180, 365);
+            this.lbl_fecha_entrega.Name = "lbl_fecha_entrega";
+            this.lbl_fecha_entrega.Size = new System.Drawing.Size(76, 13);
+            this.lbl_fecha_entrega.TabIndex = 17;
+            this.lbl_fecha_entrega.Text = "fecha entrega:";
+            // 
             // frm_venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 528);
+            this.ClientSize = new System.Drawing.Size(712, 557);
+            this.Controls.Add(this.lbl_fecha_entrega);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_new_venta);
             this.Controls.Add(this.lbl_cotizacion);
@@ -297,5 +317,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_precio2;
         private System.Windows.Forms.Button btn_new_venta;
         private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lbl_fecha_entrega;
     }
 }

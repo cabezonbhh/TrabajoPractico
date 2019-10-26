@@ -431,6 +431,13 @@ namespace AgenciaDeAutos.Support
             combo.DisplayMember = display; //nombre del campo que lista el combo
             combo.ValueMember = value; // nombre del campo Id que se guarda en cada ítems de la lista
         }
+        public void cargarComboFabricante(ComboBox combo)
+        {
+            FabricanteService service = new FabricanteService();
+            combo.DataSource = service.getFabricante();
+            combo.DisplayMember = "Nombre";
+            combo.ValueMember = "IdFabricante";
+        }
 
         public void cargarComboSerie(ComboBox combo, int serie)
         {

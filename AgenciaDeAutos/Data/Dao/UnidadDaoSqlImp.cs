@@ -13,20 +13,27 @@ namespace AgenciaDeAutos.Data.Dao
     {
         DBHelper helper = DBHelper.getDBHelper();
 
-        public string[] GetUnidadParaGrilla(int id)
+        public Unidad GetUnidadPorID(int id)
         {
-            string[] unidad = new string[6];
+            Unidad unidad = new Unidad();
             DataTable tabla = helper.ConsultaSQL("exec getUnidadPorID " + id);
             foreach(DataRow fila in tabla.Rows)
             {
-                unidad[0] = fila[0].ToString();
-                unidad[1] = fila[1].ToString();
-                unidad[2] = fila[2].ToString();
-                unidad[3] = fila[3].ToString();
-                unidad[4] = fila[4].ToString();
-                unidad[5] = fila[5].ToString();
+                unidad = mapper(fila);
             }
-            return null;
+            return unidad;
+        }
+
+        public IList<Unidad> GetUnidades(String nombre)
+        {
+            string sql = "exec getUnidadesPorNombre "+ "'"+nombre+"'";
+            DataTable tabla = helper.ConsultaSQL(sql);
+            IList<Unidad> unidades = new List<Unidad>();
+            foreach(DataRow fila in tabla.Rows)
+            {
+                unidades.Add(mapper(fila));
+            }
+            return unidades;
         }
 
         public bool nuevaUnidad(Unidad unidad)
@@ -63,18 +70,21 @@ namespace AgenciaDeAutos.Data.Dao
         private Unidad mapper(DataRow fila)
         {
             Unidad unidad = new Unidad();
-            unidad.CodUnidad = Convert.ToInt32(fila[0]);
-            unidad.IdFabricante = Convert.ToInt32(fila[1]);
-            unidad.IdSerie = Convert.ToInt32(fila[2]);
-            unidad.IdGeneracion = Convert.ToInt32(fila[3]);
-            unidad.Nombre = fila[4].ToString();
-            unidad.PrecioVenta = Convert.ToInt64(fila[5]);
-            unidad.AñoModelo = Convert.ToInt32(fila[6]);
-            unidad.Kilometraje = Convert.ToInt32(fila[7]);
-            unidad.Potencia = Convert.ToInt32(fila[8]);
-            unidad.Descripcion = fila[9].ToString();
-            unidad.Patente = fila[11].ToString();
+            unidad.CodUnidad = Convert.ToInt32(fila["codUnidad"]);
+            unidad.IdFabricante = Convert.ToInt32(fila["idfabricante"]);
+            unidad.NombreFabricante = fila["NombreFabricante"].ToString();
+            unidad.IdSerie = Convert.ToInt32(fila["idSerie"]);
+            unidad.NombreSerie = fila["NombreSerie"].ToString();
+            unidad.IdGeneracion = Convert.ToInt32(fila["idGeneracion"]);
+            unidad.NombreGeneracion = fila["NombreGeneracion"].ToString();
+            unidad.Nombre = fila["nombre"].ToString();
+            unidad.PrecioVenta = Convert.ToInt64(fila["precioVenta"]);
+            unidad.AñoModelo = Convert.ToInt32(fila["añoModelo"]);
+            unidad.Kilometraje = Convert.ToInt32(fila["kilometraje"]);
+            unidad.Potencia = Convert.ToInt32(fila["potencia"]);
+            unidad.Descripcion = fila["descripcion"].ToString();
+            unidad.Patente = fila["patente"].ToString();
             return unidad;
-        }
+        }      
     }
 }

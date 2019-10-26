@@ -10,8 +10,11 @@ namespace AgenciaDeAutos.Business
     {
         public int CodUnidad { get; set; }
         public int IdFabricante { get; set; }
+        public string NombreFabricante { get; set; }
         public int IdSerie { get; set; }
+        public string NombreSerie { get; set; }
         public int IdGeneracion { get; set; }
+        public string NombreGeneracion { get; set; }
         public string Nombre { get; set; }
         public long PrecioVenta { get; set; }
         public int AñoModelo { get; set; }
@@ -26,8 +29,11 @@ namespace AgenciaDeAutos.Business
         {
             this.CodUnidad = -99;
             this.IdFabricante = -99;
+            this.NombreFabricante = "";
             this.IdSerie = -99;
+            this.NombreSerie = "";
             this.IdGeneracion = -99;
+            this.NombreGeneracion = "";
             this.Nombre = "";
             this.PrecioVenta = -99;
             this.AñoModelo = -99;

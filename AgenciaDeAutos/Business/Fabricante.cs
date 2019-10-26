@@ -13,6 +13,7 @@ namespace AgenciaDeAutos.Business
         public string Nombre { get; set; }
         public IList<Serie> series { get; set; }
 
+
         public Fabricante()
         {
             this.IdFabricante = -99;

@@ -47,14 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Cliente.cs" />
-    <Compile Include="Business\DetalleService.cs" />
+    <Compile Include="Business\DetallePostVenta.cs" />
     <Compile Include="Business\DetalleVenta.cs" />
     <Compile Include="Business\Fabricante.cs" />
     <Compile Include="Business\Generacion.cs" />
     <Compile Include="Business\Modelo.cs" />
     <Compile Include="Business\Perfil.cs" />
     <Compile Include="Business\Serie.cs" />
-    <Compile Include="Business\Service.cs" />
+    <Compile Include="Business\PostVenta.cs" />
     <Compile Include="Business\Trabajo.cs" />
     <Compile Include="Business\Unidad.cs" />
     <Compile Include="Business\Venta.cs" />
@@ -62,17 +62,20 @@
     <Compile Include="Data\Dao\FabricanteDaoSqlImp.cs" />
     <Compile Include="Data\Dao\GeneracionDaoSqlImp.cs" />
     <Compile Include="Data\Dao\ModeloDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\PostVentaDaoSqlImp.cs" />
     <Compile Include="Data\Dao\SerieDaoSqlImp.cs" />
     <Compile Include="Data\Dao\UnidadDaoSqlImp.cs" />
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
+    <Compile Include="Data\Dao\VentaDaoSqlImp.cs" />
     <Compile Include="Data\DBHelper.cs" />
-    <Compile Include="Data\Interfaces\IDaoCliente.cs" />
-    <Compile Include="Data\Interfaces\IDaoFabricante.cs" />
-    <Compile Include="Data\Interfaces\IDaoGeneracion.cs" />
-    <Compile Include="Data\Interfaces\IDaoModelo.cs" />
-    <Compile Include="Data\Interfaces\IDaoSerie.cs" />
-    <Compile Include="Data\Interfaces\IDaoUnidad.cs" />
-    <Compile Include="Data\Interfaces\IDaoUsuario.cs" />
+    <Compile Include="Interfaces\IDaoCliente.cs" />
+    <Compile Include="Interfaces\IDaoFabricante.cs" />
+    <Compile Include="Interfaces\IDaoGeneracion.cs" />
+    <Compile Include="Interfaces\IDaoModelo.cs" />
+    <Compile Include="Interfaces\IDaoPostVenta.cs" />
+    <Compile Include="Interfaces\IDaoSerie.cs" />
+    <Compile Include="Interfaces\IDaoUnidad.cs" />
+    <Compile Include="Interfaces\IDaoUsuario.cs" />
     <Compile Include="GUI\Clientes\frm_edit_cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +172,7 @@
     <Compile Include="GUI\Ventas\frm_venta.Designer.cs">
       <DependentUpon>frm_venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IDaoVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Business\Usuario.cs" />
@@ -181,9 +185,11 @@
     <Compile Include="Service\FabricanteService.cs" />
     <Compile Include="Service\GeneracionService.cs" />
     <Compile Include="Service\ModeloService.cs" />
+    <Compile Include="Service\PostVentaService.cs" />
     <Compile Include="Service\SerieService.cs" />
     <Compile Include="Service\UnidadService.cs" />
     <Compile Include="Service\UsuarioService.cs" />
+    <Compile Include="Service\VentaService.cs" />
     <Compile Include="Support\Support.cs" />
     <EmbeddedResource Include="GUI\Clientes\frm_edit_cliente.resx">
       <DependentUpon>frm_edit_cliente.cs</DependentUpon>

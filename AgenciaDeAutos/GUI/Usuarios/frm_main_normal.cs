@@ -34,6 +34,7 @@ namespace AgenciaDeAutos.GUI.Otros
         private void btn_sale_Click(object sender, EventArgs e)
         {
             Form aux = new frm_main_unidades();
+            aux.ShowDialog();
         }
     }
 }

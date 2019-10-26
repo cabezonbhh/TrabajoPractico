@@ -16,7 +16,6 @@ namespace AgenciaDeAutos.Business
         public int NroCalle { get; set; }
         public long Telefono { get; set; }
         public long Celular { get; set; }
-
         public IList<Unidad> vehiculos { get; set; }
 
         public Cliente()

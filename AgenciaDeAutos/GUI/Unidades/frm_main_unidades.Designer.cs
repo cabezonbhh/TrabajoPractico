@@ -29,108 +29,113 @@
         private void InitializeComponent()
         {
             this.gpBox_filters = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_precio_hasta = new System.Windows.Forms.Label();
+            this.lbl_precio_desde = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.lbl_año_hasta = new System.Windows.Forms.Label();
             this.lbl_año_desde = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_modelo = new System.Windows.Forms.Label();
+            this.lbl_generacion = new System.Windows.Forms.Label();
+            this.lbl_serie = new System.Windows.Forms.Label();
+            this.lbl_fabricante = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.combo_modelo = new System.Windows.Forms.ComboBox();
+            this.combo_generacion = new System.Windows.Forms.ComboBox();
+            this.combo_serie = new System.Windows.Forms.ComboBox();
+            this.combo_fabricante = new System.Windows.Forms.ComboBox();
             this.lbl_cv = new System.Windows.Forms.Label();
             this.lbl_hp = new System.Windows.Forms.Label();
             this.lbl_potencia = new System.Windows.Forms.Label();
             this.lbl_km = new System.Windows.Forms.Label();
             this.lbl_precio_venta = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_hp = new System.Windows.Forms.TextBox();
+            this.txt_cv = new System.Windows.Forms.TextBox();
+            this.txt_km = new System.Windows.Forms.TextBox();
+            this.txt_precio_dolar = new System.Windows.Forms.TextBox();
+            this.pic_unidad = new System.Windows.Forms.PictureBox();
             this.lbl_descripcion = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.add_shopping = new System.Windows.Forms.Button();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txt_precio_peso = new System.Windows.Forms.TextBox();
+            this.lbl_cotizacion = new System.Windows.Forms.Label();
+            this.lbl_peso_Arg = new System.Windows.Forms.Label();
             this.txt_cotizacion = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_dolar = new System.Windows.Forms.Label();
+            this.labelhp = new System.Windows.Forms.Label();
+            this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
+            this.col_id_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_generacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpBox_filters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
             this.SuspendLayout();
             // 
             // gpBox_filters
             // 
-            this.gpBox_filters.Controls.Add(this.label6);
-            this.gpBox_filters.Controls.Add(this.label5);
+            this.gpBox_filters.Controls.Add(this.lbl_precio_hasta);
+            this.gpBox_filters.Controls.Add(this.lbl_precio_desde);
             this.gpBox_filters.Controls.Add(this.textBox9);
             this.gpBox_filters.Controls.Add(this.textBox8);
             this.gpBox_filters.Controls.Add(this.textBox7);
             this.gpBox_filters.Controls.Add(this.lbl_año_hasta);
             this.gpBox_filters.Controls.Add(this.lbl_año_desde);
-            this.gpBox_filters.Controls.Add(this.label4);
-            this.gpBox_filters.Controls.Add(this.label3);
-            this.gpBox_filters.Controls.Add(this.label2);
-            this.gpBox_filters.Controls.Add(this.label1);
+            this.gpBox_filters.Controls.Add(this.lbl_modelo);
+            this.gpBox_filters.Controls.Add(this.lbl_generacion);
+            this.gpBox_filters.Controls.Add(this.lbl_serie);
+            this.gpBox_filters.Controls.Add(this.lbl_fabricante);
             this.gpBox_filters.Controls.Add(this.textBox2);
-            this.gpBox_filters.Controls.Add(this.comboBox4);
-            this.gpBox_filters.Controls.Add(this.comboBox3);
-            this.gpBox_filters.Controls.Add(this.comboBox2);
-            this.gpBox_filters.Controls.Add(this.comboBox1);
+            this.gpBox_filters.Controls.Add(this.combo_modelo);
+            this.gpBox_filters.Controls.Add(this.combo_generacion);
+            this.gpBox_filters.Controls.Add(this.combo_serie);
+            this.gpBox_filters.Controls.Add(this.combo_fabricante);
             this.gpBox_filters.Location = new System.Drawing.Point(13, 13);
             this.gpBox_filters.Name = "gpBox_filters";
-            this.gpBox_filters.Size = new System.Drawing.Size(534, 319);
+            this.gpBox_filters.Size = new System.Drawing.Size(534, 242);
             this.gpBox_filters.TabIndex = 0;
             this.gpBox_filters.TabStop = false;
             this.gpBox_filters.Text = "Filtros";
             // 
-            // label6
+            // lbl_precio_hasta
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(268, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 13);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Precio (Hasta):";
+            this.lbl_precio_hasta.AutoSize = true;
+            this.lbl_precio_hasta.Location = new System.Drawing.Point(281, 180);
+            this.lbl_precio_hasta.Name = "lbl_precio_hasta";
+            this.lbl_precio_hasta.Size = new System.Drawing.Size(77, 13);
+            this.lbl_precio_hasta.TabIndex = 30;
+            this.lbl_precio_hasta.Text = "Precio (Hasta):";
             // 
-            // label5
+            // lbl_precio_desde
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(265, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Precio (Desde):";
+            this.lbl_precio_desde.AutoSize = true;
+            this.lbl_precio_desde.Location = new System.Drawing.Point(278, 135);
+            this.lbl_precio_desde.Name = "lbl_precio_desde";
+            this.lbl_precio_desde.Size = new System.Drawing.Size(80, 13);
+            this.lbl_precio_desde.TabIndex = 29;
+            this.lbl_precio_desde.Text = "Precio (Desde):";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(351, 200);
+            this.textBox9.Location = new System.Drawing.Point(364, 177);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 28;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(351, 146);
+            this.textBox8.Location = new System.Drawing.Point(364, 132);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 27;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(351, 85);
+            this.textBox7.Location = new System.Drawing.Point(364, 86);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 26;
@@ -138,7 +143,7 @@
             // lbl_año_hasta
             // 
             this.lbl_año_hasta.AutoSize = true;
-            this.lbl_año_hasta.Location = new System.Drawing.Point(281, 88);
+            this.lbl_año_hasta.Location = new System.Drawing.Point(294, 89);
             this.lbl_año_hasta.Name = "lbl_año_hasta";
             this.lbl_año_hasta.Size = new System.Drawing.Size(64, 13);
             this.lbl_año_hasta.TabIndex = 25;
@@ -147,91 +152,95 @@
             // lbl_año_desde
             // 
             this.lbl_año_desde.AutoSize = true;
-            this.lbl_año_desde.Location = new System.Drawing.Point(276, 30);
+            this.lbl_año_desde.Location = new System.Drawing.Point(289, 43);
             this.lbl_año_desde.Name = "lbl_año_desde";
             this.lbl_año_desde.Size = new System.Drawing.Size(69, 13);
             this.lbl_año_desde.TabIndex = 14;
             this.lbl_año_desde.Text = "Año (Desde):";
             // 
-            // label4
+            // lbl_modelo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Modelo:";
+            this.lbl_modelo.AutoSize = true;
+            this.lbl_modelo.Location = new System.Drawing.Point(46, 180);
+            this.lbl_modelo.Name = "lbl_modelo";
+            this.lbl_modelo.Size = new System.Drawing.Size(45, 13);
+            this.lbl_modelo.TabIndex = 12;
+            this.lbl_modelo.Text = "Modelo:";
             // 
-            // label3
+            // lbl_generacion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Generacion:";
+            this.lbl_generacion.AutoSize = true;
+            this.lbl_generacion.Location = new System.Drawing.Point(26, 135);
+            this.lbl_generacion.Name = "lbl_generacion";
+            this.lbl_generacion.Size = new System.Drawing.Size(65, 13);
+            this.lbl_generacion.TabIndex = 11;
+            this.lbl_generacion.Text = "Generacion:";
             // 
-            // label2
+            // lbl_serie
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Serie:";
+            this.lbl_serie.AutoSize = true;
+            this.lbl_serie.Location = new System.Drawing.Point(57, 89);
+            this.lbl_serie.Name = "lbl_serie";
+            this.lbl_serie.Size = new System.Drawing.Size(34, 13);
+            this.lbl_serie.TabIndex = 10;
+            this.lbl_serie.Text = "Serie:";
             // 
-            // label1
+            // lbl_fabricante
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Fabricante:";
+            this.lbl_fabricante.AutoSize = true;
+            this.lbl_fabricante.Location = new System.Drawing.Point(31, 43);
+            this.lbl_fabricante.Name = "lbl_fabricante";
+            this.lbl_fabricante.Size = new System.Drawing.Size(60, 13);
+            this.lbl_fabricante.TabIndex = 9;
+            this.lbl_fabricante.Text = "Fabricante:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(351, 27);
+            this.textBox2.Location = new System.Drawing.Point(364, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // comboBox4
+            // combo_modelo
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(84, 164);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 3;
+            this.combo_modelo.FormattingEnabled = true;
+            this.combo_modelo.Location = new System.Drawing.Point(97, 177);
+            this.combo_modelo.Name = "combo_modelo";
+            this.combo_modelo.Size = new System.Drawing.Size(121, 21);
+            this.combo_modelo.TabIndex = 3;
+            this.combo_modelo.SelectedIndexChanged += new System.EventHandler(this.combo_modelo_SelectedIndexChanged);
             // 
-            // comboBox3
+            // combo_generacion
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(84, 119);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 2;
+            this.combo_generacion.FormattingEnabled = true;
+            this.combo_generacion.Location = new System.Drawing.Point(97, 132);
+            this.combo_generacion.Name = "combo_generacion";
+            this.combo_generacion.Size = new System.Drawing.Size(121, 21);
+            this.combo_generacion.TabIndex = 2;
+            this.combo_generacion.SelectionChangeCommitted += new System.EventHandler(this.combo_generacion_SelectionChangeCommitted);
             // 
-            // comboBox2
+            // combo_serie
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(84, 73);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 1;
+            this.combo_serie.FormattingEnabled = true;
+            this.combo_serie.Location = new System.Drawing.Point(97, 86);
+            this.combo_serie.Name = "combo_serie";
+            this.combo_serie.Size = new System.Drawing.Size(121, 21);
+            this.combo_serie.TabIndex = 1;
+            this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
             // 
-            // comboBox1
+            // combo_fabricante
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(84, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.combo_fabricante.FormattingEnabled = true;
+            this.combo_fabricante.Location = new System.Drawing.Point(97, 40);
+            this.combo_fabricante.Name = "combo_fabricante";
+            this.combo_fabricante.Size = new System.Drawing.Size(121, 21);
+            this.combo_fabricante.TabIndex = 0;
+            this.combo_fabricante.SelectionChangeCommitted += new System.EventHandler(this.combo_fabricante_SelectionChangeCommitted);
             // 
             // lbl_cv
             // 
             this.lbl_cv.AutoSize = true;
-            this.lbl_cv.Location = new System.Drawing.Point(444, 436);
+            this.lbl_cv.Location = new System.Drawing.Point(444, 416);
             this.lbl_cv.Name = "lbl_cv";
             this.lbl_cv.Size = new System.Drawing.Size(21, 13);
             this.lbl_cv.TabIndex = 24;
@@ -240,7 +249,7 @@
             // lbl_hp
             // 
             this.lbl_hp.AutoSize = true;
-            this.lbl_hp.Location = new System.Drawing.Point(447, 436);
+            this.lbl_hp.Location = new System.Drawing.Point(447, 416);
             this.lbl_hp.Name = "lbl_hp";
             this.lbl_hp.Size = new System.Drawing.Size(22, 13);
             this.lbl_hp.TabIndex = 23;
@@ -249,7 +258,7 @@
             // lbl_potencia
             // 
             this.lbl_potencia.AutoSize = true;
-            this.lbl_potencia.Location = new System.Drawing.Point(365, 416);
+            this.lbl_potencia.Location = new System.Drawing.Point(383, 396);
             this.lbl_potencia.Name = "lbl_potencia";
             this.lbl_potencia.Size = new System.Drawing.Size(52, 13);
             this.lbl_potencia.TabIndex = 16;
@@ -258,7 +267,7 @@
             // lbl_km
             // 
             this.lbl_km.AutoSize = true;
-            this.lbl_km.Location = new System.Drawing.Point(383, 362);
+            this.lbl_km.Location = new System.Drawing.Point(383, 315);
             this.lbl_km.Name = "lbl_km";
             this.lbl_km.Size = new System.Drawing.Size(58, 13);
             this.lbl_km.TabIndex = 15;
@@ -267,73 +276,66 @@
             // lbl_precio_venta
             // 
             this.lbl_precio_venta.AutoSize = true;
-            this.lbl_precio_venta.Location = new System.Drawing.Point(32, 416);
+            this.lbl_precio_venta.Location = new System.Drawing.Point(32, 396);
             this.lbl_precio_venta.Name = "lbl_precio_venta";
             this.lbl_precio_venta.Size = new System.Drawing.Size(70, 13);
             this.lbl_precio_venta.TabIndex = 13;
             this.lbl_precio_venta.Text = "Precio venta:";
             // 
-            // textBox5
+            // txt_hp
             // 
-            this.textBox5.Location = new System.Drawing.Point(447, 452);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 8;
+            this.txt_hp.Location = new System.Drawing.Point(447, 432);
+            this.txt_hp.Name = "txt_hp";
+            this.txt_hp.Size = new System.Drawing.Size(100, 20);
+            this.txt_hp.TabIndex = 8;
             // 
-            // textBox4
+            // txt_cv
             // 
-            this.textBox4.Location = new System.Drawing.Point(447, 413);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txt_cv.Location = new System.Drawing.Point(447, 393);
+            this.txt_cv.Name = "txt_cv";
+            this.txt_cv.Size = new System.Drawing.Size(100, 20);
+            this.txt_cv.TabIndex = 7;
+            this.txt_cv.TextChanged += new System.EventHandler(this.txt_cv_TextChanged);
             // 
-            // textBox3
+            // txt_km
             // 
-            this.textBox3.Location = new System.Drawing.Point(447, 359);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txt_km.Location = new System.Drawing.Point(447, 312);
+            this.txt_km.Name = "txt_km";
+            this.txt_km.Size = new System.Drawing.Size(100, 20);
+            this.txt_km.TabIndex = 6;
             // 
-            // textBox1
+            // txt_precio_dolar
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 413);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_precio_dolar.Location = new System.Drawing.Point(108, 393);
+            this.txt_precio_dolar.Name = "txt_precio_dolar";
+            this.txt_precio_dolar.Size = new System.Drawing.Size(100, 20);
+            this.txt_precio_dolar.TabIndex = 4;
             // 
-            // dataGridView1
+            // pic_unidad
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(675, 359);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(627, 318);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(822, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(480, 320);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pic_unidad.Location = new System.Drawing.Point(822, 12);
+            this.pic_unidad.Name = "pic_unidad";
+            this.pic_unidad.Size = new System.Drawing.Size(480, 320);
+            this.pic_unidad.TabIndex = 2;
+            this.pic_unidad.TabStop = false;
             // 
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
-            this.lbl_descripcion.Location = new System.Drawing.Point(12, 496);
+            this.lbl_descripcion.Location = new System.Drawing.Point(12, 479);
             this.lbl_descripcion.Name = "lbl_descripcion";
             this.lbl_descripcion.Size = new System.Drawing.Size(66, 13);
             this.lbl_descripcion.TabIndex = 3;
             this.lbl_descripcion.Text = "Descripcion:";
             // 
-            // textBox6
+            // txt_descripcion
             // 
-            this.textBox6.Location = new System.Drawing.Point(15, 512);
-            this.textBox6.MaxLength = 1000;
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(535, 165);
-            this.textBox6.TabIndex = 25;
+            this.txt_descripcion.Location = new System.Drawing.Point(15, 495);
+            this.txt_descripcion.MaxLength = 1000;
+            this.txt_descripcion.Multiline = true;
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(535, 182);
+            this.txt_descripcion.TabIndex = 25;
             // 
             // lbl_stock
             // 
@@ -354,90 +356,142 @@
             this.add_shopping.UseVisualStyleBackColor = true;
             this.add_shopping.Click += new System.EventHandler(this.add_shopping_Click);
             // 
-            // textBox10
+            // txt_precio_peso
             // 
-            this.textBox10.Location = new System.Drawing.Point(108, 452);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 27;
+            this.txt_precio_peso.Location = new System.Drawing.Point(108, 432);
+            this.txt_precio_peso.Name = "txt_precio_peso";
+            this.txt_precio_peso.Size = new System.Drawing.Size(100, 20);
+            this.txt_precio_peso.TabIndex = 27;
             // 
-            // label7
+            // lbl_cotizacion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 362);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 13);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Cotizacion:";
+            this.lbl_cotizacion.AutoSize = true;
+            this.lbl_cotizacion.Location = new System.Drawing.Point(46, 315);
+            this.lbl_cotizacion.Name = "lbl_cotizacion";
+            this.lbl_cotizacion.Size = new System.Drawing.Size(59, 13);
+            this.lbl_cotizacion.TabIndex = 28;
+            this.lbl_cotizacion.Text = "Cotizacion:";
             // 
-            // label8
+            // lbl_peso_Arg
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(214, 459);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 13);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Potencia:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(444, 475);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 13);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "CV";
+            this.lbl_peso_Arg.AutoSize = true;
+            this.lbl_peso_Arg.Location = new System.Drawing.Point(214, 439);
+            this.lbl_peso_Arg.Name = "lbl_peso_Arg";
+            this.lbl_peso_Arg.Size = new System.Drawing.Size(28, 13);
+            this.lbl_peso_Arg.TabIndex = 29;
+            this.lbl_peso_Arg.Text = "AR$";
             // 
             // txt_cotizacion
             // 
-            this.txt_cotizacion.Location = new System.Drawing.Point(108, 359);
+            this.txt_cotizacion.Location = new System.Drawing.Point(108, 312);
             this.txt_cotizacion.Name = "txt_cotizacion";
             this.txt_cotizacion.Size = new System.Drawing.Size(100, 20);
             this.txt_cotizacion.TabIndex = 31;
+            this.txt_cotizacion.TextChanged += new System.EventHandler(this.txt_cotizacion_TextChanged);
             // 
-            // label10
+            // lbl_dolar
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(214, 416);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "Potencia:";
+            this.lbl_dolar.AutoSize = true;
+            this.lbl_dolar.Location = new System.Drawing.Point(214, 396);
+            this.lbl_dolar.Name = "lbl_dolar";
+            this.lbl_dolar.Size = new System.Drawing.Size(28, 13);
+            this.lbl_dolar.TabIndex = 32;
+            this.lbl_dolar.Text = "US$";
+            // 
+            // labelhp
+            // 
+            this.labelhp.AutoSize = true;
+            this.labelhp.Location = new System.Drawing.Point(444, 455);
+            this.labelhp.Name = "labelhp";
+            this.labelhp.Size = new System.Drawing.Size(22, 13);
+            this.labelhp.TabIndex = 33;
+            this.labelhp.Text = "HP";
+            // 
+            // dgv_stock_unidades
+            // 
+            this.dgv_stock_unidades.AllowUserToAddRows = false;
+            this.dgv_stock_unidades.AllowUserToDeleteRows = false;
+            this.dgv_stock_unidades.AllowUserToOrderColumns = true;
+            this.dgv_stock_unidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_stock_unidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id_unidad,
+            this.col_fabricante,
+            this.col_modelo,
+            this.col_añoModelo,
+            this.col_generacion});
+            this.dgv_stock_unidades.Location = new System.Drawing.Point(669, 362);
+            this.dgv_stock_unidades.Name = "dgv_stock_unidades";
+            this.dgv_stock_unidades.ReadOnly = true;
+            this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_stock_unidades.Size = new System.Drawing.Size(633, 315);
+            this.dgv_stock_unidades.TabIndex = 34;
+            this.dgv_stock_unidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_unidades_CellClick);
+            this.dgv_stock_unidades.CurrentCellChanged += new System.EventHandler(this.dgv_stock_unidades_CurrentCellChanged);
+            // 
+            // col_id_unidad
+            // 
+            this.col_id_unidad.HeaderText = "NºUnidad";
+            this.col_id_unidad.Name = "col_id_unidad";
+            this.col_id_unidad.ReadOnly = true;
+            // 
+            // col_fabricante
+            // 
+            this.col_fabricante.HeaderText = "Fabricante";
+            this.col_fabricante.Name = "col_fabricante";
+            this.col_fabricante.ReadOnly = true;
+            // 
+            // col_modelo
+            // 
+            this.col_modelo.HeaderText = "Modelo";
+            this.col_modelo.Name = "col_modelo";
+            this.col_modelo.ReadOnly = true;
+            // 
+            // col_añoModelo
+            // 
+            this.col_añoModelo.HeaderText = "Año";
+            this.col_añoModelo.Name = "col_añoModelo";
+            this.col_añoModelo.ReadOnly = true;
+            // 
+            // col_generacion
+            // 
+            this.col_generacion.HeaderText = "Generacion";
+            this.col_generacion.Name = "col_generacion";
+            this.col_generacion.ReadOnly = true;
             // 
             // frm_main_unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dgv_stock_unidades);
+            this.Controls.Add(this.labelhp);
+            this.Controls.Add(this.lbl_dolar);
             this.Controls.Add(this.txt_cotizacion);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.lbl_peso_Arg);
+            this.Controls.Add(this.lbl_cotizacion);
+            this.Controls.Add(this.txt_precio_peso);
             this.Controls.Add(this.add_shopping);
             this.Controls.Add(this.lbl_stock);
             this.Controls.Add(this.lbl_cv);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.lbl_hp);
             this.Controls.Add(this.lbl_km);
             this.Controls.Add(this.lbl_potencia);
             this.Controls.Add(this.lbl_descripcion);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pic_unidad);
             this.Controls.Add(this.lbl_precio_venta);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gpBox_filters);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_hp);
+            this.Controls.Add(this.txt_precio_dolar);
+            this.Controls.Add(this.txt_cv);
+            this.Controls.Add(this.txt_km);
             this.Name = "frm_main_unidades";
             this.Text = "frm_main_unidades";
             this.Load += new System.EventHandler(this.frm_main_unidades_Load);
             this.gpBox_filters.ResumeLayout(false);
             this.gpBox_filters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,21 +500,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpBox_filters;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox combo_fabricante;
+        private System.Windows.Forms.ComboBox combo_modelo;
+        private System.Windows.Forms.ComboBox combo_generacion;
+        private System.Windows.Forms.ComboBox combo_serie;
+        private System.Windows.Forms.TextBox txt_hp;
+        private System.Windows.Forms.TextBox txt_cv;
+        private System.Windows.Forms.TextBox txt_km;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_precio_dolar;
+        private System.Windows.Forms.PictureBox pic_unidad;
+        private System.Windows.Forms.Label lbl_modelo;
+        private System.Windows.Forms.Label lbl_generacion;
+        private System.Windows.Forms.Label lbl_serie;
+        private System.Windows.Forms.Label lbl_fabricante;
         private System.Windows.Forms.Label lbl_potencia;
         private System.Windows.Forms.Label lbl_km;
         private System.Windows.Forms.Label lbl_año_desde;
@@ -468,20 +521,26 @@
         private System.Windows.Forms.Label lbl_cv;
         private System.Windows.Forms.Label lbl_hp;
         private System.Windows.Forms.Label lbl_descripcion;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label lbl_stock;
         private System.Windows.Forms.Button add_shopping;
         private System.Windows.Forms.Label lbl_año_hasta;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbl_precio_hasta;
+        private System.Windows.Forms.Label lbl_precio_desde;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_precio_peso;
+        private System.Windows.Forms.Label lbl_cotizacion;
+        private System.Windows.Forms.Label lbl_peso_Arg;
         private System.Windows.Forms.TextBox txt_cotizacion;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_dolar;
+        private System.Windows.Forms.Label labelhp;
+        private System.Windows.Forms.DataGridView dgv_stock_unidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fabricante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_añoModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_generacion;
     }
 }
