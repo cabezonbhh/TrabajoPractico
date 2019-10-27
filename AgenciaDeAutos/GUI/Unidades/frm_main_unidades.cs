@@ -1,5 +1,6 @@
 ﻿using AgenciaDeAutos.Business;
 using AgenciaDeAutos.GUI.Ventas;
+using AgenciaDeAutos.Properties;
 using AgenciaDeAutos.Service;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,16 @@ namespace AgenciaDeAutos.GUI.Unidades
             InitializeComponent();
             support = Support.Support.GetSupport();
             service = new UnidadService();
+            pic_unidad.BackColor = Color.Transparent;         
+            try
+            {
+                //pic_unidad.Image = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Logos/" + logo + ".png");
+              
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                pic_unidad.Image = (Image)Resources.NoImage;
+            }
         }
 
 
@@ -59,11 +70,13 @@ namespace AgenciaDeAutos.GUI.Unidades
                 {
                     venta = new frm_venta(cotizacion);
                     venta.Show();
-                    venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));                 
+                    venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
+                    dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
                 }
                 else
                 {
                     venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
+                   dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
                 }
             }
         }
@@ -94,6 +107,7 @@ namespace AgenciaDeAutos.GUI.Unidades
             txt_km.Text = unidad.Kilometraje.ToString();
             txt_cv.Text = unidad.Potencia.ToString();
             txt_descripcion.Text = unidad.Descripcion.ToString();
+            txt_precio_dolar.Text = unidad.PrecioVenta.ToString();
         }
         private void combo_fabricante_SelectionChangeCommitted(object sender, EventArgs e)
         {
@@ -121,9 +135,7 @@ namespace AgenciaDeAutos.GUI.Unidades
             if (dgv_stock_unidades.CurrentRow != null)
             {
                 Unidad unidad = service.getUnidadPorId(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
-                txt_cv.Text = unidad.Potencia.ToString();
-                txt_km.Text = unidad.Kilometraje.ToString();
-                txt_descripcion.Text = unidad.Descripcion.ToString();
+                cargarDatos(unidad);
             }
         }
 
@@ -132,10 +144,15 @@ namespace AgenciaDeAutos.GUI.Unidades
             if (dgv_stock_unidades.CurrentRow != null)
             {
                 Unidad unidad = service.getUnidadPorId(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
-                txt_cv.Text = unidad.Potencia.ToString();
-                txt_km.Text = unidad.Kilometraje.ToString();
-                txt_descripcion.Text = unidad.Descripcion.ToString();
+                cargarDatos(unidad);
             }
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+                this.Dispose();
         }
     }
 }

@@ -250,12 +250,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8_add_shopping_cart_80px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NoImage.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_online_48px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_shopping_cart_96px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

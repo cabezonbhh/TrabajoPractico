@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_dni = new System.Windows.Forms.Label();
+            this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_name_cliente = new System.Windows.Forms.Label();
             this.lbl_last_name_cliente = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.txt_lastName = new System.Windows.Forms.TextBox();
             this.dgv_details = new System.Windows.Forms.DataGridView();
             this.col_id_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,26 +51,26 @@
             this.txt_cotizacion = new System.Windows.Forms.TextBox();
             this.btn_new_venta = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.lbl_fecha_entrega = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_details)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_dni
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "DNI";
+            this.lbl_dni.AutoSize = true;
+            this.lbl_dni.Location = new System.Drawing.Point(41, 45);
+            this.lbl_dni.Name = "lbl_dni";
+            this.lbl_dni.Size = new System.Drawing.Size(26, 13);
+            this.lbl_dni.TabIndex = 0;
+            this.lbl_dni.Text = "DNI";
             // 
-            // textBox1
+            // txt_dni
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_dni.Location = new System.Drawing.Point(73, 42);
+            this.txt_dni.Name = "txt_dni";
+            this.txt_dni.Size = new System.Drawing.Size(100, 20);
+            this.txt_dni.TabIndex = 1;
             // 
             // lbl_name_cliente
             // 
@@ -84,25 +84,25 @@
             // lbl_last_name_cliente
             // 
             this.lbl_last_name_cliente.AutoSize = true;
-            this.lbl_last_name_cliente.Location = new System.Drawing.Point(392, 45);
+            this.lbl_last_name_cliente.Location = new System.Drawing.Point(446, 45);
             this.lbl_last_name_cliente.Name = "lbl_last_name_cliente";
             this.lbl_last_name_cliente.Size = new System.Drawing.Size(47, 13);
             this.lbl_last_name_cliente.TabIndex = 3;
             this.lbl_last_name_cliente.Text = "Apellido:";
             // 
-            // textBox2
+            // txt_name
             // 
-            this.textBox2.Location = new System.Drawing.Point(262, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.txt_name.Location = new System.Drawing.Point(262, 42);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(178, 20);
+            this.txt_name.TabIndex = 4;
             // 
-            // textBox3
+            // txt_lastName
             // 
-            this.textBox3.Location = new System.Drawing.Point(445, 42);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txt_lastName.Location = new System.Drawing.Point(499, 42);
+            this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.Size = new System.Drawing.Size(178, 20);
+            this.txt_lastName.TabIndex = 5;
             // 
             // dgv_details
             // 
@@ -201,12 +201,14 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(44, 339);
+            this.btn_delete.Enabled = false;
+            this.btn_delete.Location = new System.Drawing.Point(44, 344);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_delete.TabIndex = 11;
             this.btn_delete.Text = "quitar";
             this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // lbl_cotizacion
             // 
@@ -219,6 +221,7 @@
             // 
             // txt_cotizacion
             // 
+            this.txt_cotizacion.Enabled = false;
             this.txt_cotizacion.Location = new System.Drawing.Point(577, 362);
             this.txt_cotizacion.Name = "txt_cotizacion";
             this.txt_cotizacion.Size = new System.Drawing.Size(100, 20);
@@ -234,6 +237,7 @@
             this.btn_new_venta.TabIndex = 14;
             this.btn_new_venta.Text = "Confirmar";
             this.btn_new_venta.UseVisualStyleBackColor = true;
+            this.btn_new_venta.Click += new System.EventHandler(this.btn_new_venta_Click);
             // 
             // btn_salir
             // 
@@ -244,12 +248,12 @@
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // dtp_fechaEntrega
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(262, 362);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 16;
+            this.dtp_fechaEntrega.Location = new System.Drawing.Point(262, 362);
+            this.dtp_fechaEntrega.Name = "dtp_fechaEntrega";
+            this.dtp_fechaEntrega.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fechaEntrega.TabIndex = 16;
             // 
             // lbl_fecha_entrega
             // 
@@ -266,7 +270,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 557);
             this.Controls.Add(this.lbl_fecha_entrega);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_fechaEntrega);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_new_venta);
             this.Controls.Add(this.lbl_cotizacion);
@@ -277,12 +281,12 @@
             this.Controls.Add(this.lbl_total_peso);
             this.Controls.Add(this.txt_total_peso);
             this.Controls.Add(this.dgv_details);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txt_lastName);
+            this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_last_name_cliente);
             this.Controls.Add(this.lbl_name_cliente);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt_dni);
+            this.Controls.Add(this.lbl_dni);
             this.Name = "frm_venta";
             this.Text = "frm_venta";
             this.Load += new System.EventHandler(this.frm_venta_Load);
@@ -294,12 +298,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_dni;
+        private System.Windows.Forms.TextBox txt_dni;
         private System.Windows.Forms.Label lbl_name_cliente;
         private System.Windows.Forms.Label lbl_last_name_cliente;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_name;
+        private System.Windows.Forms.TextBox txt_lastName;
         private System.Windows.Forms.DataGridView dgv_details;
         private System.Windows.Forms.TextBox txt_total_peso;
         private System.Windows.Forms.Label lbl_total_peso;
@@ -317,7 +321,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_precio2;
         private System.Windows.Forms.Button btn_new_venta;
         private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_fechaEntrega;
         private System.Windows.Forms.Label lbl_fecha_entrega;
     }
 }

@@ -12,7 +12,7 @@ namespace AgenciaDeAutos.Business
         public int NroVenta { get; set; }
         public DateTime FechaVenta { get; set; }
         public DateTime fechaEntrega { get; set; }
-        IList<DetalleVenta> Detalles { get; set; }
+        public IList<DetalleVenta> Detalles { get; set; }
         public Cliente Cliente { get; set; }
 
         private void agregarDetalle(DetalleVenta detalle)

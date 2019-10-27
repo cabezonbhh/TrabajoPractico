@@ -15,18 +15,23 @@ namespace AgenciaDeAutos.GUI.Ventas
     public partial class frm_venta : Form
     {
         public UnidadService service = null;
+        private VentaService serviceVenta = null;
         private double cotizacion;
         long total = 0;
         long peso;
+        IList<int> detalles;
         public frm_venta(double cotizacion)
         {
             InitializeComponent();
             service = new UnidadService();
+            serviceVenta = new VentaService();
             this.cotizacion = cotizacion;
+            detalles = new List<int>();
         }
         public void addDetail(int idUnidad)
         {   
             Unidad unidad = service.getUnidadPorId(idUnidad);
+            detalles.Add(idUnidad);
             peso = Convert.ToInt64(unidad.PrecioVenta * (long)cotizacion);
             dgv_details.Rows.Add(new object[]
             {
@@ -52,6 +57,45 @@ namespace AgenciaDeAutos.GUI.Ventas
             txt_total_dolar.Text = total.ToString();
         }
 
-       
+        private void btn_new_venta_Click(object sender, EventArgs e)
+        {
+            if(detalles.Count>0)
+            {
+                DialogResult resultado = MessageBox.Show("Confirma la venta?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (resultado == DialogResult.Yes)
+                {
+                    bool retorno = false;
+                    DateTime fechaEntrega = new DateTime();
+                    fechaEntrega = dtp_fechaEntrega.Value;
+                    retorno = serviceVenta.registrarVenta(detalles, fechaEntrega);
+                    if (retorno == true)
+                        MessageBox.Show("Venta registrada con exito!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else
+                        MessageBox.Show("Error al registrar la venta, verifique los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No a ingresado ninguna unidad a la venta", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (dgv_details.CurrentRow == null)
+            {
+                MessageBox.Show("No ha seleccionado ningun item para eliminar","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            else
+            {
+                int fila = Convert.ToInt32(dgv_details.CurrentRow.Cells["col_id_unidad"].Value.ToString());
+                foreach(int n in detalles)
+                {
+                    if (n == fila)
+                        detalles.Remove(n);
+                }
+                dgv_details.Rows.RemoveAt(dgv_details.CurrentRow.Index);
+            }
+        }
     }
 }

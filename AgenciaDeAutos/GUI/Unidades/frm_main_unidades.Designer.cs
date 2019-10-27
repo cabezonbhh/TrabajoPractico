@@ -54,11 +54,9 @@
             this.txt_cv = new System.Windows.Forms.TextBox();
             this.txt_km = new System.Windows.Forms.TextBox();
             this.txt_precio_dolar = new System.Windows.Forms.TextBox();
-            this.pic_unidad = new System.Windows.Forms.PictureBox();
             this.lbl_descripcion = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.lbl_stock = new System.Windows.Forms.Label();
-            this.add_shopping = new System.Windows.Forms.Button();
             this.txt_precio_peso = new System.Windows.Forms.TextBox();
             this.lbl_cotizacion = new System.Windows.Forms.Label();
             this.lbl_peso_Arg = new System.Windows.Forms.Label();
@@ -71,9 +69,12 @@
             this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_generacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.add_shopping = new System.Windows.Forms.Button();
+            this.pic_unidad = new System.Windows.Forms.PictureBox();
             this.gpBox_filters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).BeginInit();
             this.SuspendLayout();
             // 
             // gpBox_filters
@@ -311,14 +312,6 @@
             this.txt_precio_dolar.Size = new System.Drawing.Size(100, 20);
             this.txt_precio_dolar.TabIndex = 4;
             // 
-            // pic_unidad
-            // 
-            this.pic_unidad.Location = new System.Drawing.Point(822, 12);
-            this.pic_unidad.Name = "pic_unidad";
-            this.pic_unidad.Size = new System.Drawing.Size(480, 320);
-            this.pic_unidad.TabIndex = 2;
-            this.pic_unidad.TabStop = false;
-            // 
             // lbl_descripcion
             // 
             this.lbl_descripcion.AutoSize = true;
@@ -345,16 +338,6 @@
             this.lbl_stock.Size = new System.Drawing.Size(38, 13);
             this.lbl_stock.TabIndex = 25;
             this.lbl_stock.Text = "Stock:";
-            // 
-            // add_shopping
-            // 
-            this.add_shopping.Location = new System.Drawing.Point(675, 12);
-            this.add_shopping.Name = "add_shopping";
-            this.add_shopping.Size = new System.Drawing.Size(75, 59);
-            this.add_shopping.TabIndex = 26;
-            this.add_shopping.Text = ".";
-            this.add_shopping.UseVisualStyleBackColor = true;
-            this.add_shopping.Click += new System.EventHandler(this.add_shopping_Click);
             // 
             // txt_precio_peso
             // 
@@ -458,11 +441,41 @@
             this.col_generacion.Name = "col_generacion";
             this.col_generacion.ReadOnly = true;
             // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(1227, 694);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.TabIndex = 35;
+            this.btn_exit.Text = "Salir";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // add_shopping
+            // 
+            this.add_shopping.Image = global::AgenciaDeAutos.Properties.Resources.icons8_add_shopping_cart_96px;
+            this.add_shopping.Location = new System.Drawing.Point(669, 12);
+            this.add_shopping.Name = "add_shopping";
+            this.add_shopping.Size = new System.Drawing.Size(113, 96);
+            this.add_shopping.TabIndex = 26;
+            this.add_shopping.Text = ".";
+            this.add_shopping.UseVisualStyleBackColor = true;
+            this.add_shopping.Click += new System.EventHandler(this.add_shopping_Click);
+            // 
+            // pic_unidad
+            // 
+            this.pic_unidad.Location = new System.Drawing.Point(822, 12);
+            this.pic_unidad.Name = "pic_unidad";
+            this.pic_unidad.Size = new System.Drawing.Size(480, 320);
+            this.pic_unidad.TabIndex = 2;
+            this.pic_unidad.TabStop = false;
+            // 
             // frm_main_unidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.dgv_stock_unidades);
             this.Controls.Add(this.labelhp);
             this.Controls.Add(this.lbl_dolar);
@@ -490,8 +503,8 @@
             this.Load += new System.EventHandler(this.frm_main_unidades_Load);
             this.gpBox_filters.ResumeLayout(false);
             this.gpBox_filters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_unidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,5 +555,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_añoModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_generacion;
+        private System.Windows.Forms.Button btn_exit;
     }
 }

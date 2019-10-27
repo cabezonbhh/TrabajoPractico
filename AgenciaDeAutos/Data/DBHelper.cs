@@ -213,5 +213,47 @@ namespace AgenciaDeAutos
 
             return filas;
         }
+
+        public int registrarVenta(string factura, IList<string> detallesSQL)
+        {
+            int resultado = 0;
+
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction t = null;
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+
+                t = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.Text;
+                foreach(string detalle in detallesSQL)
+                {
+                    cmd.CommandText = detalle;
+                }              
+                cmd.Transaction = t;
+                resultado = cmd.ExecuteNonQuery();
+
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = 0;
+                }
+                throw ex;
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+
+            return resultado;
+        }
     }
 }

@@ -10,5 +10,7 @@ namespace AgenciaDeAutos.Interfaces
     public interface IDaoVenta<V>
     {
         IList<V> getVentas();
+
+        bool registrarVenta(Venta venta);
     }
 }
