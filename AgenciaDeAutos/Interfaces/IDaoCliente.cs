@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgenciaDeAutos.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace AgenciaDeAutos.Data.Interfaces
         bool editarCliente(C obj);
         bool borrarCliente(int id);
         bool buscarClientePorDNI(long dni);
+        Cliente buscarClientePorDNI(int dni);
     }
 }

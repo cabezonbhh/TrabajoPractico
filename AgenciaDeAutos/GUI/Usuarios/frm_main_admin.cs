@@ -19,10 +19,12 @@ namespace AgenciaDeAutos.GUI.Otros
     public partial class frm_main_admin : Form
     {
         private UsuarioService service;
+        private UnidadService uService;
         public frm_main_admin(string usuario)
         {
             InitializeComponent();
             service = new UsuarioService();
+            uService = new UnidadService();
             lbl_userOn.Text = "Usuario logueado: "+ usuario;
         }
 
@@ -35,9 +37,26 @@ namespace AgenciaDeAutos.GUI.Otros
                 dgv_usuarios.Rows.Add(new Object[] { usuario.Idusuario.ToString(), usuario.Nombre.ToString(), usuario.Contraseña.ToString(), usuario.Perfil.Nombre.ToString() });
             }
         }
+
+        private void cargarGrillaUnidades()
+        {
+            IList<Unidad> stockUnidades = uService.getUnidadesFiltradas(txt_filter_name.Text);
+            dgv_stock_unidades.Rows.Clear();
+            foreach (Unidad unidad in stockUnidades)
+            {
+                dgv_stock_unidades.Rows.Add(new object[] {  unidad.CodUnidad.ToString(),unidad.NombreFabricante.ToString(),
+                                                            unidad.Nombre.ToString(),unidad.AñoModelo.ToString(),unidad.NombreGeneracion.ToString()
+                                                         }
+                                            );
+            }
+        }
         private void frm_main_admin_Load(object sender, EventArgs e)
         {
             this.cargarGrilla();
+            btn_edit.Enabled = false;
+            btn_edit_uni.Enabled = false;
+            btn_delete.Enabled = false;
+            btn_delete_uni.Enabled = false;
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
@@ -111,6 +130,40 @@ namespace AgenciaDeAutos.GUI.Otros
         {
             Form aux = new frm_new_unidad();
             aux.ShowDialog();
+        }
+        private void dgv_usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgv_usuarios.CurrentRow != null)
+            {
+                btn_edit.Enabled = true;
+                btn_delete.Enabled = true;
+            }
+            else
+            {
+                btn_edit.Enabled = false;
+                btn_delete.Enabled = false;
+            }
+            
+        }
+
+        private void txt_filter_name_TextChanged(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrWhiteSpace(txt_filter_name.Text))
+                cargarGrillaUnidades();
+        }
+
+        private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_usuarios.CurrentRow != null)
+            {
+                btn_edit_uni.Enabled = true;
+                btn_delete_uni.Enabled = true;
+            }
+            else
+            {
+                btn_edit_uni.Enabled = false;
+                btn_delete_uni.Enabled = false;
+            }
         }
     }
 }

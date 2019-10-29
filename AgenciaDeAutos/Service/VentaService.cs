@@ -1,4 +1,5 @@
 ﻿using AgenciaDeAutos.Business;
+using AgenciaDeAutos.Data.Dao;
 using AgenciaDeAutos.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,17 @@ namespace AgenciaDeAutos.Service
     {
         private IDaoVenta<Venta> dao;
         private UnidadService service = new UnidadService();
-        public bool registrarVenta(IList<int> detalles, DateTime fecheEntrega)
+        private ClienteService cservice = new ClienteService();
+
+        public VentaService()
         {
+            dao = new VentaDaoSqlImp();
+        }
+        public bool registrarVenta(int dni, IList<int> detalles, DateTime fecheEntrega)
+        {
+            Cliente cliente = cservice.traerClientePorDni(dni);
             Venta venta = new Venta();
+            venta.Cliente = cliente;
             foreach(int detalle in detalles)
             {
                 Unidad unidad = service.getUnidadPorId(detalle);

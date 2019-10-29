@@ -209,7 +209,7 @@
             this.combo_modelo.Name = "combo_modelo";
             this.combo_modelo.Size = new System.Drawing.Size(121, 21);
             this.combo_modelo.TabIndex = 3;
-            this.combo_modelo.SelectedIndexChanged += new System.EventHandler(this.combo_modelo_SelectedIndexChanged);
+            this.combo_modelo.SelectionChangeCommitted += new System.EventHandler(this.combo_modelo_SelectionChangeCommitted);
             // 
             // combo_generacion
             // 

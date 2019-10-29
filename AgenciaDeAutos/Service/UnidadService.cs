@@ -24,9 +24,14 @@ namespace AgenciaDeAutos.Service
             return dao.GetUnidadPorID(id); 
         }
 
-        public IList<Unidad> getUnidades(string nombre)
+        public IList<Unidad> getUnidades(int fabricante, int serie, int generacion, string nombre)
         {
-            return dao.GetUnidades(nombre);
+            return dao.GetUnidades(fabricante, serie, generacion, nombre);
+        }
+
+        public IList<Unidad> getUnidadesFiltradas(string filtro)
+        {
+            return dao.getUnidadesFiltradas(filtro);
         }
 
         public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion)

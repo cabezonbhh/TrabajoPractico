@@ -48,7 +48,11 @@ namespace AgenciaDeAutos.GUI.Unidades
         }
         public void cargarGrilla(string nombre)
         {
-            IList<Unidad> stockUnidades = service.getUnidades(nombre);
+            int fabricante, serie, generacion;
+            fabricante = Convert.ToInt32(combo_fabricante.SelectedValue);
+            serie = Convert.ToInt32(combo_serie.SelectedValue);
+            generacion = Convert.ToInt32(combo_generacion.SelectedValue);
+            IList<Unidad> stockUnidades = service.getUnidades(fabricante,serie,generacion ,nombre);
             dgv_stock_unidades.Rows.Clear();
             foreach (Unidad unidad in stockUnidades)
             {
@@ -75,7 +79,8 @@ namespace AgenciaDeAutos.GUI.Unidades
                 }
                 else
                 {
-                    venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
+                   venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
+                   venta.Show();
                    dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
                 }
             }
@@ -125,10 +130,6 @@ namespace AgenciaDeAutos.GUI.Unidades
                                            Convert.ToInt32(combo_generacion.SelectedValue)
                                         );
         }
-        private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
-        {        
-            cargarGrilla(combo_modelo.Text);
-        }
 
         private void dgv_stock_unidades_CurrentCellChanged(object sender, EventArgs e)
         {
@@ -153,6 +154,11 @@ namespace AgenciaDeAutos.GUI.Unidades
             DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
                 this.Dispose();
+        }
+
+        private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cargarGrilla(combo_modelo.Text);
         }
     }
 }

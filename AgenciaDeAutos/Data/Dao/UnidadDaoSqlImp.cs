@@ -24,9 +24,9 @@ namespace AgenciaDeAutos.Data.Dao
             return unidad;
         }
 
-        public IList<Unidad> GetUnidades(String nombre)
+        public IList<Unidad> GetUnidades(int fabricante, int serie, int generacion, String nombre)
         {
-            string sql = "exec getUnidadesPorNombre "+ "'"+nombre+"'";
+            string sql = "exec getUnidadesPorNombre "+fabricante.ToString()+", "+serie.ToString()+", "+generacion.ToString()+", '"+nombre+"'";
             DataTable tabla = helper.ConsultaSQL(sql);
             IList<Unidad> unidades = new List<Unidad>();
             foreach(DataRow fila in tabla.Rows)
@@ -85,6 +85,26 @@ namespace AgenciaDeAutos.Data.Dao
             unidad.Descripcion = fila["descripcion"].ToString();
             unidad.Patente = fila["patente"].ToString();
             return unidad;
-        }      
+        }
+
+        public IList<Unidad> getUnidadesFiltradas(string filtro)
+        {
+      //      string sql = @"select	su.codUnidad, su.idFabricante, su.idSerie, su.idGeneracion, su.nombre, su.precioVenta, su.añoModelo, su.kilometraje,
+		    //            su.potencia, su.descripcion, su.patente, s.nombre as NombreSerie, g.nombre as NombreGeneracion, f.nombre as NombreFabricante 
+      //                  from StockUnidades su	join Generaciones g on su.idGeneracion = g.idGeneracion
+						//join Series s on su.idSerie = s.idSerie
+						//join Fabricantes f on su.idFabricante = f.idFabricante 
+      //                  where su.nombre like '%"+filtro+"%' and su.borrado = 0";
+
+            string cadena = "'%"+filtro+"%'";
+            string sql = "exec getUnidadesPorNombre " + cadena;
+            DataTable tabla = helper.ConsultaSQL(sql);
+            IList<Unidad> unidades = new List<Unidad>();
+            foreach (DataRow fila in tabla.Rows)
+            {
+                unidades.Add(mapper(fila));
+            }
+            return unidades;
+        }
     }
 }

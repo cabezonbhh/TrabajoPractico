@@ -13,6 +13,7 @@ namespace AgenciaDeAutos.Data.Interfaces
 
         Unidad GetUnidadPorID(int id);
 
-        IList<Unidad> GetUnidades(String nombre);
+        IList<Unidad> GetUnidades(int fabricante, int serie, int generacion, String nombre);
+        IList<Unidad> getUnidadesFiltradas(string filtro);
     }
 }

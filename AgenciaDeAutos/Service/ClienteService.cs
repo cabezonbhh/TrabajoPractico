@@ -62,6 +62,10 @@ namespace AgenciaDeAutos.Service
         {
             return dao.buscarClientePorDNI(dni);
         }
+        public Cliente traerClientePorDni(int dni)
+        {
+            return dao.buscarClientePorDNI(dni);
+        }
 
         public bool editarCliente(string[] vector)
         {

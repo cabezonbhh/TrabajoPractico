@@ -161,11 +161,11 @@
             // lbl_precio_compra
             // 
             this.lbl_precio_compra.AutoSize = true;
-            this.lbl_precio_compra.Location = new System.Drawing.Point(6, 15);
+            this.lbl_precio_compra.Location = new System.Drawing.Point(12, 15);
             this.lbl_precio_compra.Name = "lbl_precio_compra";
-            this.lbl_precio_compra.Size = new System.Drawing.Size(79, 13);
+            this.lbl_precio_compra.Size = new System.Drawing.Size(70, 13);
             this.lbl_precio_compra.TabIndex = 23;
-            this.lbl_precio_compra.Text = "Precio Compra:";
+            this.lbl_precio_compra.Text = "Precio venta:";
             // 
             // lbl_descripcion
             // 

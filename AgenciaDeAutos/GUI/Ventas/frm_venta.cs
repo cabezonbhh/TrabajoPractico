@@ -61,13 +61,14 @@ namespace AgenciaDeAutos.GUI.Ventas
         {
             if(detalles.Count>0)
             {
+                int dni = Convert.ToInt32(txt_dni.Text);
                 DialogResult resultado = MessageBox.Show("Confirma la venta?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (resultado == DialogResult.Yes)
                 {
                     bool retorno = false;
                     DateTime fechaEntrega = new DateTime();
                     fechaEntrega = dtp_fechaEntrega.Value;
-                    retorno = serviceVenta.registrarVenta(detalles, fechaEntrega);
+                    retorno = serviceVenta.registrarVenta(dni,detalles, fechaEntrega);
                     if (retorno == true)
                         MessageBox.Show("Venta registrada con exito!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else

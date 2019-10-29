@@ -43,9 +43,20 @@
             this.btn_cliente = new System.Windows.Forms.Button();
             this.pic_user_on = new System.Windows.Forms.PictureBox();
             this.btn_unid = new System.Windows.Forms.Button();
+            this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
+            this.col_id_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_generacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_edit_uni = new System.Windows.Forms.Button();
+            this.btn_delete_uni = new System.Windows.Forms.Button();
+            this.txt_filter_name = new System.Windows.Forms.TextBox();
+            this.lbl_name_uni = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user_on)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_usuarios
@@ -65,6 +76,7 @@
             this.dgv_usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_usuarios.Size = new System.Drawing.Size(445, 206);
             this.dgv_usuarios.TabIndex = 0;
+            this.dgv_usuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_usuarios_CellClick);
             // 
             // col_id_usuario
             // 
@@ -137,7 +149,7 @@
             this.groupBox1.Controls.Add(this.dgv_usuarios);
             this.groupBox1.Controls.Add(this.btn_edit);
             this.groupBox1.Controls.Add(this.btn_delete);
-            this.groupBox1.Location = new System.Drawing.Point(12, 123);
+            this.groupBox1.Location = new System.Drawing.Point(12, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(763, 250);
             this.groupBox1.TabIndex = 5;
@@ -185,13 +197,98 @@
             // 
             // btn_unid
             // 
-            this.btn_unid.Location = new System.Drawing.Point(413, 77);
+            this.btn_unid.Location = new System.Drawing.Point(61, 415);
             this.btn_unid.Name = "btn_unid";
             this.btn_unid.Size = new System.Drawing.Size(75, 40);
             this.btn_unid.TabIndex = 10;
-            this.btn_unid.Text = "Nueva Unidad";
+            this.btn_unid.Text = "Nueva unidad";
             this.btn_unid.UseVisualStyleBackColor = true;
             this.btn_unid.Click += new System.EventHandler(this.btn_unid_Click);
+            // 
+            // dgv_stock_unidades
+            // 
+            this.dgv_stock_unidades.AllowUserToAddRows = false;
+            this.dgv_stock_unidades.AllowUserToDeleteRows = false;
+            this.dgv_stock_unidades.AllowUserToOrderColumns = true;
+            this.dgv_stock_unidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_stock_unidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_id_unidad,
+            this.col_fabricante,
+            this.col_modelo,
+            this.col_añoModelo,
+            this.col_generacion});
+            this.dgv_stock_unidades.Location = new System.Drawing.Point(142, 341);
+            this.dgv_stock_unidades.Name = "dgv_stock_unidades";
+            this.dgv_stock_unidades.ReadOnly = true;
+            this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_stock_unidades.Size = new System.Drawing.Size(633, 315);
+            this.dgv_stock_unidades.TabIndex = 35;
+            this.dgv_stock_unidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_unidades_CellContentClick);
+            // 
+            // col_id_unidad
+            // 
+            this.col_id_unidad.HeaderText = "NºUnidad";
+            this.col_id_unidad.Name = "col_id_unidad";
+            this.col_id_unidad.ReadOnly = true;
+            // 
+            // col_fabricante
+            // 
+            this.col_fabricante.HeaderText = "Fabricante";
+            this.col_fabricante.Name = "col_fabricante";
+            this.col_fabricante.ReadOnly = true;
+            // 
+            // col_modelo
+            // 
+            this.col_modelo.HeaderText = "Modelo";
+            this.col_modelo.Name = "col_modelo";
+            this.col_modelo.ReadOnly = true;
+            // 
+            // col_añoModelo
+            // 
+            this.col_añoModelo.HeaderText = "Año";
+            this.col_añoModelo.Name = "col_añoModelo";
+            this.col_añoModelo.ReadOnly = true;
+            // 
+            // col_generacion
+            // 
+            this.col_generacion.HeaderText = "Generacion";
+            this.col_generacion.Name = "col_generacion";
+            this.col_generacion.ReadOnly = true;
+            // 
+            // btn_edit_uni
+            // 
+            this.btn_edit_uni.Location = new System.Drawing.Point(61, 461);
+            this.btn_edit_uni.Name = "btn_edit_uni";
+            this.btn_edit_uni.Size = new System.Drawing.Size(75, 40);
+            this.btn_edit_uni.TabIndex = 36;
+            this.btn_edit_uni.Text = "Editar unidad";
+            this.btn_edit_uni.UseVisualStyleBackColor = true;
+            // 
+            // btn_delete_uni
+            // 
+            this.btn_delete_uni.Location = new System.Drawing.Point(61, 507);
+            this.btn_delete_uni.Name = "btn_delete_uni";
+            this.btn_delete_uni.Size = new System.Drawing.Size(75, 40);
+            this.btn_delete_uni.TabIndex = 37;
+            this.btn_delete_uni.Text = "Borrar unidad";
+            this.btn_delete_uni.UseVisualStyleBackColor = true;
+            // 
+            // txt_filter_name
+            // 
+            this.txt_filter_name.Location = new System.Drawing.Point(36, 363);
+            this.txt_filter_name.Name = "txt_filter_name";
+            this.txt_filter_name.Size = new System.Drawing.Size(100, 20);
+            this.txt_filter_name.TabIndex = 38;
+            this.txt_filter_name.TextChanged += new System.EventHandler(this.txt_filter_name_TextChanged);
+            // 
+            // lbl_name_uni
+            // 
+            this.lbl_name_uni.AutoSize = true;
+            this.lbl_name_uni.Location = new System.Drawing.Point(33, 347);
+            this.lbl_name_uni.Name = "lbl_name_uni";
+            this.lbl_name_uni.Size = new System.Drawing.Size(42, 13);
+            this.lbl_name_uni.TabIndex = 39;
+            this.lbl_name_uni.Text = "Modelo";
             // 
             // frm_main_admin
             // 
@@ -199,6 +296,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(790, 699);
+            this.Controls.Add(this.lbl_name_uni);
+            this.Controls.Add(this.txt_filter_name);
+            this.Controls.Add(this.btn_delete_uni);
+            this.Controls.Add(this.btn_edit_uni);
+            this.Controls.Add(this.dgv_stock_unidades);
             this.Controls.Add(this.btn_unid);
             this.Controls.Add(this.pic_user_on);
             this.Controls.Add(this.btn_cliente);
@@ -213,6 +315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_user_on)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +338,15 @@
         private System.Windows.Forms.Button btn_cliente;
         private System.Windows.Forms.PictureBox pic_user_on;
         private System.Windows.Forms.Button btn_unid;
+        private System.Windows.Forms.DataGridView dgv_stock_unidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_unidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fabricante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_añoModelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_generacion;
+        private System.Windows.Forms.Button btn_edit_uni;
+        private System.Windows.Forms.Button btn_delete_uni;
+        private System.Windows.Forms.TextBox txt_filter_name;
+        private System.Windows.Forms.Label lbl_name_uni;
     }
 }

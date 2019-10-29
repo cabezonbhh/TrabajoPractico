@@ -35,6 +35,16 @@ namespace AgenciaDeAutos.Data.Dao
             }
             return cliente;
         }
+        public Cliente buscarClientePorDNI(int dni)
+        {
+            DataTable tabla = helper.ConsultaSQL("exec buscarClientePorDNI " + dni);
+            Cliente cliente = new Cliente();
+            foreach (DataRow fila in tabla.Rows)
+            {
+                cliente = mapper(fila);
+            }
+            return cliente;
+        }
 
         public bool editarCliente(Cliente cliente)
         {
