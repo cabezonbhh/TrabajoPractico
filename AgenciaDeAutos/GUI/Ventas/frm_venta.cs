@@ -59,25 +59,32 @@ namespace AgenciaDeAutos.GUI.Ventas
 
         private void btn_new_venta_Click(object sender, EventArgs e)
         {
-            if(detalles.Count>0)
+            if(serviceVenta.existeCliente(Convert.ToInt64(txt_dni.Text))==true)
             {
-                int dni = Convert.ToInt32(txt_dni.Text);
-                DialogResult resultado = MessageBox.Show("Confirma la venta?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (resultado == DialogResult.Yes)
+                if (detalles.Count > 0)
                 {
-                    bool retorno = false;
-                    DateTime fechaEntrega = new DateTime();
-                    fechaEntrega = dtp_fechaEntrega.Value;
-                    retorno = serviceVenta.registrarVenta(dni,detalles, fechaEntrega);
-                    if (retorno == true)
-                        MessageBox.Show("Venta registrada con exito!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    else
-                        MessageBox.Show("Error al registrar la venta, verifique los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    int dni = Convert.ToInt32(txt_dni.Text);
+                    DialogResult resultado = MessageBox.Show("Confirma la venta?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        bool retorno = false;
+                        DateTime fechaEntrega = new DateTime();
+                        fechaEntrega = dtp_fechaEntrega.Value;
+                        retorno = serviceVenta.registrarVenta(dni, detalles, fechaEntrega);
+                        if (retorno == true)
+                            MessageBox.Show("Venta registrada con exito!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        else
+                            MessageBox.Show("Error al registrar la venta, verifique los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No a ingresado ninguna unidad a la venta", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                MessageBox.Show("No a ingresado ninguna unidad a la venta", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No existe un cliente registrado con ese DNI", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -96,6 +103,17 @@ namespace AgenciaDeAutos.GUI.Ventas
                         detalles.Remove(n);
                 }
                 dgv_details.Rows.RemoveAt(dgv_details.CurrentRow.Index);
+            }
+        }
+
+        private void txt_dni_TextChanged(object sender, EventArgs e)
+        {
+            txt_name.Clear();
+            txt_lastName.Clear();
+            if(!String.IsNullOrWhiteSpace(txt_dni.Text))
+            {              
+                txt_name.Text = serviceVenta.getClientePorDNI(Convert.ToInt32(txt_dni.Text)).Nombre.ToString();
+                txt_lastName.Text = serviceVenta.getClientePorDNI(Convert.ToInt32(txt_dni.Text)).Apellido.ToString(); 
             }
         }
     }

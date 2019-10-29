@@ -26,7 +26,7 @@ namespace AgenciaDeAutos.Data.Dao
 
         public IList<Unidad> GetUnidades(int fabricante, int serie, int generacion, String nombre)
         {
-            string sql = "exec getUnidadesPorNombre "+fabricante.ToString()+", "+serie.ToString()+", "+generacion.ToString()+", '"+nombre+"'";
+            string sql = "exec getUnidadesPorFiltros " + fabricante.ToString()+", "+serie.ToString()+", "+generacion.ToString()+", '"+nombre+"'";
             DataTable tabla = helper.ConsultaSQL(sql);
             IList<Unidad> unidades = new List<Unidad>();
             foreach(DataRow fila in tabla.Rows)

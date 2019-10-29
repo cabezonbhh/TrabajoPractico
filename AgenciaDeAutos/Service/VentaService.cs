@@ -19,6 +19,16 @@ namespace AgenciaDeAutos.Service
         {
             dao = new VentaDaoSqlImp();
         }
+
+        public Cliente getClientePorDNI(int dni)
+        {
+            return cservice.traerClientePorDni(dni);
+        }
+
+        public bool existeCliente(long dni)
+        {
+            return cservice.buscarClientePorDni(dni);
+        }
         public bool registrarVenta(int dni, IList<int> detalles, DateTime fecheEntrega)
         {
             Cliente cliente = cservice.traerClientePorDni(dni);

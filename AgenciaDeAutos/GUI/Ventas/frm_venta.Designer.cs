@@ -71,6 +71,7 @@
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(100, 20);
             this.txt_dni.TabIndex = 1;
+            this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
             // lbl_name_cliente
             // 

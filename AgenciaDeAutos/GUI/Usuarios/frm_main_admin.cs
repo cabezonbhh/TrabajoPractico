@@ -148,8 +148,10 @@ namespace AgenciaDeAutos.GUI.Otros
 
         private void txt_filter_name_TextChanged(object sender, EventArgs e)
         {
-            if(!String.IsNullOrWhiteSpace(txt_filter_name.Text))
+            if (!String.IsNullOrWhiteSpace(txt_filter_name.Text))
                 cargarGrillaUnidades();
+            else
+                dgv_stock_unidades.Rows.Clear();
         }
 
         private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
