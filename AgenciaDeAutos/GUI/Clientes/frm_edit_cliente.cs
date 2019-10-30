@@ -172,5 +172,12 @@ namespace AgenciaDeAutos.GUI.Clientes
                 lbl_dni_warning.Visible = false;
             }
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+                this.Dispose();
+        }
     }
 }

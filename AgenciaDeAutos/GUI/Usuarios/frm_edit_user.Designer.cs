@@ -197,6 +197,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frm_edit_user";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_edit_user";
             this.Load += new System.EventHandler(this.frm_edit_user_Load);
             this.ResumeLayout(false);

@@ -197,6 +197,7 @@
             this.Controls.Add(this.txt_precio_compra);
             this.Controls.Add(this.lbl_precio_compra);
             this.Name = "frm_edit_unidad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_edit_unidad";
             this.ResumeLayout(false);
             this.PerformLayout();

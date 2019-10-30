@@ -150,6 +150,7 @@
             this.Controls.Add(this.lbl_pass);
             this.Controls.Add(this.lbl_name);
             this.Name = "frm_new_user";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
             this.Text = "Nuevo usuario";
             this.ResumeLayout(false);

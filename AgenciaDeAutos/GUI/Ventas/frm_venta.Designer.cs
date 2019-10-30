@@ -289,6 +289,7 @@
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.lbl_dni);
             this.Name = "frm_venta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_venta";
             this.Load += new System.EventHandler(this.frm_venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_details)).EndInit();

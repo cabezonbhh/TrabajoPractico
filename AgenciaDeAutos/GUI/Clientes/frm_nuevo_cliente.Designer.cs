@@ -72,6 +72,7 @@
             this.btn_exit.TabIndex = 30;
             this.btn_exit.Text = "Salir";
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // txt_mobile
             // 
@@ -277,8 +278,10 @@
             // 
             // frm_nuevo_cliente
             // 
+            this.AcceptButton = this.btn_save;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_exit;
             this.ClientSize = new System.Drawing.Size(460, 390);
             this.Controls.Add(this.lbl_obligatorios);
             this.Controls.Add(this.label7);
@@ -305,6 +308,7 @@
             this.Controls.Add(this.lbl_lastName);
             this.Controls.Add(this.lbl_name);
             this.Name = "frm_nuevo_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_nuevo_cliente";
             this.ResumeLayout(false);
             this.PerformLayout();

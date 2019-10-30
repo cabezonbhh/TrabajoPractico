@@ -118,6 +118,7 @@
             this.Controls.Add(this.menu_main);
             this.MainMenuStrip = this.menu_main;
             this.Name = "frm_main_normal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_main";
             this.menu_main.ResumeLayout(false);
             this.menu_main.PerformLayout();

@@ -18,7 +18,7 @@ namespace AgenciaDeAutos.Data.Dao
 
         public bool registrarVenta(Venta venta)
         {
-            string sqlFactura = "exec registrarVenta " + venta.Cliente.IdCliente + ", " + venta.fechaEntrega;
+            string sqlFactura = "exec registrarVenta " + venta.Cliente.IdCliente + ", '" + venta.fechaEntrega.ToShortDateString()+" "+venta.fechaEntrega.ToLongTimeString()+"'";
             
             IList<string> detallesSQL = new List<string>();
             IList<DetalleVenta> detalles = new List<DetalleVenta>();

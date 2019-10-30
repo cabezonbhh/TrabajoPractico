@@ -36,7 +36,6 @@
             this.lbl_serie = new System.Windows.Forms.Label();
             this.lbl_generacion = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_stock = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.txt_precio_dolar = new System.Windows.Forms.TextBox();
@@ -44,19 +43,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_precio_arg = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbl_precio_arg = new System.Windows.Forms.Label();
             this.lbl_cotizacion = new System.Windows.Forms.Label();
             this.txt_cotizacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
+            this.col_fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_generacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
             this.SuspendLayout();
             // 
             // pic_vehiculo
@@ -130,26 +133,15 @@
             this.lbl_modelo.TabIndex = 8;
             this.lbl_modelo.Text = "Modelo:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 365);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(727, 278);
-            this.dataGridView1.TabIndex = 10;
-            // 
             // btn_stock
             // 
-            this.btn_stock.Location = new System.Drawing.Point(607, 661);
+            this.btn_stock.Location = new System.Drawing.Point(648, 331);
             this.btn_stock.Name = "btn_stock";
             this.btn_stock.Size = new System.Drawing.Size(132, 23);
             this.btn_stock.TabIndex = 11;
             this.btn_stock.Text = "Stock en existencia";
             this.btn_stock.UseVisualStyleBackColor = true;
+            this.btn_stock.Click += new System.EventHandler(this.btn_stock_Click);
             // 
             // btn_back
             // 
@@ -159,6 +151,7 @@
             this.btn_back.TabIndex = 12;
             this.btn_back.Text = "Atras";
             this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // txt_precio_dolar
             // 
@@ -200,15 +193,6 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "$ USD";
             // 
-            // lbl_precio_arg
-            // 
-            this.lbl_precio_arg.AutoSize = true;
-            this.lbl_precio_arg.Location = new System.Drawing.Point(1, 40);
-            this.lbl_precio_arg.Name = "lbl_precio_arg";
-            this.lbl_precio_arg.Size = new System.Drawing.Size(85, 13);
-            this.lbl_precio_arg.TabIndex = 18;
-            this.lbl_precio_arg.Text = "Precio Sugerido:";
-            // 
             // lbl_cotizacion
             // 
             this.lbl_cotizacion.AutoSize = true;
@@ -244,9 +228,8 @@
             this.panel1.Controls.Add(this.lbl_precio_dolar);
             this.panel1.Controls.Add(this.lbl_cotizacion);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lbl_precio_arg);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(265, 208);
+            this.panel1.Location = new System.Drawing.Point(211, 197);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 100);
             this.panel1.TabIndex = 22;
@@ -259,7 +242,7 @@
             this.panel2.Controls.Add(this.lbl_modelo);
             this.panel2.Controls.Add(this.combo_serie);
             this.panel2.Controls.Add(this.lbl_generacion);
-            this.panel2.Location = new System.Drawing.Point(265, 30);
+            this.panel2.Location = new System.Drawing.Point(211, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
@@ -273,29 +256,72 @@
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
+            // dgv_stock_unidades
+            // 
+            this.dgv_stock_unidades.AllowUserToAddRows = false;
+            this.dgv_stock_unidades.AllowUserToDeleteRows = false;
+            this.dgv_stock_unidades.AllowUserToOrderColumns = true;
+            this.dgv_stock_unidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_stock_unidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_fabricante,
+            this.col_modelo,
+            this.col_generacion,
+            this.col_añoModelo});
+            this.dgv_stock_unidades.Location = new System.Drawing.Point(211, 360);
+            this.dgv_stock_unidades.Name = "dgv_stock_unidades";
+            this.dgv_stock_unidades.ReadOnly = true;
+            this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_stock_unidades.Size = new System.Drawing.Size(569, 315);
+            this.dgv_stock_unidades.TabIndex = 35;
+            // 
+            // col_fabricante
+            // 
+            this.col_fabricante.HeaderText = "Fabricante";
+            this.col_fabricante.Name = "col_fabricante";
+            this.col_fabricante.ReadOnly = true;
+            // 
+            // col_modelo
+            // 
+            this.col_modelo.HeaderText = "Modelo";
+            this.col_modelo.Name = "col_modelo";
+            this.col_modelo.ReadOnly = true;
+            // 
+            // col_generacion
+            // 
+            this.col_generacion.HeaderText = "Generacion";
+            this.col_generacion.Name = "col_generacion";
+            this.col_generacion.ReadOnly = true;
+            // 
+            // col_añoModelo
+            // 
+            this.col_añoModelo.HeaderText = "Año";
+            this.col_añoModelo.Name = "col_añoModelo";
+            this.col_añoModelo.ReadOnly = true;
+            // 
             // frm_modelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.dgv_stock_unidades);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_stock);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.pic_vehiculo);
             this.Name = "frm_modelo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_modelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,7 +336,6 @@
         private System.Windows.Forms.Label lbl_serie;
         private System.Windows.Forms.Label lbl_generacion;
         private System.Windows.Forms.Label lbl_modelo;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_stock;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.TextBox txt_precio_dolar;
@@ -318,12 +343,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_precio_arg;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_precio_arg;
         private System.Windows.Forms.Label lbl_cotizacion;
         private System.Windows.Forms.TextBox txt_cotizacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dgv_stock_unidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fabricante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_generacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_añoModelo;
     }
 }

@@ -3,6 +3,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System;
 using System.Data;
+using System.Windows.Forms;
 
 namespace AgenciaDeAutos
 {
@@ -71,6 +72,7 @@ namespace AgenciaDeAutos
                     t.Rollback();
                     afectadas = 0;
                 }
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw ex;
             }
             finally
@@ -109,6 +111,7 @@ namespace AgenciaDeAutos
             }
             catch (SqlException ex)
             {
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw (ex);
             }
             finally
@@ -158,6 +161,7 @@ namespace AgenciaDeAutos
             }
             catch (Exception ex)
             {
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw (ex);
             }
             finally
@@ -203,6 +207,7 @@ namespace AgenciaDeAutos
             }
             catch (Exception ex)
             {
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 filas = 0;
                 throw ex;
             }
@@ -214,38 +219,31 @@ namespace AgenciaDeAutos
             return filas;
         }
 
+        
         public int registrarVenta(string factura, IList<string> detallesSQL)
         {
             int resultado = 0;
 
             SqlConnection cnn = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
-            SqlTransaction t = null;
 
             try
             {
                 cnn.ConnectionString = string_conexion;
                 cnn.Open();
-
-                t = cnn.BeginTransaction();
                 cmd.Connection = cnn;
                 cmd.CommandType = CommandType.Text;
-                foreach(string detalle in detallesSQL)
+                cmd.CommandText = factura;
+                resultado = cmd.ExecuteNonQuery();
+                foreach (string detalle in detallesSQL)
                 {
                     cmd.CommandText = detalle;
-                }              
-                cmd.Transaction = t;
-                resultado = cmd.ExecuteNonQuery();
-
-                t.Commit();
+                    resultado += cmd.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
-                if (t != null)
-                {
-                    t.Rollback();
-                    resultado = 0;
-                }
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 throw ex;
             }
             finally

@@ -206,6 +206,9 @@
     <EmbeddedResource Include="GUI\Otros\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PostVenta\frm_main_service.resx">
+      <DependentUpon>frm_main_service.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Unidades\frm_edit_unidad.resx">
       <DependentUpon>frm_edit_unidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usuarios\frm_main_admin.resx">
       <DependentUpon>frm_main_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Usuarios\frm_main_gerencial.resx">
+      <DependentUpon>frm_main_gerencial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Usuarios\frm_main_normal.resx">
       <DependentUpon>frm_main_normal.cs</DependentUpon>

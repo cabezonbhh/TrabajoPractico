@@ -113,6 +113,7 @@
             // 
             // frm_login
             // 
+            this.AcceptButton = this.btn_in;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -129,6 +130,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesion";
             this.ResumeLayout(false);
             this.PerformLayout();

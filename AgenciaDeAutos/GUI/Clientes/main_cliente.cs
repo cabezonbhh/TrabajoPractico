@@ -79,5 +79,12 @@ namespace AgenciaDeAutos.GUI.Clientes
             }
             this.cargarGrilla();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+                this.Dispose();
+        }
     }
 }

@@ -38,6 +38,7 @@
             this.btn_bmw = new System.Windows.Forms.Button();
             this.btn_audi = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_salir = new System.Windows.Forms.Button();
             this.tab_fabricantes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -146,13 +147,26 @@
             this.tabPage2.Text = "Busqueda";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btn_salir
+            // 
+            this.btn_salir.Location = new System.Drawing.Point(674, 498);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_salir.TabIndex = 9;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
             // frm_menu_fabricantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 498);
+            this.CancelButton = this.btn_salir;
+            this.ClientSize = new System.Drawing.Size(766, 533);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.tab_fabricantes);
             this.Name = "frm_menu_fabricantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fabricantes";
             this.tab_fabricantes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -171,5 +185,6 @@
         private System.Windows.Forms.Button btn_bmw;
         private System.Windows.Forms.Button btn_audi;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

@@ -320,6 +320,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.combo_fab);
             this.Name = "frm_new_unidad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Unidades";
             this.Load += new System.EventHandler(this.frm_new_unidad_Load);
             this.ResumeLayout(false);

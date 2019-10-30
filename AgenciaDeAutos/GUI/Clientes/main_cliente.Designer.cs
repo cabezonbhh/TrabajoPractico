@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
@@ -40,14 +40,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btn_exit
             // 
-            this.button4.Location = new System.Drawing.Point(468, 282);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Salir";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_exit.Location = new System.Drawing.Point(468, 282);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.TabIndex = 14;
+            this.btn_exit.Text = "Salir";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_delete
             // 
@@ -125,13 +127,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_exit;
             this.ClientSize = new System.Drawing.Size(577, 331);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.dgv_clientes);
             this.Name = "main_cliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "main_cliente";
             this.Load += new System.EventHandler(this.main_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
@@ -141,7 +145,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.Button btn_new;

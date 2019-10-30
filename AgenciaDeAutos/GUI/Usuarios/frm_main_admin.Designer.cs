@@ -310,6 +310,7 @@
             this.Controls.Add(this.lbl_userOn);
             this.MaximizeBox = false;
             this.Name = "frm_main_admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_main_admin";
             this.Load += new System.EventHandler(this.frm_main_admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();

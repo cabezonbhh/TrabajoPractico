@@ -53,5 +53,10 @@ namespace AgenciaDeAutos.GUI.Fabricantes
             Form aux = new frm_modelo("Porsche", "Porsche");
             aux.ShowDialog();
         }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }
