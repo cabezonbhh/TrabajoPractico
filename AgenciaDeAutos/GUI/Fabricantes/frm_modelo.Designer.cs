@@ -65,7 +65,7 @@
             // pic_vehiculo
             // 
             this.pic_vehiculo.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
-            this.pic_vehiculo.Location = new System.Drawing.Point(801, 21);
+            this.pic_vehiculo.Location = new System.Drawing.Point(843, 21);
             this.pic_vehiculo.Name = "pic_vehiculo";
             this.pic_vehiculo.Size = new System.Drawing.Size(480, 320);
             this.pic_vehiculo.TabIndex = 0;
@@ -73,7 +73,7 @@
             // 
             // pic_logo
             // 
-            this.pic_logo.Location = new System.Drawing.Point(12, 30);
+            this.pic_logo.Location = new System.Drawing.Point(43, 21);
             this.pic_logo.Name = "pic_logo";
             this.pic_logo.Size = new System.Drawing.Size(180, 180);
             this.pic_logo.TabIndex = 1;
@@ -86,6 +86,8 @@
             this.combo_serie.Name = "combo_serie";
             this.combo_serie.Size = new System.Drawing.Size(178, 21);
             this.combo_serie.TabIndex = 3;
+            this.combo_serie.SelectedIndexChanged += new System.EventHandler(this.combo_serie_SelectedIndexChanged);
+            this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
             // 
             // combo_modelo
             // 
@@ -94,6 +96,7 @@
             this.combo_modelo.Name = "combo_modelo";
             this.combo_modelo.Size = new System.Drawing.Size(178, 21);
             this.combo_modelo.TabIndex = 4;
+            this.combo_modelo.SelectedIndexChanged += new System.EventHandler(this.combo_modelo_SelectedIndexChanged);
             // 
             // combo_generacion
             // 
@@ -102,6 +105,7 @@
             this.combo_generacion.Name = "combo_generacion";
             this.combo_generacion.Size = new System.Drawing.Size(178, 21);
             this.combo_generacion.TabIndex = 5;
+            this.combo_generacion.SelectedIndexChanged += new System.EventHandler(this.combo_generacion_SelectedIndexChanged);
             // 
             // lbl_serie
             // 
@@ -135,7 +139,7 @@
             // 
             // btn_stock
             // 
-            this.btn_stock.Location = new System.Drawing.Point(648, 331);
+            this.btn_stock.Location = new System.Drawing.Point(306, 360);
             this.btn_stock.Name = "btn_stock";
             this.btn_stock.Size = new System.Drawing.Size(132, 23);
             this.btn_stock.TabIndex = 11;
@@ -229,7 +233,7 @@
             this.panel1.Controls.Add(this.lbl_cotizacion);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(211, 197);
+            this.panel1.Location = new System.Drawing.Point(485, 505);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 100);
             this.panel1.TabIndex = 22;
@@ -242,7 +246,7 @@
             this.panel2.Controls.Add(this.lbl_modelo);
             this.panel2.Controls.Add(this.combo_serie);
             this.panel2.Controls.Add(this.lbl_generacion);
-            this.panel2.Location = new System.Drawing.Point(211, 30);
+            this.panel2.Location = new System.Drawing.Point(485, 360);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
@@ -250,7 +254,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
-            this.pictureBox1.Location = new System.Drawing.Point(801, 355);
+            this.pictureBox1.Location = new System.Drawing.Point(306, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(480, 320);
             this.pictureBox1.TabIndex = 24;
@@ -267,11 +271,11 @@
             this.col_modelo,
             this.col_generacion,
             this.col_añoModelo});
-            this.dgv_stock_unidades.Location = new System.Drawing.Point(211, 360);
+            this.dgv_stock_unidades.Location = new System.Drawing.Point(843, 360);
             this.dgv_stock_unidades.Name = "dgv_stock_unidades";
             this.dgv_stock_unidades.ReadOnly = true;
             this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_stock_unidades.Size = new System.Drawing.Size(569, 315);
+            this.dgv_stock_unidades.Size = new System.Drawing.Size(480, 315);
             this.dgv_stock_unidades.TabIndex = 35;
             // 
             // col_fabricante

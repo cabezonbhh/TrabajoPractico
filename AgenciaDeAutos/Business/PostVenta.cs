@@ -21,7 +21,37 @@ namespace AgenciaDeAutos.Business
             this.Detalles = null;
         }
 
-
+        public long getPrecioTotal()
+        {
+            long total = 0;
+            if(Detalles == null)
+            {
+                return 0;
+            }
+            else
+            {
+                foreach(DetallePostVenta detalle in Detalles)
+                {
+                    total += detalle.Precio;
+                }
+                return total;
+            }
+        }
+        private void agregarDetalle(DetallePostVenta detalle)
+        {
+            Detalles.Add(detalle);
+        }
+        
+        public void crearDetallePostVenta(int idService, int idUnidad, Trabajo trabajo, long precio, string descripcion)
+        {
+            DetallePostVenta detalle = new DetallePostVenta();
+            detalle.IdUnidad = idUnidad;
+            detalle.Job = trabajo;
+            detalle.Precio = precio;
+            detalle.Descripcion = descripcion;
+            detalle.IdService = idService;
+            agregarDetalle(detalle);
+        }
         
     }
 }

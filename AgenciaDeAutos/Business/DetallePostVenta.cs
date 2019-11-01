@@ -11,14 +11,17 @@ namespace AgenciaDeAutos.Business
         public int IdService { get; set; }
         public int IdUnidad { get; set; }
         public Trabajo Job { get; set; }
-        public double Precio { get; set; }
+        public long Precio { get; set; }
+        public string Descripcion { get; set; }
 
-        public DetallePostVenta(Trabajo job)
+
+        public DetallePostVenta()
         {
             this.IdService = -99;
             this.IdUnidad = -99;
-            this.Job = job;
+            this.Job = null;
             this.Precio = -99;
+            this.Descripcion = "";
         }
     }
 }

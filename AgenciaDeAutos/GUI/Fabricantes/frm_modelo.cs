@@ -18,10 +18,12 @@ namespace AgenciaDeAutos.GUI.Vehiculos
     {
         private int fabricante;
         private UnidadService service;
+        private Support.Support support = null;
         public frm_modelo(string logo, string titulo)
         {
             InitializeComponent();
             pic_logo.BackColor = Color.Transparent;
+            support = Support.Support.GetSupport();
             Random random = new Random();
             this.Text = titulo;
             int i = random.Next(1, 8);
@@ -65,7 +67,7 @@ namespace AgenciaDeAutos.GUI.Vehiculos
 
         private void frm_modelo_Load(object sender, EventArgs e)
         {
-
+            support.cargarComboSerie(combo_serie,fabricante);
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -82,8 +84,8 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         public void cargarGrilla(string nombre)
         {
             int serie, generacion;;
-            serie = Convert.ToInt32(combo_serie.SelectedValue);
-            generacion = Convert.ToInt32(combo_generacion.SelectedValue);
+            serie = Convert.ToInt32(combo_serie.SelectedValue.ToString());
+            generacion = Convert.ToInt32(combo_generacion.SelectedValue.ToString());
             IList<Unidad> stockUnidades = service.getUnidades(fabricante, serie, generacion, nombre);
             dgv_stock_unidades.Rows.Clear();
             foreach (Unidad unidad in stockUnidades)
@@ -95,6 +97,32 @@ namespace AgenciaDeAutos.GUI.Vehiculos
                                                          }
                                             );
             }
+        }
+
+        private void combo_serie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiar();         
+        }
+
+        private void combo_generacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiar();
+        }
+
+        private void combo_serie_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            support.cargarComboGeneracion(combo_generacion, Convert.ToInt32(combo_serie.SelectedValue));
+        }
+        private void limpiar()
+        {
+            dgv_stock_unidades.Rows.Clear();
+            txt_precio_dolar.Clear();
+
         }
     }
 }

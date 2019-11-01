@@ -16,5 +16,6 @@ namespace AgenciaDeAutos.GUI.PostVenta
         {
             InitializeComponent();
         }
+
     }
 }

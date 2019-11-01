@@ -439,17 +439,17 @@ namespace AgenciaDeAutos.Support
             combo.ValueMember = "IdFabricante";
         }
 
-        public void cargarComboSerie(ComboBox combo, int serie)
+        public void cargarComboSerie(ComboBox combo, int fabricante)
         {
             SerieService service = new SerieService();
-            combo.DataSource = service.getSeries(serie);
+            combo.DataSource = service.getSeries(fabricante);
             combo.DisplayMember = "Nombre";
             combo.ValueMember = "IdSerie";
         }
-        public void cargarComboGeneracion(ComboBox combo, int generacion)
+        public void cargarComboGeneracion(ComboBox combo, int serie)
         {
             GeneracionService service = new GeneracionService();
-            combo.DataSource = service.getGeneraciones(generacion);
+            combo.DataSource = service.getGeneraciones(serie);
             combo.DisplayMember = "Nombre";
             combo.ValueMember = "IdGeneracion";
         }

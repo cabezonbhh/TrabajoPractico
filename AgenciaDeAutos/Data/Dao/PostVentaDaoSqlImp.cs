@@ -10,8 +10,9 @@ namespace AgenciaDeAutos.Data.Dao
 {
     public class PostVentaDaoSqlImp : IDaoPostVenta<PostVenta>
     {
-        public IList<PostVenta> getPostVentas()
+        public IList<PostVenta> getPostVentaPorIdUnidad(int id)
         {
+            Trabajo trabajo = new Trabajo();
             throw new NotImplementedException();
         }
     }

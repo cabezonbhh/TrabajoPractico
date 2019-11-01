@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgenciaDeAutos.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,9 @@ namespace AgenciaDeAutos.Interfaces
 {
     public interface IDaoPostVenta <Pv>
     {
-        IList<Pv> getPostVentas();
+        IList<PostVenta> getPostVentaPorIdUnidad(int id);
+
+
+
     }
 }
