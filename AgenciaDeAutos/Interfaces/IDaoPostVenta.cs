@@ -9,7 +9,7 @@ namespace AgenciaDeAutos.Interfaces
 {
     public interface IDaoPostVenta <Pv>
     {
-        IList<PostVenta> getPostVentaPorIdUnidad(int id);
+        IList<PostVenta> getPostVentaPorIdUnidad(int unidad, string modelo, string patente, int borrado);
 
 
 

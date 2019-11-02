@@ -106,5 +106,17 @@ namespace AgenciaDeAutos.Data.Dao
             }
             return unidades;
         }
+
+        public IList<Unidad> GetUnidadesPorDni(int dni)
+        {
+            string sql = "exec getUnidadesPorDNI " + dni;
+            DataTable tabla = helper.ConsultaSQL(sql);
+            IList<Unidad> unidades = new List<Unidad>();
+            foreach (DataRow fila in tabla.Rows)
+            {
+                unidades.Add(mapper(fila));
+            }
+            return unidades;
+        }
     }
 }

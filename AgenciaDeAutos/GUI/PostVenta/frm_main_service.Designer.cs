@@ -30,12 +30,17 @@
         {
             this.tab_main = new System.Windows.Forms.TabControl();
             this.tab_cliente = new System.Windows.Forms.TabPage();
+            this.btn_new_service = new System.Windows.Forms.Button();
+            this.btn_more_detail = new System.Windows.Forms.Button();
             this.dgv_post_service = new System.Windows.Forms.DataGridView();
+            this.id_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.km_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_lastName = new System.Windows.Forms.TextBox();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_last_name_cliente = new System.Windows.Forms.Label();
             this.lbl_name_cliente = new System.Windows.Forms.Label();
-            this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_dni = new System.Windows.Forms.Label();
             this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
             this.col_id_unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +50,6 @@
             this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_patente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_interno = new System.Windows.Forms.TabPage();
-            this.id_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_service = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.km_limite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_more_detail = new System.Windows.Forms.Button();
-            this.btn_new_service = new System.Windows.Forms.Button();
             this.txt_patente = new System.Windows.Forms.TextBox();
             this.txt_modelo = new System.Windows.Forms.TextBox();
             this.lbl_patente = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.tab_main.SuspendLayout();
             this.tab_cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_post_service)).BeginInit();
@@ -84,6 +84,7 @@
             // 
             // tab_cliente
             // 
+            this.tab_cliente.Controls.Add(this.txt_DNI);
             this.tab_cliente.Controls.Add(this.btn_new_service);
             this.tab_cliente.Controls.Add(this.btn_more_detail);
             this.tab_cliente.Controls.Add(this.dgv_post_service);
@@ -91,7 +92,6 @@
             this.tab_cliente.Controls.Add(this.txt_name);
             this.tab_cliente.Controls.Add(this.lbl_last_name_cliente);
             this.tab_cliente.Controls.Add(this.lbl_name_cliente);
-            this.tab_cliente.Controls.Add(this.txt_dni);
             this.tab_cliente.Controls.Add(this.lbl_dni);
             this.tab_cliente.Controls.Add(this.dgv_stock_unidades);
             this.tab_cliente.Location = new System.Drawing.Point(4, 22);
@@ -101,6 +101,26 @@
             this.tab_cliente.TabIndex = 0;
             this.tab_cliente.Text = "Cliente";
             this.tab_cliente.UseVisualStyleBackColor = true;
+            // 
+            // btn_new_service
+            // 
+            this.btn_new_service.Enabled = false;
+            this.btn_new_service.Location = new System.Drawing.Point(477, 286);
+            this.btn_new_service.Name = "btn_new_service";
+            this.btn_new_service.Size = new System.Drawing.Size(75, 38);
+            this.btn_new_service.TabIndex = 51;
+            this.btn_new_service.Text = "Nuevo service";
+            this.btn_new_service.UseVisualStyleBackColor = true;
+            // 
+            // btn_more_detail
+            // 
+            this.btn_more_detail.Enabled = false;
+            this.btn_more_detail.Location = new System.Drawing.Point(477, 229);
+            this.btn_more_detail.Name = "btn_more_detail";
+            this.btn_more_detail.Size = new System.Drawing.Size(75, 37);
+            this.btn_more_detail.TabIndex = 50;
+            this.btn_more_detail.Text = "Mas detalles";
+            this.btn_more_detail.UseVisualStyleBackColor = true;
             // 
             // dgv_post_service
             // 
@@ -121,10 +141,36 @@
             this.dgv_post_service.Size = new System.Drawing.Size(394, 150);
             this.dgv_post_service.TabIndex = 49;
             // 
+            // id_service
+            // 
+            this.id_service.HeaderText = "Nº Service";
+            this.id_service.Name = "id_service";
+            this.id_service.ReadOnly = true;
+            this.id_service.Visible = false;
+            // 
+            // precio_total
+            // 
+            this.precio_total.HeaderText = "Precio Total (US$)";
+            this.precio_total.Name = "precio_total";
+            this.precio_total.ReadOnly = true;
+            // 
+            // fecha_service
+            // 
+            this.fecha_service.HeaderText = "Fecha";
+            this.fecha_service.Name = "fecha_service";
+            this.fecha_service.ReadOnly = true;
+            // 
+            // km_limite
+            // 
+            this.km_limite.HeaderText = "Km limite";
+            this.km_limite.Name = "km_limite";
+            this.km_limite.ReadOnly = true;
+            // 
             // txt_lastName
             // 
             this.txt_lastName.Location = new System.Drawing.Point(516, 22);
             this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.ReadOnly = true;
             this.txt_lastName.Size = new System.Drawing.Size(178, 20);
             this.txt_lastName.TabIndex = 48;
             // 
@@ -132,13 +178,14 @@
             // 
             this.txt_name.Location = new System.Drawing.Point(250, 22);
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(178, 20);
             this.txt_name.TabIndex = 47;
             // 
             // lbl_last_name_cliente
             // 
             this.lbl_last_name_cliente.AutoSize = true;
-            this.lbl_last_name_cliente.Location = new System.Drawing.Point(434, 25);
+            this.lbl_last_name_cliente.Location = new System.Drawing.Point(463, 25);
             this.lbl_last_name_cliente.Name = "lbl_last_name_cliente";
             this.lbl_last_name_cliente.Size = new System.Drawing.Size(47, 13);
             this.lbl_last_name_cliente.TabIndex = 46;
@@ -152,13 +199,6 @@
             this.lbl_name_cliente.Size = new System.Drawing.Size(47, 13);
             this.lbl_name_cliente.TabIndex = 45;
             this.lbl_name_cliente.Text = "Nombre:";
-            // 
-            // txt_dni
-            // 
-            this.txt_dni.Location = new System.Drawing.Point(61, 22);
-            this.txt_dni.Name = "txt_dni";
-            this.txt_dni.Size = new System.Drawing.Size(100, 20);
-            this.txt_dni.TabIndex = 44;
             // 
             // lbl_dni
             // 
@@ -242,51 +282,6 @@
             this.tab_interno.TabIndex = 1;
             this.tab_interno.Text = "Interno";
             this.tab_interno.UseVisualStyleBackColor = true;
-            // 
-            // id_service
-            // 
-            this.id_service.HeaderText = "Nº Service";
-            this.id_service.Name = "id_service";
-            this.id_service.ReadOnly = true;
-            this.id_service.Visible = false;
-            // 
-            // precio_total
-            // 
-            this.precio_total.HeaderText = "Precio Total (US$)";
-            this.precio_total.Name = "precio_total";
-            this.precio_total.ReadOnly = true;
-            // 
-            // fecha_service
-            // 
-            this.fecha_service.HeaderText = "Fecha";
-            this.fecha_service.Name = "fecha_service";
-            this.fecha_service.ReadOnly = true;
-            // 
-            // km_limite
-            // 
-            this.km_limite.HeaderText = "Km limite";
-            this.km_limite.Name = "km_limite";
-            this.km_limite.ReadOnly = true;
-            // 
-            // btn_more_detail
-            // 
-            this.btn_more_detail.Enabled = false;
-            this.btn_more_detail.Location = new System.Drawing.Point(477, 229);
-            this.btn_more_detail.Name = "btn_more_detail";
-            this.btn_more_detail.Size = new System.Drawing.Size(75, 37);
-            this.btn_more_detail.TabIndex = 50;
-            this.btn_more_detail.Text = "Mas detalles";
-            this.btn_more_detail.UseVisualStyleBackColor = true;
-            // 
-            // btn_new_service
-            // 
-            this.btn_new_service.Enabled = false;
-            this.btn_new_service.Location = new System.Drawing.Point(477, 286);
-            this.btn_new_service.Name = "btn_new_service";
-            this.btn_new_service.Size = new System.Drawing.Size(75, 38);
-            this.btn_new_service.TabIndex = 51;
-            this.btn_new_service.Text = "Nuevo service";
-            this.btn_new_service.UseVisualStyleBackColor = true;
             // 
             // txt_patente
             // 
@@ -395,6 +390,14 @@
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // txt_DNI
+            // 
+            this.txt_DNI.Location = new System.Drawing.Point(61, 22);
+            this.txt_DNI.Name = "txt_DNI";
+            this.txt_DNI.Size = new System.Drawing.Size(100, 20);
+            this.txt_DNI.TabIndex = 52;
+            this.txt_DNI.TextChanged += new System.EventHandler(this.txt_DNI_TextChanged);
+            // 
             // frm_main_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +427,6 @@
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label lbl_last_name_cliente;
         private System.Windows.Forms.Label lbl_name_cliente;
-        private System.Windows.Forms.TextBox txt_dni;
         private System.Windows.Forms.Label lbl_dni;
         private System.Windows.Forms.DataGridView dgv_stock_unidades;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_unidad;
@@ -454,5 +456,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.TextBox txt_DNI;
     }
 }

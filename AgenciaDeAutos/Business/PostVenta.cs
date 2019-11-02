@@ -11,6 +11,7 @@ namespace AgenciaDeAutos.Business
         public int IdService { get; set; }
         public Unidad unidad { get; set; }
         public DateTime FechaService { get; set; }
+        public long Kmlimite { get; set; }
         public IList<DetallePostVenta> Detalles { get; set; }
 
         public PostVenta()

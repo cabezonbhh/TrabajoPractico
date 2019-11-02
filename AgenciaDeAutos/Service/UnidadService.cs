@@ -33,7 +33,10 @@ namespace AgenciaDeAutos.Service
         {
             return dao.getUnidadesFiltradas(filtro);
         }
-
+        public IList<Unidad> GetUnidadesPorDni(int dni)
+        {
+            return dao.GetUnidadesPorDni(dni);
+        }
         public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion)
         {
             Unidad unidad = new Unidad();

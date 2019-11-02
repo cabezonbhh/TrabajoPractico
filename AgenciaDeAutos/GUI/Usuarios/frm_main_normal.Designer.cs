@@ -64,7 +64,6 @@
             this.gestionNegocioToolStripMenuItem.Name = "gestionNegocioToolStripMenuItem";
             this.gestionNegocioToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.gestionNegocioToolStripMenuItem.Text = "Nuevo cliente";
-            this.gestionNegocioToolStripMenuItem.Click += new System.EventHandler(this.gestionNegocioToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
@@ -106,6 +105,7 @@
             this.btn_postVenta.TabIndex = 3;
             this.btn_postVenta.Text = "Post venta";
             this.btn_postVenta.UseVisualStyleBackColor = true;
+            this.btn_postVenta.Click += new System.EventHandler(this.btn_postVenta_Click);
             // 
             // frm_main_normal
             // 
