@@ -1,5 +1,5 @@
 ﻿using AgenciaDeAutos.GUI.Fabricantes;
-using AgenciaDeAutos.GUI.PostVenta;
+using AgenciaDeAutos.GUI.PostVentaServices;
 using AgenciaDeAutos.GUI.Unidades;
 using AgenciaDeAutos.GUI.Vehiculos;
 using System;

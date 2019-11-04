@@ -20,16 +20,15 @@ namespace AgenciaDeAutos.Data.Dao
             string descripcion;
             long precio;
             Trabajo job = new Trabajo();
-            string sqlService = "Exec getAllServices " + unidad + ", " + modelo + ", " + patente + ", " + borrado;
+            string sqlService = "Exec getServicePorFiltro " + unidad + ", %" + modelo + "%, %" + patente + "%, " + borrado;
             IList<PostVenta> listaServices = new List<PostVenta>();
             DataTable tablaService = helper.ConsultaSQL(sqlService);
-            DataTable tablaDetalle = null;
             PostVenta post = null;
 
             foreach(DataRow fila in tablaService.Rows)
             {
                 post = mapper(fila);
-                tablaDetalle = helper.ConsultaSQL("Exec getDetallesPorService " + post.IdService.ToString() + ", " + post.unidad.CodUnidad.ToString());
+                DataTable tablaDetalle = helper.ConsultaSQL("Exec getDetallesPorService " + post.IdService + ", " + post.unidad.CodUnidad);
                 foreach(DataRow filaDetalle in tablaDetalle.Rows)
                 {
                     job.IdTrabajo = Convert.ToInt32(filaDetalle["idTrabajo"].ToString());

@@ -68,6 +68,12 @@
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
     <Compile Include="Data\Dao\VentaDaoSqlImp.cs" />
     <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="GUI\PostVentaServices\frm_new_service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PostVentaServices\frm_new_service.Designer.cs">
+      <DependentUpon>frm_new_service.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IDaoCliente.cs" />
     <Compile Include="Interfaces\IDaoFabricante.cs" />
     <Compile Include="Interfaces\IDaoGeneracion.cs" />
@@ -106,10 +112,10 @@
     <Compile Include="GUI\Otros\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\PostVenta\frm_main_service.cs">
+    <Compile Include="GUI\PostVentaServices\frm_main_service.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\PostVenta\frm_main_service.Designer.cs">
+    <Compile Include="GUI\PostVentaServices\frm_main_service.Designer.cs">
       <DependentUpon>frm_main_service.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Unidades\frm_edit_unidad.cs">
@@ -206,7 +212,10 @@
     <EmbeddedResource Include="GUI\Otros\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\PostVenta\frm_main_service.resx">
+    <EmbeddedResource Include="GUI\PostVentaServices\frm_new_service.resx">
+      <DependentUpon>frm_new_service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PostVentaServices\frm_main_service.resx">
       <DependentUpon>frm_main_service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Unidades\frm_edit_unidad.resx">

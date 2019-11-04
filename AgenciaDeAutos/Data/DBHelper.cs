@@ -22,7 +22,7 @@ namespace AgenciaDeAutos
 
         private DBHelper()
         {
-            string_conexion = pc;
+            string_conexion = notebook;
         }
 
         public static DBHelper getDBHelper()

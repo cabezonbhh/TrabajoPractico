@@ -77,10 +77,13 @@ D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.U
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_new_unidad.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CoreCompileInputs.cache
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csprojAssemblyReference.cache
-D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.CodeAnalysisLog.xml
-D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\AgenciaDeAutos.exe.lastcodeanalysissucceeded
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_main_unidades.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Ventas.frm_venta.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVenta.frm_main_service.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_main_gerencial.resources
+D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_main_service.resources
+D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
+D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_main_unidades.resources
+D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_main_gerencial.resources
+D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Ventas.frm_venta.resources

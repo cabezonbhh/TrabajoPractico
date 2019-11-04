@@ -12,7 +12,6 @@ namespace AgenciaDeAutos.Service
     public class PostVentaService
     {
         private IDaoPostVenta<PostVenta> dao;
-        public int ClienteSeleccionado { get; set; }
 
         public PostVentaService()
         {
@@ -21,7 +20,7 @@ namespace AgenciaDeAutos.Service
 
         public IList<PostVenta> GetPostVentasPorID(int id)
         {
-            return dao.getPostVentaPorIdUnidad(id,"","",1);
+            return dao.getPostVentaPorIdUnidad(id,"''","''",1);
         }
 
     }
