@@ -66,9 +66,13 @@ namespace AgenciaDeAutos.GUI.Unidades
             {
                 return "potencia";
             }
-            if (String.IsNullOrWhiteSpace(txt_precio_compra.Text))
+            if (String.IsNullOrWhiteSpace(txt_precio_venta.Text))
             {
                 return "precio de compra";
+            }
+            if (String.IsNullOrWhiteSpace(txt_precio_venta.Text))
+            {
+                return "precio de venta";
             }
             if (String.IsNullOrWhiteSpace(txt_precio_compra.Text))
             {
@@ -105,11 +109,12 @@ namespace AgenciaDeAutos.GUI.Unidades
                 int serie = Convert.ToInt32(combo_serie.SelectedValue);
                 int generacion = Convert.ToInt32(combo_gen.SelectedValue);
                 string nombre = combo_modelo.Text;
-                long precio = Convert.ToInt64(txt_precio_compra.Text); 
+                long precioVenta = Convert.ToInt64(txt_precio_venta.Text); 
                 int año = Convert.ToInt32(txt_año_modelo.Text);
                 int km = Convert.ToInt32(txt_km.Text);
                 int potencia = Convert.ToInt32(txt_potencia_cv.Text);
                 string descripcion = txt_descripcion.Text;
+                long precioCompra = Convert.ToInt64(txt_precio_compra.Text);
                 if(km > 0)
                 {
                     if(String.IsNullOrWhiteSpace(txt_patente.Text))
@@ -120,13 +125,13 @@ namespace AgenciaDeAutos.GUI.Unidades
                     else
                     {
                         string patente = txt_patente.Text;
-                        flag = service.nuevaUnidad(fabricante, serie, generacion, nombre, precio, año, km, potencia, descripcion, patente);
+                        flag = service.nuevaUnidad(fabricante, serie, generacion, nombre, precioVenta, precioCompra, año, km, potencia, descripcion, patente);
                     }
                     
                 }                   
                 else
                 {
-                    flag = service.nuevaUnidad(fabricante, serie, generacion, nombre, precio, año, km, potencia, descripcion);
+                    flag = service.nuevaUnidad(fabricante, serie, generacion, nombre, precioVenta, precioCompra, año, km, potencia, descripcion);
                 }
                 if (flag == true)
                     MessageBox.Show("Unidad registrada con exito", "Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -46,7 +46,8 @@ namespace AgenciaDeAutos.Data.Dao
                                                         + unidad.AñoModelo + ", "
                                                         + unidad.Kilometraje + ", "
                                                         + unidad.Potencia + ", '"
-                                                        + unidad.Descripcion.ToString()+"'";
+                                                        + unidad.Descripcion.ToString()+"', "
+                                                        + unidad.PrecioCompra;
 
             string sql2 = @"exec registrarUnidadUsada " + unidad.IdFabricante + ", "
                                                         + unidad.IdSerie + ", "
@@ -57,7 +58,8 @@ namespace AgenciaDeAutos.Data.Dao
                                                         + unidad.Kilometraje + ", "
                                                         + unidad.Potencia + ", '"
                                                         + unidad.Descripcion.ToString() + "', '"
-                                                        + unidad.Patente.ToString() + "'";
+                                                        + unidad.Patente.ToString() + "', "
+                                                        + unidad.PrecioCompra;
             if(unidad.Kilometraje > 0)
             {
                 return helper.registrarUnidad(sql2) > 2;
@@ -84,18 +86,12 @@ namespace AgenciaDeAutos.Data.Dao
             unidad.Potencia = Convert.ToInt32(fila["potencia"]);
             unidad.Descripcion = fila["descripcion"].ToString();
             unidad.Patente = fila["patente"].ToString();
+            unidad.PrecioCompra = Convert.ToInt64(fila["precioCompra"].ToString());
             return unidad;
         }
 
         public IList<Unidad> getUnidadesFiltradas(string filtro)
         {
-      //      string sql = @"select	su.codUnidad, su.idFabricante, su.idSerie, su.idGeneracion, su.nombre, su.precioVenta, su.añoModelo, su.kilometraje,
-		    //            su.potencia, su.descripcion, su.patente, s.nombre as NombreSerie, g.nombre as NombreGeneracion, f.nombre as NombreFabricante 
-      //                  from StockUnidades su	join Generaciones g on su.idGeneracion = g.idGeneracion
-						//join Series s on su.idSerie = s.idSerie
-						//join Fabricantes f on su.idFabricante = f.idFabricante 
-      //                  where su.nombre like '%"+filtro+"%' and su.borrado = 0";
-
             string cadena = "'%"+filtro+"%'";
             string sql = "exec getUnidadesPorNombre " + cadena;
             DataTable tabla = helper.ConsultaSQL(sql);

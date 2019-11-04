@@ -30,6 +30,7 @@
         {
             this.tab_main = new System.Windows.Forms.TabControl();
             this.tab_cliente = new System.Windows.Forms.TabPage();
+            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.btn_new_service = new System.Windows.Forms.Button();
             this.btn_more_detail = new System.Windows.Forms.Button();
             this.dgv_post_service = new System.Windows.Forms.DataGridView();
@@ -63,7 +64,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_DNI = new System.Windows.Forms.TextBox();
             this.tab_main.SuspendLayout();
             this.tab_cliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_post_service)).BeginInit();
@@ -102,6 +102,14 @@
             this.tab_cliente.Text = "Cliente";
             this.tab_cliente.UseVisualStyleBackColor = true;
             // 
+            // txt_DNI
+            // 
+            this.txt_DNI.Location = new System.Drawing.Point(61, 22);
+            this.txt_DNI.Name = "txt_DNI";
+            this.txt_DNI.Size = new System.Drawing.Size(100, 20);
+            this.txt_DNI.TabIndex = 52;
+            this.txt_DNI.TextChanged += new System.EventHandler(this.txt_DNI_TextChanged);
+            // 
             // btn_new_service
             // 
             this.btn_new_service.Enabled = false;
@@ -138,6 +146,7 @@
             this.dgv_post_service.ReadOnly = true;
             this.dgv_post_service.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_post_service.RowHeadersWidth = 30;
+            this.dgv_post_service.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_post_service.Size = new System.Drawing.Size(394, 150);
             this.dgv_post_service.TabIndex = 49;
             // 
@@ -228,6 +237,7 @@
             this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_stock_unidades.Size = new System.Drawing.Size(633, 141);
             this.dgv_stock_unidades.TabIndex = 42;
+            this.dgv_stock_unidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_stock_unidades_CellContentClick);
             // 
             // col_id_unidad
             // 
@@ -389,14 +399,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Patente";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // txt_DNI
-            // 
-            this.txt_DNI.Location = new System.Drawing.Point(61, 22);
-            this.txt_DNI.Name = "txt_DNI";
-            this.txt_DNI.Size = new System.Drawing.Size(100, 20);
-            this.txt_DNI.TabIndex = 52;
-            this.txt_DNI.TextChanged += new System.EventHandler(this.txt_DNI_TextChanged);
             // 
             // frm_main_service
             // 

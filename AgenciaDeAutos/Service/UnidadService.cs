@@ -37,33 +37,36 @@ namespace AgenciaDeAutos.Service
         {
             return dao.GetUnidadesPorDni(dni);
         }
-        public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion)
+             
+        public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precioVenta, long precioCompra, int año, int km, int potencia, string descripcion,string patente)
         {
             Unidad unidad = new Unidad();
             unidad.IdFabricante = fabricante;
             unidad.IdSerie = serie;
             unidad.IdGeneracion = generacion;
             unidad.Nombre = nombre;
-            unidad.PrecioVenta = precio;
-            unidad.AñoModelo = año;
-            unidad.Kilometraje = km;
-            unidad.Potencia = potencia;
-            unidad.Descripcion = descripcion;
-            return dao.nuevaUnidad(unidad);
-        }
-        public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precio, int año, int km, int potencia, string descripcion,string patente)
-        {
-            Unidad unidad = new Unidad();
-            unidad.IdFabricante = fabricante;
-            unidad.IdSerie = serie;
-            unidad.IdGeneracion = generacion;
-            unidad.Nombre = nombre;
-            unidad.PrecioVenta = precio;
+            unidad.PrecioVenta = precioVenta;
+            unidad.PrecioCompra = precioCompra;
             unidad.AñoModelo = año;
             unidad.Kilometraje = km;
             unidad.Potencia = potencia;
             unidad.Descripcion = descripcion;
             unidad.Patente = patente;
+            return dao.nuevaUnidad(unidad);
+        }
+        public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precioVenta, long precioCompra, int año, int km, int potencia, string descripcion)
+        {
+            Unidad unidad = new Unidad();
+            unidad.IdFabricante = fabricante;
+            unidad.IdSerie = serie;
+            unidad.IdGeneracion = generacion;
+            unidad.Nombre = nombre;
+            unidad.PrecioVenta = precioVenta;
+            unidad.PrecioCompra = precioCompra;
+            unidad.AñoModelo = año;
+            unidad.Kilometraje = km;
+            unidad.Potencia = potencia;
+            unidad.Descripcion = descripcion;
             return dao.nuevaUnidad(unidad);
         }
     }

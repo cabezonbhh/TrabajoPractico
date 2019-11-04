@@ -57,5 +57,13 @@ namespace AgenciaDeAutos.GUI.PostVenta
                 llenarGrillaUnidades(dni);
             }
         }
+
+        private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgv_stock_unidades.CurrentRow != null)
+            {
+                //pvService.
+            }
+        }
     }
 }

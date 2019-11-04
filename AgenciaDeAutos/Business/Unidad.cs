@@ -17,6 +17,7 @@ namespace AgenciaDeAutos.Business
         public string NombreGeneracion { get; set; }
         public string Nombre { get; set; }
         public long PrecioVenta { get; set; }
+        public long PrecioCompra { get; set; }
         public int AñoModelo { get; set; }
         public long Kilometraje { get; set; }
         public string Descripcion { get; set; }
