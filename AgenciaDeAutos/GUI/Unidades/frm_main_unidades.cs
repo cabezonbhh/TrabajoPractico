@@ -80,7 +80,7 @@ namespace AgenciaDeAutos.GUI.Unidades
                 else
                 {
                    venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
-                   venta.Show();
+                    venta.Visible = true;
                    dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
                 }
             }
@@ -139,29 +139,29 @@ namespace AgenciaDeAutos.GUI.Unidades
             if (resultado == DialogResult.Yes)
                 this.Dispose();
         }
-        private void combo_fabricante_SelectedIndexChanged(object sender, EventArgs e)
+        
+
+        private void combo_fabricante_SelectedValueChanged(object sender, EventArgs e)
         {
-            dgv_stock_unidades.Rows.Clear();
-            txt_precio_dolar.Clear();
-            txt_km.Clear();
-            txt_cv.Clear();
-            txt_descripcion.Clear();
-            txt_precio_dolar.Clear();
-            support.cargarComboSerie(combo_serie, Convert.ToInt32(combo_fabricante.SelectedValue));
+            
         }
 
-        private void combo_serie_SelectedIndexChanged(object sender, EventArgs e)
+        private void combo_serie_SelectedValueChanged(object sender, EventArgs e)
         {
-            dgv_stock_unidades.Rows.Clear();
-            txt_precio_dolar.Clear();
-            txt_km.Clear();
-            txt_cv.Clear();
-            txt_descripcion.Clear();
-            txt_precio_dolar.Clear();
-            support.cargarComboGeneracion(combo_generacion, Convert.ToInt32(combo_serie.SelectedValue));
+            
         }
 
-        private void combo_generacion_SelectedIndexChanged(object sender, EventArgs e)
+        private void combo_generacion_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void combo_modelo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void combo_fabricante_SelectionChangeCommitted(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();
             txt_precio_dolar.Clear();
@@ -169,13 +169,35 @@ namespace AgenciaDeAutos.GUI.Unidades
             txt_cv.Clear();
             txt_descripcion.Clear();
             txt_precio_dolar.Clear();
-            support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_fabricante.SelectedValue),
-                                           Convert.ToInt32(combo_serie.SelectedValue),
-                                           Convert.ToInt32(combo_generacion.SelectedValue)
+            support.cargarComboSerie(combo_serie, Convert.ToInt32(combo_fabricante.SelectedValue.ToString()));
+        }
+
+        private void combo_serie_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dgv_stock_unidades.Rows.Clear();
+            txt_precio_dolar.Clear();
+            txt_km.Clear();
+            txt_cv.Clear();
+            txt_descripcion.Clear();
+            txt_precio_dolar.Clear();
+            support.cargarComboGeneracion(combo_generacion, Convert.ToInt32(combo_serie.SelectedValue.ToString()));
+        }
+
+        private void combo_generacion_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dgv_stock_unidades.Rows.Clear();
+            txt_precio_dolar.Clear();
+            txt_km.Clear();
+            txt_cv.Clear();
+            txt_descripcion.Clear();
+            txt_precio_dolar.Clear();
+            support.cargarComboModelo(combo_modelo, Convert.ToInt32(combo_fabricante.SelectedValue.ToString()),
+                                           Convert.ToInt32(combo_serie.SelectedValue.ToString()),
+                                           Convert.ToInt32(combo_generacion.SelectedValue.ToString())
                                         );
         }
 
-        private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
+        private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();
             txt_precio_dolar.Clear();

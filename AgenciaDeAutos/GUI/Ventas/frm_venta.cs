@@ -33,6 +33,8 @@ namespace AgenciaDeAutos.GUI.Ventas
             Unidad unidad = service.getUnidadPorId(idUnidad);
             detalles.Add(idUnidad);
             peso = Convert.ToInt64(unidad.PrecioVenta * (long)cotizacion);
+
+          
             dgv_details.Rows.Add(new object[]
             {
                 unidad.CodUnidad.ToString(),
@@ -57,6 +59,19 @@ namespace AgenciaDeAutos.GUI.Ventas
             txt_total_dolar.Text = total.ToString();
         }
 
+        public void limpiarCampos()
+        {
+            txt_cotizacion.Clear();
+            txt_dni.Clear();
+            txt_name.Clear();
+            txt_lastName.Clear();
+            txt_total_dolar.Clear();
+            txt_total_peso.Clear();
+            dgv_details.Rows.Clear();
+
+        }
+
+
         private void btn_new_venta_Click(object sender, EventArgs e)
         {
             if(!String.IsNullOrWhiteSpace(txt_dni.Text))
@@ -74,7 +89,13 @@ namespace AgenciaDeAutos.GUI.Ventas
                             fechaEntrega = dtp_fechaEntrega.Value;
                             retorno = serviceVenta.registrarVenta(dni, detalles, fechaEntrega);
                             if (retorno == true)
+                            {
                                 MessageBox.Show("Venta registrada con exito!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                limpiarCampos();
+                                this.Visible = false;
+
+                            }
+                                
                             else
                                 MessageBox.Show("Error al registrar la venta, verifique los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -122,6 +143,13 @@ namespace AgenciaDeAutos.GUI.Ventas
                 txt_name.Text = serviceVenta.getClientePorDNI(Convert.ToInt32(txt_dni.Text)).Nombre.ToString();
                 txt_lastName.Text = serviceVenta.getClientePorDNI(Convert.ToInt32(txt_dni.Text)).Apellido.ToString(); 
             }
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea cancelar? ", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+                this.Visible = false;
         }
     }
 }

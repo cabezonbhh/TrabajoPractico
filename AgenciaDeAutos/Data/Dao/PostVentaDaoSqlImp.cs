@@ -20,7 +20,7 @@ namespace AgenciaDeAutos.Data.Dao
             string descripcion;
             long precio;
             Trabajo job = new Trabajo();
-            string sqlService = "Exec getServicePorFiltro " + unidad + ", %" + modelo + "%, %" + patente + "%, " + borrado;
+            string sqlService = "Exec getServicePorFiltro " + unidad + ", '%" + modelo + "%', '%" + patente + "%', " + borrado;
             IList<PostVenta> listaServices = new List<PostVenta>();
             DataTable tablaService = helper.ConsultaSQL(sqlService);
             PostVenta post = null;
