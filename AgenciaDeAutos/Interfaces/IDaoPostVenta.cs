@@ -11,6 +11,7 @@ namespace AgenciaDeAutos.Interfaces
     {
         IList<PostVenta> getPostVentaPorIdUnidad(int unidad, string modelo, string patente, int borrado);
 
+        bool registrarNuevoService(PostVenta pv);
 
 
     }

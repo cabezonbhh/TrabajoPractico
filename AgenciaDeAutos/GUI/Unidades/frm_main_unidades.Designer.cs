@@ -210,7 +210,6 @@
             this.combo_modelo.Size = new System.Drawing.Size(121, 21);
             this.combo_modelo.TabIndex = 3;
             this.combo_modelo.SelectionChangeCommitted += new System.EventHandler(this.combo_modelo_SelectionChangeCommitted);
-            this.combo_modelo.SelectedValueChanged += new System.EventHandler(this.combo_modelo_SelectedValueChanged);
             // 
             // combo_generacion
             // 
@@ -220,7 +219,6 @@
             this.combo_generacion.Size = new System.Drawing.Size(121, 21);
             this.combo_generacion.TabIndex = 2;
             this.combo_generacion.SelectionChangeCommitted += new System.EventHandler(this.combo_generacion_SelectionChangeCommitted);
-            this.combo_generacion.SelectedValueChanged += new System.EventHandler(this.combo_generacion_SelectedValueChanged);
             // 
             // combo_serie
             // 
@@ -230,7 +228,6 @@
             this.combo_serie.Size = new System.Drawing.Size(121, 21);
             this.combo_serie.TabIndex = 1;
             this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
-            this.combo_serie.SelectedValueChanged += new System.EventHandler(this.combo_serie_SelectedValueChanged);
             // 
             // combo_fabricante
             // 
@@ -240,7 +237,7 @@
             this.combo_fabricante.Size = new System.Drawing.Size(121, 21);
             this.combo_fabricante.TabIndex = 0;
             this.combo_fabricante.SelectionChangeCommitted += new System.EventHandler(this.combo_fabricante_SelectionChangeCommitted);
-            this.combo_fabricante.SelectedValueChanged += new System.EventHandler(this.combo_fabricante_SelectedValueChanged);
+
             // 
             // lbl_cv
             // 

@@ -1,6 +1,7 @@
 ﻿using AgenciaDeAutos.Service;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace AgenciaDeAutos.Support
     public class Support
     {
         private static Support instance = new Support();
+        private DBHelper helper = DBHelper.getDBHelper();
 
         public static Support GetSupport()
         {
@@ -19,6 +21,16 @@ namespace AgenciaDeAutos.Support
             return instance;
         }
 
+        public string getTitutoTrabajoPorID(int id)
+        {
+            string descripcion ="";
+            DataTable tabla = helper.ConsultaSQL("select t.descripcion from Trabajos t where  t.idTrabajo = " + id);
+            foreach(DataRow fila in tabla.Rows)
+            {
+                descripcion = fila["descripcion"].ToString();
+            }
+            return descripcion;
+        }
         public void soloLetrasNumeros(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))

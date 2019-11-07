@@ -28,7 +28,7 @@ namespace AgenciaDeAutos.Data.Dao
             foreach(DataRow fila in tablaService.Rows)
             {
                 post = mapper(fila);
-                DataTable tablaDetalle = helper.ConsultaSQL("Exec getDetallesPorService " + post.IdService + ", " + post.unidad.CodUnidad);
+                DataTable tablaDetalle = helper.ConsultaSQL("Exec getDetallesPorService " + post.IdService + ", " + unidad);
                 foreach(DataRow filaDetalle in tablaDetalle.Rows)
                 {
                     job.IdTrabajo = Convert.ToInt32(filaDetalle["idTrabajo"].ToString());
@@ -41,6 +41,11 @@ namespace AgenciaDeAutos.Data.Dao
                 listaServices.Add(post);
             }
             return listaServices;
+        }
+
+        public bool registrarNuevoService(PostVenta pv)
+        {
+            throw new NotImplementedException();
         }
 
         private PostVenta mapper(DataRow fila)

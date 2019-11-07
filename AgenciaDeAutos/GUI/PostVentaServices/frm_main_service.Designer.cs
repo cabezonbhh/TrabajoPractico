@@ -117,6 +117,7 @@
             // txt_DNI
             // 
             this.txt_DNI.Location = new System.Drawing.Point(61, 22);
+            this.txt_DNI.MaxLength = 8;
             this.txt_DNI.Name = "txt_DNI";
             this.txt_DNI.Size = new System.Drawing.Size(100, 20);
             this.txt_DNI.TabIndex = 52;
@@ -124,8 +125,7 @@
             // 
             // btn_new_service
             // 
-            this.btn_new_service.Enabled = false;
-            this.btn_new_service.Location = new System.Drawing.Point(477, 354);
+            this.btn_new_service.Location = new System.Drawing.Point(477, 336);
             this.btn_new_service.Name = "btn_new_service";
             this.btn_new_service.Size = new System.Drawing.Size(75, 38);
             this.btn_new_service.TabIndex = 51;
@@ -136,7 +136,7 @@
             // btn_more_detail
             // 
             this.btn_more_detail.Enabled = false;
-            this.btn_more_detail.Location = new System.Drawing.Point(477, 297);
+            this.btn_more_detail.Location = new System.Drawing.Point(477, 279);
             this.btn_more_detail.Name = "btn_more_detail";
             this.btn_more_detail.Size = new System.Drawing.Size(75, 37);
             this.btn_more_detail.TabIndex = 50;
@@ -155,7 +155,7 @@
             this.fecha_service,
             this.precio_total,
             this.km_limite});
-            this.dgv_post_service.Location = new System.Drawing.Point(61, 297);
+            this.dgv_post_service.Location = new System.Drawing.Point(61, 279);
             this.dgv_post_service.Name = "dgv_post_service";
             this.dgv_post_service.ReadOnly = true;
             this.dgv_post_service.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

@@ -114,5 +114,16 @@ namespace AgenciaDeAutos.Data.Dao
             }
             return unidades;
         }
+
+        public Unidad getUnidadParaService(int id)
+        {
+            Unidad unidad = new Unidad();
+            DataTable tabla = helper.ConsultaSQL("getUnidadParaService " + id);
+            foreach (DataRow fila in tabla.Rows)
+            {
+                unidad = mapper(fila);
+            }
+            return unidad;          
+        }
     }
 }

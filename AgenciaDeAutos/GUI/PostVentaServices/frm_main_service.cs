@@ -18,7 +18,6 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
         private ClienteService cService = null;
         private PostVentaService pvService = null;
         private int unidadSeleccionada;
-
         public frm_main_service()
         {
             InitializeComponent();
@@ -86,10 +85,12 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
                 unidadSeleccionada = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells[0].Value.ToString());
                 dgv_post_service.Rows.Clear();
                 llenarGrillaServices(unidadSeleccionada);
+                btn_new_service.Enabled = true;
             }
             else
             {
                 MessageBox.Show("No selecciono ninguna unidad","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                btn_new_service.Enabled = false;
             }
         }
 
@@ -108,14 +109,18 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
 
         private void btn_new_service_Click(object sender, EventArgs e)
         {
-            if (dgv_post_service.CurrentRow == null)
+            if (dgv_stock_unidades.CurrentRow == null)
             {
                 MessageBox.Show("No ha seleccionado ninguna unidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
+                unidadSeleccionada = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells[0].Value.ToString());
                 Form aux = new frm_new_service(unidadSeleccionada);
+                aux.Show();
             }
         }
+
+       
     }
 }

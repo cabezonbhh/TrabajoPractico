@@ -23,5 +23,11 @@ namespace AgenciaDeAutos.Service
             return dao.getPostVentaPorIdUnidad(id,"''","''",1);
         }
 
+        public bool registrarService(PostVenta service)
+        {
+            return dao.registrarNuevoService(service);
+        }
+
+        
     }
 }

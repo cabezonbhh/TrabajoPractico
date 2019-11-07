@@ -40,7 +40,8 @@ namespace AgenciaDeAutos.GUI.Unidades
 
         private void frm_main_unidades_Load(object sender, EventArgs e)
         {
-            txt_cotizacion.Text = 60.ToString();
+            cotizacion = 1;
+            txt_cotizacion.Text = cotizacion.ToString();
             txt_precio_dolar.Text = 0.ToString();
             txt_precio_peso.Text = 0.ToString();
             support.cargarComboFabricante(combo_fabricante);
@@ -140,27 +141,6 @@ namespace AgenciaDeAutos.GUI.Unidades
                 this.Dispose();
         }
         
-
-        private void combo_fabricante_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void combo_serie_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void combo_generacion_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void combo_modelo_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void combo_fabricante_SelectionChangeCommitted(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();

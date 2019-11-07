@@ -69,5 +69,10 @@ namespace AgenciaDeAutos.Service
             unidad.Descripcion = descripcion;
             return dao.nuevaUnidad(unidad);
         }
+
+        public Unidad getUnidadParaService(int id)
+        {
+            return dao.getUnidadParaService(id);
+        }
     }
 }

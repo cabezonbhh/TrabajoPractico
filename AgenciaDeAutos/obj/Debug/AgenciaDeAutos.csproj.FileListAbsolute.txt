@@ -80,7 +80,6 @@ T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.cspro
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_main_unidades.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Ventas.frm_venta.resources
-T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVenta.frm_main_service.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_main_gerencial.resources
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_main_service.resources
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Unidades.frm_edit_unidad.resources
@@ -88,3 +87,5 @@ D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.U
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Usuarios.frm_main_gerencial.resources
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.Ventas.frm_venta.resources
 D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_new_service.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_new_service.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_main_service.resources

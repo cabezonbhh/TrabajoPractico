@@ -51,9 +51,34 @@ namespace AgenciaDeAutos.Business
             detalle.Precio = precio;
             detalle.Descripcion = descripcion;
             detalle.IdService = idService;
-            agregarDetalle(detalle);
+            if (Detalles == null)
+            {
+                Detalles = new List<DetallePostVenta>();               
+                agregarDetalle(detalle);
+            }
+            else
+            {
+                agregarDetalle(detalle);
+            }
         }
-        
+        public void crearDetallePostVenta(int idUnidad, Trabajo trabajo, long precio, string descripcion)
+        {
+            DetallePostVenta detalle = new DetallePostVenta();
+            detalle.IdUnidad = idUnidad;
+            detalle.Job = trabajo;
+            detalle.Precio = precio;
+            detalle.Descripcion = descripcion;
+            if (Detalles == null)
+            {
+                Detalles = new List<DetallePostVenta>();
+                agregarDetalle(detalle);
+            }
+            else
+            {
+                agregarDetalle(detalle);
+            }
+        }
+
     }
 }
 

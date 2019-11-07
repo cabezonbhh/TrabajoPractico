@@ -16,5 +16,7 @@ namespace AgenciaDeAutos.Data.Interfaces
         IList<Unidad> GetUnidades(int fabricante, int serie, int generacion, String nombre);
         IList<Unidad> getUnidadesFiltradas(string filtro);
         IList<Unidad> GetUnidadesPorDni(int dni);
+
+        Unidad getUnidadParaService(int id);
     }
 }
