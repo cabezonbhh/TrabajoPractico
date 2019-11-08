@@ -14,13 +14,13 @@ namespace AgenciaDeAutos.Data.Dao
     {
         private UnidadService uService = new UnidadService();
         private DBHelper helper = DBHelper.getDBHelper();
-        public IList<PostVenta> getPostVentaPorIdUnidad(int unidad, string modelo, string patente, int borrado)
+        public IList<PostVenta> getPostVentaPorIdUnidad(int unidad, int borrado)
         {
             //para el detalle--→ int idService, int idUnidad, Trabajo trabajo, long precio, string descripcion
             string descripcion;
             long precio;
             Trabajo job = new Trabajo();
-            string sqlService = "Exec getServicePorFiltro " + unidad + ", '%" + modelo + "%', '%" + patente + "%', " + borrado;
+            string sqlService = "Exec getServicePorFiltro " + unidad + ", " + borrado;
             IList<PostVenta> listaServices = new List<PostVenta>();
             DataTable tablaService = helper.ConsultaSQL(sqlService);
             PostVenta post = null;
@@ -43,9 +43,16 @@ namespace AgenciaDeAutos.Data.Dao
             return listaServices;
         }
 
-        public bool registrarNuevoService(PostVenta pv)
+      
+
+        public bool registrarNuevoServiceCliente(PostVenta pv)
         {
-            throw new NotImplementedException();
+            return helper.registrarPostVentaCliente(pv) > 0;
+        }
+
+        public bool registrarNuevoServiceInterno(PostVenta pv)
+        {
+            return helper.registrarPostVentaInterno(pv) > 0; ;
         }
 
         private PostVenta mapper(DataRow fila)

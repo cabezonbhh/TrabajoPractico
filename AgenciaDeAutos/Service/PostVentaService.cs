@@ -20,14 +20,22 @@ namespace AgenciaDeAutos.Service
 
         public IList<PostVenta> GetPostVentasPorID(int id)
         {
-            return dao.getPostVentaPorIdUnidad(id,"''","''",1);
+            return dao.getPostVentaPorIdUnidad(id,1);
         }
-
-        public bool registrarService(PostVenta service)
+        public IList<PostVenta> GetPostVentasPorIDInterno(int id)
         {
-            return dao.registrarNuevoService(service);
+            return dao.getPostVentaPorIdUnidad(id,0);
         }
 
-        
+        public bool registrarServiceInterno(PostVenta service)
+        {
+            return dao.registrarNuevoServiceInterno(service);
+        }
+        public bool registrarServiceCliente(PostVenta service)
+        {
+            return dao.registrarNuevoServiceCliente(service);
+        }
+
+
     }
 }

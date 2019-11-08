@@ -9,9 +9,10 @@ namespace AgenciaDeAutos.Interfaces
 {
     public interface IDaoPostVenta <Pv>
     {
-        IList<PostVenta> getPostVentaPorIdUnidad(int unidad, string modelo, string patente, int borrado);
+        IList<PostVenta> getPostVentaPorIdUnidad(int unidad, int borrado);
 
-        bool registrarNuevoService(PostVenta pv);
+        bool registrarNuevoServiceCliente(PostVenta pv);
+        bool registrarNuevoServiceInterno(PostVenta pv);
 
 
     }

@@ -44,10 +44,10 @@
             this.txt_precio_dolar = new System.Windows.Forms.TextBox();
             this.dgv_detalles = new System.Windows.Forms.DataGridView();
             this.col_nro_orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_precio_arg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_precio_dolar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_precio_arg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_add_detail = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             // 
             // combo_trabajos
             // 
+            this.combo_trabajos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_trabajos.FormattingEnabled = true;
             this.combo_trabajos.Location = new System.Drawing.Point(340, 23);
             this.combo_trabajos.Name = "combo_trabajos";
@@ -87,6 +88,7 @@
             this.txt_tareas_trabajos.Location = new System.Drawing.Point(340, 74);
             this.txt_tareas_trabajos.Multiline = true;
             this.txt_tareas_trabajos.Name = "txt_tareas_trabajos";
+            this.txt_tareas_trabajos.ReadOnly = true;
             this.txt_tareas_trabajos.Size = new System.Drawing.Size(342, 84);
             this.txt_tareas_trabajos.TabIndex = 2;
             // 
@@ -158,6 +160,7 @@
             this.txt_cotizacion.Size = new System.Drawing.Size(130, 20);
             this.txt_cotizacion.TabIndex = 11;
             this.txt_cotizacion.TextChanged += new System.EventHandler(this.txt_cotizacion_TextChanged);
+            this.txt_cotizacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cotizacion_KeyPress);
             // 
             // lbl_cotizacion
             // 
@@ -193,10 +196,10 @@
             this.dgv_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_detalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_nro_orden,
-            this.col_titulo,
+            this.col_tareas,
             this.col_descripcion,
-            this.col_precio_arg,
-            this.col_precio_dolar});
+            this.col_precio_dolar,
+            this.col_precio_arg});
             this.dgv_detalles.Location = new System.Drawing.Point(12, 400);
             this.dgv_detalles.Name = "dgv_detalles";
             this.dgv_detalles.ReadOnly = true;
@@ -209,11 +212,11 @@
             this.col_nro_orden.Name = "col_nro_orden";
             this.col_nro_orden.ReadOnly = true;
             // 
-            // col_titulo
+            // col_tareas
             // 
-            this.col_titulo.HeaderText = "Tareas";
-            this.col_titulo.Name = "col_titulo";
-            this.col_titulo.ReadOnly = true;
+            this.col_tareas.HeaderText = "Tareas";
+            this.col_tareas.Name = "col_tareas";
+            this.col_tareas.ReadOnly = true;
             // 
             // col_descripcion
             // 
@@ -221,21 +224,21 @@
             this.col_descripcion.Name = "col_descripcion";
             this.col_descripcion.ReadOnly = true;
             // 
-            // col_precio_arg
-            // 
-            this.col_precio_arg.HeaderText = "Precio AR$";
-            this.col_precio_arg.Name = "col_precio_arg";
-            this.col_precio_arg.ReadOnly = true;
-            // 
             // col_precio_dolar
             // 
             this.col_precio_dolar.HeaderText = "Precio US$";
             this.col_precio_dolar.Name = "col_precio_dolar";
             this.col_precio_dolar.ReadOnly = true;
             // 
+            // col_precio_arg
+            // 
+            this.col_precio_arg.HeaderText = "Precio AR$";
+            this.col_precio_arg.Name = "col_precio_arg";
+            this.col_precio_arg.ReadOnly = true;
+            // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(591, 650);
+            this.btn_cancelar.Location = new System.Drawing.Point(591, 617);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(91, 32);
             this.btn_cancelar.TabIndex = 15;
@@ -247,7 +250,7 @@
             // 
             this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_save.Location = new System.Drawing.Point(483, 650);
+            this.btn_save.Location = new System.Drawing.Point(483, 617);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(91, 32);
             this.btn_save.TabIndex = 16;
@@ -326,6 +329,7 @@
             this.txt_km_actual.Name = "txt_km_actual";
             this.txt_km_actual.Size = new System.Drawing.Size(130, 20);
             this.txt_km_actual.TabIndex = 25;
+            this.txt_km_actual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_km_actual_KeyPress);
             // 
             // lbl_km_actual
             // 
@@ -340,6 +344,7 @@
             // 
             this.txt_km_limite.Location = new System.Drawing.Point(78, 95);
             this.txt_km_limite.Name = "txt_km_limite";
+            this.txt_km_limite.ReadOnly = true;
             this.txt_km_limite.Size = new System.Drawing.Size(130, 20);
             this.txt_km_limite.TabIndex = 27;
             // 
@@ -356,7 +361,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 712);
+            this.ClientSize = new System.Drawing.Size(704, 666);
             this.Controls.Add(this.txt_km_limite);
             this.Controls.Add(this.lbl_km_limite);
             this.Controls.Add(this.txt_km_actual);
@@ -411,11 +416,6 @@
         private System.Windows.Forms.Label lbl_dolar;
         private System.Windows.Forms.TextBox txt_precio_dolar;
         private System.Windows.Forms.DataGridView dgv_detalles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nro_orden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_arg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_dolar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_add_detail;
@@ -429,5 +429,10 @@
         private System.Windows.Forms.Label lbl_km_actual;
         private System.Windows.Forms.TextBox txt_km_limite;
         private System.Windows.Forms.Label lbl_km_limite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_nro_orden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tareas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_dolar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_arg;
     }
 }

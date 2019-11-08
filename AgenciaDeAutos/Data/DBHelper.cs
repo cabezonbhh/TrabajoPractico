@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using AgenciaDeAutos.Business;
 
 namespace AgenciaDeAutos
 {
@@ -252,6 +253,124 @@ namespace AgenciaDeAutos
             }
 
             return resultado;
+        }
+
+        public int registrarPostVentaCliente(PostVenta pv)
+        {
+            int afectadas = 0;
+
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction t = null;
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+               
+                t = cnn.BeginTransaction();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "registrarServiceCliente";
+                cmd.Parameters.AddWithValue("@unidad",pv.unidad.CodUnidad);
+                cmd.Parameters.AddWithValue("@km", pv.Kmlimite);
+                cmd.Transaction = t;
+                afectadas = cmd.ExecuteNonQuery();
+                //foreach (DetallePostVenta dpv in pv.Detalles)
+                //{
+                // ARROJA SQL EXCEPTION → EL PROCEDIMIENTO TIENE DEMASIADOS ARGUMENTOS
+                //    cmd.CommandText = "registrarDetalleServiceCliente";
+                //    cmd.Parameters.AddWithValue("@unidad", pv.unidad.CodUnidad);
+                //    cmd.Parameters.AddWithValue("@trabajo", dpv.Job.IdTrabajo);
+                //    cmd.Parameters.AddWithValue("@precio", dpv.Precio);
+                //    cmd.Parameters.AddWithValue("@descripcion", dpv.Descripcion);
+                //    afectadas += cmd.ExecuteNonQuery();
+                //}
+                cmd.CommandType = CommandType.Text;
+                foreach (DetallePostVenta dpv in pv.Detalles)
+                {               
+                    cmd.CommandText = "registrarDetalleServiceCliente " + pv.unidad.CodUnidad+", " + dpv.Job.IdTrabajo + ", " + dpv.Precio + ", '" + dpv.Descripcion +"'";
+                    cmd.Transaction = t;
+                    afectadas += cmd.ExecuteNonQuery();
+                }
+                
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    afectadas = 0;
+                }
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+
+            return afectadas;
+        }
+        public int registrarPostVentaInterno(PostVenta pv)
+        {
+            int afectadas = 0;
+
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction t = null;
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+
+                t = cnn.BeginTransaction();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "registrarService";
+                cmd.Parameters.AddWithValue("@unidad", pv.unidad.CodUnidad);
+                cmd.Parameters.AddWithValue("@km", pv.Kmlimite);
+                cmd.Transaction = t;
+                afectadas = cmd.ExecuteNonQuery();
+                //foreach (DetallePostVenta dpv in pv.Detalles)
+                //{
+                //    cmd.CommandText = "registrarDetalleServiceCliente";
+                //    cmd.Parameters.AddWithValue("@unidad", pv.unidad.CodUnidad);
+                //    cmd.Parameters.AddWithValue("@trabajo", dpv.Job.IdTrabajo);
+                //    cmd.Parameters.AddWithValue("@precio", dpv.Precio);
+                //    cmd.Parameters.AddWithValue("@descripcion", dpv.Descripcion);
+                //    afectadas += cmd.ExecuteNonQuery();
+                //}
+                cmd.CommandType = CommandType.Text;
+                foreach (DetallePostVenta dpv in pv.Detalles)
+                {
+                    cmd.CommandText = "registrarDetalleService " + pv.unidad.CodUnidad + ", " + dpv.Job.IdTrabajo + ", " + dpv.Precio + ", '" + dpv.Descripcion + "'";
+                    cmd.Transaction = t;
+                    afectadas += cmd.ExecuteNonQuery();
+                }
+
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    afectadas = 0;
+                }
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+
+            return afectadas;
         }
     }
 }

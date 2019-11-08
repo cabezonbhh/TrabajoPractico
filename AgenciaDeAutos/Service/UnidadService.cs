@@ -37,7 +37,11 @@ namespace AgenciaDeAutos.Service
         {
             return dao.GetUnidadesPorDni(dni);
         }
-             
+        public IList<Unidad> GetUnidadesPorPatente(string patente)
+        {
+            return dao.GetUnidadesPorPatente(patente);
+        }
+
         public bool nuevaUnidad(int fabricante, int serie, int generacion, string nombre, long precioVenta, long precioCompra, int año, int km, int potencia, string descripcion,string patente)
         {
             Unidad unidad = new Unidad();

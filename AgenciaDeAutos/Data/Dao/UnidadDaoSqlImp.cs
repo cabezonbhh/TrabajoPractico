@@ -121,9 +121,28 @@ namespace AgenciaDeAutos.Data.Dao
             DataTable tabla = helper.ConsultaSQL("getUnidadParaService " + id);
             foreach (DataRow fila in tabla.Rows)
             {
-                unidad = mapper(fila);
+                unidad.CodUnidad = Convert.ToInt32(fila["codUnidad"]);
+                unidad.NombreFabricante = fila["NombreFabricante"].ToString();
+                unidad.NombreGeneracion = fila["NombreGeneracion"].ToString();
+                unidad.Nombre = fila["nombre"].ToString();              
+                unidad.AñoModelo = Convert.ToInt32(fila["añoModelo"]);            
+                unidad.Patente = fila["patente"].ToString();
+                unidad.Descripcion = fila["kmLimite"].ToString();           
             }
             return unidad;          
+        }
+
+        public IList<Unidad> GetUnidadesPorPatente(string patente)
+        {
+            string cadena = "'%" + patente + "%'";
+            string sql = "exec getUnidadPorPatente " + cadena;
+            DataTable tabla = helper.ConsultaSQL(sql);
+            IList<Unidad> unidades = new List<Unidad>();
+            foreach (DataRow fila in tabla.Rows)
+            {
+                unidades.Add(mapper(fila));
+            }
+            return unidades;
         }
     }
 }

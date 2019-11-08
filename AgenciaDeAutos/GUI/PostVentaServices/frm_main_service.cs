@@ -18,12 +18,14 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
         private ClienteService cService = null;
         private PostVentaService pvService = null;
         private int unidadSeleccionada;
+        private Support.Support support = null;
         public frm_main_service()
         {
             InitializeComponent();
             uService = new UnidadService();
             cService = new ClienteService();
             pvService = new PostVentaService();
+            support = Support.Support.GetSupport();
         }
 
         private void limpiarCampos()
@@ -85,12 +87,10 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
                 unidadSeleccionada = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells[0].Value.ToString());
                 dgv_post_service.Rows.Clear();
                 llenarGrillaServices(unidadSeleccionada);
-                btn_new_service.Enabled = true;
             }
             else
             {
                 MessageBox.Show("No selecciono ninguna unidad","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                btn_new_service.Enabled = false;
             }
         }
 
@@ -116,11 +116,144 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
             else
             {
                 unidadSeleccionada = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells[0].Value.ToString());
-                Form aux = new frm_new_service(unidadSeleccionada);
+                Form aux = new frm_new_service(unidadSeleccionada,0);
                 aux.Show();
             }
         }
 
-       
+        private void txt_DNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender,e);
+        }
+
+        private void txt_modelo_TextChanged(object sender, EventArgs e)
+        {
+            dgv_pv_interno.Rows.Clear();
+            dgv_unidadesInternas.Rows.Clear();
+            txt_patente.Clear();
+            txt_unidad.Clear();
+            if (!String.IsNullOrWhiteSpace(txt_modelo.Text))
+            {
+                IList<Unidad> stockUnidades = uService.getUnidadesFiltradas(txt_modelo.Text);
+                dgv_unidadesInternas.Rows.Clear();
+                foreach (Unidad unidad in stockUnidades)
+                {
+                    dgv_unidadesInternas.Rows.Add
+                        (
+                            new object[]
+                            {
+                            unidad.CodUnidad.ToString(), unidad.NombreFabricante, unidad.Nombre, unidad.NombreGeneracion,
+                            unidad.AñoModelo.ToString(),unidad.Patente
+                            }
+                        );
+
+                }
+            }
+            else
+                dgv_unidadesInternas.Rows.Clear();
+        }
+   
+        private void txt_modelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloLetrasNumeros(sender,e);
+        }
+
+        private void txt_patente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.noEspaciosBlancos(sender,e);
+        }
+
+        private void txt_unidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender,e);
+        }
+
+        private void txt_unidad_TextChanged(object sender, EventArgs e)
+        {
+            txt_patente.Clear();
+            txt_modelo.Clear();
+            dgv_pv_interno.Rows.Clear();
+            dgv_unidadesInternas.Rows.Clear();
+            if (!String.IsNullOrWhiteSpace(txt_unidad.Text))
+            {
+                Unidad unidad = uService.getUnidadPorId(Convert.ToInt32(txt_unidad.Text));
+                dgv_unidadesInternas.Rows.Clear();
+                dgv_unidadesInternas.Rows.Add
+                        (
+                            new object[]
+                            {
+                            unidad.CodUnidad.ToString(), unidad.NombreFabricante, unidad.Nombre, unidad.NombreGeneracion,
+                            unidad.AñoModelo.ToString(),unidad.Patente
+                            }
+                        );
+            }
+            else
+                dgv_unidadesInternas.Rows.Clear();
+        }
+
+        private void txt_patente_TextChanged(object sender, EventArgs e)
+        {
+            dgv_pv_interno.Rows.Clear();
+            dgv_unidadesInternas.Rows.Clear();
+            txt_unidad.Clear();
+            txt_modelo.Clear();
+            if (!String.IsNullOrWhiteSpace(txt_patente.Text))
+            {
+                IList<Unidad> stockUnidades = uService.GetUnidadesPorPatente(txt_patente.Text);
+                dgv_unidadesInternas.Rows.Clear();
+                foreach (Unidad unidad in stockUnidades)
+                {
+                    dgv_unidadesInternas.Rows.Add
+                        (
+                            new object[]
+                            {
+                            unidad.CodUnidad.ToString(), unidad.NombreFabricante, unidad.Nombre, unidad.NombreGeneracion,
+                            unidad.AñoModelo.ToString(),unidad.Patente
+                            }
+                        );
+
+                }
+            }
+            else
+                dgv_unidadesInternas.Rows.Clear();
+        }
+
+        private void btn_service_interno_Click(object sender, EventArgs e)
+        {
+            if (dgv_unidadesInternas.CurrentRow != null)
+            {
+                unidadSeleccionada = Convert.ToInt32(dgv_unidadesInternas.CurrentRow.Cells["col_numero_unidad"].Value.ToString());
+                dgv_pv_interno.Rows.Clear();
+                llenarGrillaServicesInterna(unidadSeleccionada);
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ninguna unidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btn_new_service.Enabled = false;
+            }
+        }
+        private void llenarGrillaServicesInterna(int id)
+        {
+            IList<PostVenta> lista = pvService.GetPostVentasPorIDInterno(id);
+            foreach (PostVenta pv in lista)
+            {
+                dgv_pv_interno.Rows.Add(new Object[]  {   pv.IdService.ToString(),
+                                                            pv.FechaService.ToShortDateString(),
+                                                            pv.getPrecioTotal().ToString(),
+                                                            pv.Kmlimite.ToString()
+                                                        });
+
+            }
+        }
+
+        private void frm_main_service_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
