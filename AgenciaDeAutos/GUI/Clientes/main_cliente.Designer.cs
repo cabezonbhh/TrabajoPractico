@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_cliente));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
@@ -134,9 +135,10 @@
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.dgv_clientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "main_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "main_cliente";
+            this.Text = "Gestion de clientes";
             this.Load += new System.EventHandler(this.main_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);

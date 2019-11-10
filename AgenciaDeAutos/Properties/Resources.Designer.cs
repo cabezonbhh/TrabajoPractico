@@ -93,6 +93,16 @@ namespace AgenciaDeAutos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_retro_car_48px_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_retro_car_48px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap NoImage {
             get {
                 object obj = ResourceManager.GetObject("NoImage", resourceCulture);

@@ -167,5 +167,19 @@ namespace AgenciaDeAutos.GUI.Otros
                 btn_delete_uni.Enabled = false;
             }
         }
+
+        private void btn_edit_uni_Click(object sender, EventArgs e)
+        {
+            if(dgv_stock_unidades.CurrentRow == null)
+            {
+                MessageBox.Show("No se selecciono ninguna unidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Unidad seleccionada = uService.getUnidadPorId(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells[0].Value.ToString()));
+                Form aux = new frm_edit_unidad(seleccionada);
+                aux.ShowDialog();
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_new_service));
             this.lbl_trabajo = new System.Windows.Forms.Label();
             this.combo_trabajos = new System.Windows.Forms.ComboBox();
             this.txt_tareas_trabajos = new System.Windows.Forms.TextBox();
@@ -61,7 +62,9 @@
             this.lbl_km_actual = new System.Windows.Forms.Label();
             this.txt_km_limite = new System.Windows.Forms.TextBox();
             this.lbl_km_limite = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_trabajo
@@ -273,7 +276,7 @@
             this.lbl_vehiculo.AutoSize = true;
             this.lbl_vehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_vehiculo.ForeColor = System.Drawing.Color.Blue;
-            this.lbl_vehiculo.Location = new System.Drawing.Point(12, 24);
+            this.lbl_vehiculo.Location = new System.Drawing.Point(75, 23);
             this.lbl_vehiculo.Name = "lbl_vehiculo";
             this.lbl_vehiculo.Size = new System.Drawing.Size(78, 15);
             this.lbl_vehiculo.TabIndex = 18;
@@ -325,7 +328,7 @@
             // 
             // txt_km_actual
             // 
-            this.txt_km_actual.Location = new System.Drawing.Point(78, 57);
+            this.txt_km_actual.Location = new System.Drawing.Point(78, 74);
             this.txt_km_actual.Name = "txt_km_actual";
             this.txt_km_actual.Size = new System.Drawing.Size(130, 20);
             this.txt_km_actual.TabIndex = 25;
@@ -334,7 +337,7 @@
             // lbl_km_actual
             // 
             this.lbl_km_actual.AutoSize = true;
-            this.lbl_km_actual.Location = new System.Drawing.Point(15, 60);
+            this.lbl_km_actual.Location = new System.Drawing.Point(15, 77);
             this.lbl_km_actual.Name = "lbl_km_actual";
             this.lbl_km_actual.Size = new System.Drawing.Size(57, 13);
             this.lbl_km_actual.TabIndex = 24;
@@ -342,7 +345,7 @@
             // 
             // txt_km_limite
             // 
-            this.txt_km_limite.Location = new System.Drawing.Point(78, 95);
+            this.txt_km_limite.Location = new System.Drawing.Point(78, 112);
             this.txt_km_limite.Name = "txt_km_limite";
             this.txt_km_limite.ReadOnly = true;
             this.txt_km_limite.Size = new System.Drawing.Size(130, 20);
@@ -351,17 +354,28 @@
             // lbl_km_limite
             // 
             this.lbl_km_limite.AutoSize = true;
-            this.lbl_km_limite.Location = new System.Drawing.Point(21, 98);
+            this.lbl_km_limite.Location = new System.Drawing.Point(21, 115);
             this.lbl_km_limite.Name = "lbl_km_limite";
             this.lbl_km_limite.Size = new System.Drawing.Size(51, 13);
             this.lbl_km_limite.TabIndex = 26;
             this.lbl_km_limite.Text = "Km limite:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::AgenciaDeAutos.Properties.Resources.icons8_retro_car_48px_1;
+            this.pictureBox1.InitialImage = global::AgenciaDeAutos.Properties.Resources.icons8_retro_car_48px_1;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_new_service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 666);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_km_limite);
             this.Controls.Add(this.lbl_km_limite);
             this.Controls.Add(this.txt_km_actual);
@@ -390,10 +404,12 @@
             this.Controls.Add(this.txt_tareas_trabajos);
             this.Controls.Add(this.combo_trabajos);
             this.Controls.Add(this.lbl_trabajo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_new_service";
-            this.Text = "frm_detalles_service";
+            this.Text = "Nuevo service";
             this.Load += new System.EventHandler(this.frm_new_service_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalles)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,5 +450,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_dolar;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_precio_arg;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

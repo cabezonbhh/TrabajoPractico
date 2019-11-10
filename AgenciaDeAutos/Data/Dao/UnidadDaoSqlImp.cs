@@ -144,5 +144,12 @@ namespace AgenciaDeAutos.Data.Dao
             }
             return unidades;
         }
+
+        public bool actualizarUnidad(Unidad unidad)
+        {
+            unidad.Patente = "'"+unidad.Patente.ToString()+"'";
+            unidad.Descripcion =  "'" + unidad.Descripcion.ToString() + "'";
+            return helper.actualizarUnidad(unidad);
+        }
     }
 }

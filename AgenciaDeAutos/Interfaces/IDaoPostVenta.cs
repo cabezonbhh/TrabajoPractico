@@ -14,6 +14,6 @@ namespace AgenciaDeAutos.Interfaces
         bool registrarNuevoServiceCliente(PostVenta pv);
         bool registrarNuevoServiceInterno(PostVenta pv);
 
-
+        PostVenta getPostVentaMasDetalle(int service, int unidad);
     }
 }

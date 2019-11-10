@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_nuevo_cliente));
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.txt_mobile = new System.Windows.Forms.TextBox();
@@ -66,6 +67,7 @@
             // 
             // btn_exit
             // 
+            this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_exit.Location = new System.Drawing.Point(372, 355);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
@@ -307,9 +309,10 @@
             this.Controls.Add(this.lbl_address);
             this.Controls.Add(this.lbl_lastName);
             this.Controls.Add(this.lbl_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_nuevo_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_nuevo_cliente";
+            this.Text = "Alta cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

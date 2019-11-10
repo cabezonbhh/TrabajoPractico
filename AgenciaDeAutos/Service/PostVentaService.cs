@@ -36,6 +36,9 @@ namespace AgenciaDeAutos.Service
             return dao.registrarNuevoServiceCliente(service);
         }
 
-
+        public PostVenta getPostVentaMasDetalle(int service, int unidad)
+        {
+            return dao.getPostVentaMasDetalle(service,unidad);
+        }
     }
 }

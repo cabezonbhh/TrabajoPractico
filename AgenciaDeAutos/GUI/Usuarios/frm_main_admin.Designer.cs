@@ -263,6 +263,7 @@
             this.btn_edit_uni.TabIndex = 36;
             this.btn_edit_uni.Text = "Editar unidad";
             this.btn_edit_uni.UseVisualStyleBackColor = true;
+            this.btn_edit_uni.Click += new System.EventHandler(this.btn_edit_uni_Click);
             // 
             // btn_delete_uni
             // 

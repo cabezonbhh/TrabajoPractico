@@ -43,7 +43,7 @@ namespace AgenciaDeAutos.Data.Dao
             return listaServices;
         }
 
-      
+       
 
         public bool registrarNuevoServiceCliente(PostVenta pv)
         {
@@ -65,6 +65,31 @@ namespace AgenciaDeAutos.Data.Dao
             return service;
         }
 
+        public PostVenta getPostVentaMasDetalle(int service, int unidad)
+        {
+            string descripcion;
+            long precio;
+            Trabajo job = new Trabajo();
+            string sqlService = "Exec getServiceMasDetalleService " + service + ", " + unidad;
+            IList<PostVenta> listaServices = new List<PostVenta>();
+            DataTable tablaService = helper.ConsultaSQL(sqlService);
+            PostVenta post = null;
 
+            foreach (DataRow fila in tablaService.Rows)
+            {
+                post = mapper(fila);
+                DataTable tablaDetalle = helper.ConsultaSQL("Exec getDetallesPorService " + post.IdService + ", " + unidad);
+                foreach (DataRow filaDetalle in tablaDetalle.Rows)
+                {
+                    job.IdTrabajo = Convert.ToInt32(filaDetalle["idTrabajo"].ToString());
+                    job.Titulo = filaDetalle["nombre"].ToString();
+                    job.Descripcion = filaDetalle["descripcion"].ToString();
+                    precio = Convert.ToInt64(filaDetalle["precios"].ToString());
+                    descripcion = filaDetalle["detalleDescripcion"].ToString();
+                    post.crearDetallePostVenta(post.IdService, post.unidad.CodUnidad, job, precio, descripcion);
+                }
+            }
+            return post;
+        }
     }
 }

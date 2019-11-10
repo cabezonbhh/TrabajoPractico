@@ -97,6 +97,7 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
         private void dgv_post_service_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_more_detail.Enabled = true;
+
         }
 
         private void btn_more_detail_Click(object sender, EventArgs e)
@@ -104,6 +105,11 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
             if (dgv_post_service.CurrentRow == null)
             {
                 MessageBox.Show("No ha seleccionado ningun service");
+            }
+            else
+            {
+                int pv = Convert.ToInt32(dgv_post_service.CurrentRow.Cells["id_service"].Value.ToString());
+                Form aux = new frm_detalle_pv(pv,unidadSeleccionada);
             }
         }
 
@@ -254,6 +260,37 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
         private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_nuevo_service_Click(object sender, EventArgs e)
+        {
+            if (dgv_unidadesInternas.CurrentRow == null)
+            {
+                MessageBox.Show("No ha seleccionado ninguna unidad", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                unidadSeleccionada = Convert.ToInt32(dgv_unidadesInternas.CurrentRow.Cells[0].Value.ToString());
+                Form aux = new frm_new_service(unidadSeleccionada, 1);
+                aux.Show();
+            }
+        }
+
+        private void btn_mas_detalles_Click(object sender, EventArgs e)
+        {
+            Form aux = new frm_detalle_pv(Convert.ToInt32(dgv_pv_interno.CurrentRow.Cells[0].Value.ToString()),unidadSeleccionada);
+            aux.ShowDialog();
+        }
+
+        private void dgv_pv_interno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_mas_detalles.Enabled = true;
+        }
+
+        private void dgv_pv_interno_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form aux = new frm_detalle_pv(Convert.ToInt32(dgv_pv_interno.CurrentRow.Cells[0].Value.ToString()), unidadSeleccionada);
+            aux.ShowDialog();
         }
     }
 }

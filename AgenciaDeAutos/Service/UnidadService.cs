@@ -78,5 +78,9 @@ namespace AgenciaDeAutos.Service
         {
             return dao.getUnidadParaService(id);
         }
+        public bool actualizarUnidad(Unidad unidad)
+        {
+            return dao.actualizarUnidad(unidad);
+        }
     }
 }

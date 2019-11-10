@@ -253,6 +253,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
             this.pictureBox1.Location = new System.Drawing.Point(306, 21);
             this.pictureBox1.Name = "pictureBox1";

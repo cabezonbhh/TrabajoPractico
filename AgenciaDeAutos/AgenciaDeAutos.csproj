@@ -68,6 +68,12 @@
     <Compile Include="Data\Dao\UsuarioDaoSqlImp.cs" />
     <Compile Include="Data\Dao\VentaDaoSqlImp.cs" />
     <Compile Include="Data\DBHelper.cs" />
+    <Compile Include="GUI\PostVentaServices\frm_detalle_pv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\PostVentaServices\frm_detalle_pv.Designer.cs">
+      <DependentUpon>frm_detalle_pv.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\PostVentaServices\frm_new_service.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="GUI\Otros\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PostVentaServices\frm_detalle_pv.resx">
+      <DependentUpon>frm_detalle_pv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\PostVentaServices\frm_new_service.resx">
       <DependentUpon>frm_new_service.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +285,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_add_shopping_cart_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_retro_car_48px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

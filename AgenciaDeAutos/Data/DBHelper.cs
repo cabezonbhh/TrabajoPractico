@@ -372,5 +372,54 @@ namespace AgenciaDeAutos
 
             return afectadas;
         }
+
+        public bool actualizarUnidad(Unidad unidad)
+        {
+            int afectadas = 0;
+
+            SqlConnection cnn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction t = null;
+
+
+            try
+            {
+                cnn.ConnectionString = string_conexion;
+                cnn.Open();
+
+                t = cnn.BeginTransaction();
+
+                cmd.Connection = cnn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "actualizarUnidad";
+                cmd.Parameters.AddWithValue("@unidad",unidad.CodUnidad);
+                cmd.Parameters.AddWithValue("@año",unidad.AñoModelo);
+                cmd.Parameters.AddWithValue("@km",unidad.Kilometraje);
+                cmd.Parameters.AddWithValue("@patente",unidad.Patente.ToString());
+                cmd.Parameters.AddWithValue("@precioVenta",unidad.PrecioVenta);
+                cmd.Parameters.AddWithValue("@precioCompra",unidad.PrecioCompra);
+                cmd.Parameters.AddWithValue("@potencia",unidad.Potencia);
+                cmd.Parameters.AddWithValue("@descripcion",unidad.Descripcion.ToString());
+                cmd.Transaction = t;
+                afectadas = cmd.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch (Exception ex)
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    afectadas = 0;
+                }
+                MessageBox.Show("EXPLOTO EL HELPER", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
+            }
+            finally
+            {
+                this.CloseConnection(cnn);
+            }
+
+            return afectadas > 0;
+        }
     }
 }

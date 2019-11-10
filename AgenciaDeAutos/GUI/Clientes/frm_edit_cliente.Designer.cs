@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_edit_cliente));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
@@ -249,9 +250,10 @@
             this.Controls.Add(this.lbl_address);
             this.Controls.Add(this.lbl_lastName);
             this.Controls.Add(this.lbl_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_edit_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_edit_cliente";
+            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frm_edit_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
