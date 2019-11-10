@@ -28,7 +28,9 @@ namespace AgenciaDeAutos.GUI.Unidades
         }
         private void frm_new_unidad_Load(object sender, EventArgs e)
         {
-            support.cargarCombo(combo_fab,"Fabricantes","idFabricante","nombre");
+            support.cargarCombo(combo_fab, "Fabricantes", "idFabricante", "nombre");
+            combo_fab.SelectedIndex = -1;
+            txt_km.Text = 0.ToString();
             txt_patente.Enabled = false;
         }
 
@@ -134,7 +136,11 @@ namespace AgenciaDeAutos.GUI.Unidades
                     flag = service.nuevaUnidad(fabricante, serie, generacion, nombre, precioVenta, precioCompra, año, km, potencia, descripcion);
                 }
                 if (flag == true)
+                {
                     MessageBox.Show("Unidad registrada con exito", "Registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //limpiarCampos();
+                }
+                   
                 else
                     MessageBox.Show("Hubo un problema al registrar la unidad, revise los datos e intente nuevamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -148,5 +154,28 @@ namespace AgenciaDeAutos.GUI.Unidades
             else
                 txt_patente.Enabled = false;
         }
+
+        private void limpiarCampos()
+        {
+            combo_fab.SelectedIndex = -1;
+            combo_gen.SelectedIndex = -1;
+            combo_serie.SelectedIndex = -1;
+            combo_modelo.SelectedIndex = -1;
+            txt_año_modelo.Clear();
+            txt_descripcion.Clear();
+            txt_km.Clear();
+            txt_patente.Clear();
+            check_edit.Checked = false;
+            txt_potencia_cv.Clear();
+            txt_precio_compra.Clear();
+            txt_precio_venta.Clear();
+        }
+        private void combo_fab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            combo_serie.SelectedIndex = -1;
+            combo_gen.SelectedIndex = -1;
+            combo_modelo.SelectedIndex = -1;
+        }
+
     }
 }

@@ -90,3 +90,7 @@ D:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.P
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_new_service.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_main_service.resources
 T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.GUI.PostVentaServices.frm_detalle_pv.resources
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\Microsoft.ReportViewer.Common.dll
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+T:\Programacion\C#\TrabajoPractico\AgenciaDeAutos\obj\Debug\AgenciaDeAutos.csproj.CopyComplete

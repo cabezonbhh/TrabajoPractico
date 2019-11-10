@@ -467,6 +467,7 @@ namespace AgenciaDeAutos.Support
             combo.DataSource = service.getFabricante();
             combo.DisplayMember = "Nombre";
             combo.ValueMember = "IdFabricante";
+            combo.SelectedIndex = -1;
         }
 
         public void cargarComboSerie(ComboBox combo, int fabricante)
@@ -475,6 +476,7 @@ namespace AgenciaDeAutos.Support
             combo.DataSource = service.getSeries(fabricante);
             combo.DisplayMember = "Nombre";
             combo.ValueMember = "IdSerie";
+            combo.SelectedIndex = -1;
         }
         public void cargarComboGeneracion(ComboBox combo, int serie)
         {
@@ -482,12 +484,14 @@ namespace AgenciaDeAutos.Support
             combo.DataSource = service.getGeneraciones(serie);
             combo.DisplayMember = "Nombre";
             combo.ValueMember = "IdGeneracion";
+            combo.SelectedIndex = -1;
         }
         public void cargarComboModelo(ComboBox combo, int fabricante, int serie, int generacion)
         {
             ModeloService service = new ModeloService();
             combo.DataSource = service.getModelos(fabricante,serie,generacion);
             combo.DisplayMember = "Nombre";
+            combo.SelectedIndex = -1;
         }
     }
 }

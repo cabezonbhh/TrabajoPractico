@@ -60,11 +60,13 @@
             // 
             // combo_fab
             // 
+            this.combo_fab.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_fab.FormattingEnabled = true;
             this.combo_fab.Location = new System.Drawing.Point(79, 27);
             this.combo_fab.Name = "combo_fab";
             this.combo_fab.Size = new System.Drawing.Size(162, 21);
             this.combo_fab.TabIndex = 0;
+            this.combo_fab.SelectedIndexChanged += new System.EventHandler(this.combo_fab_SelectedIndexChanged);
             this.combo_fab.SelectionChangeCommitted += new System.EventHandler(this.combo_fab_SelectionChangeCommitted);
             // 
             // label1
@@ -87,11 +89,12 @@
             // 
             // combo_serie
             // 
+            this.combo_serie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_serie.FormattingEnabled = true;
             this.combo_serie.Location = new System.Drawing.Point(79, 73);
             this.combo_serie.Name = "combo_serie";
             this.combo_serie.Size = new System.Drawing.Size(162, 21);
-            this.combo_serie.TabIndex = 2;
+            this.combo_serie.TabIndex = 1;
             this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
             // 
             // label3
@@ -105,11 +108,12 @@
             // 
             // combo_gen
             // 
+            this.combo_gen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_gen.FormattingEnabled = true;
             this.combo_gen.Location = new System.Drawing.Point(79, 119);
             this.combo_gen.Name = "combo_gen";
             this.combo_gen.Size = new System.Drawing.Size(162, 21);
-            this.combo_gen.TabIndex = 4;
+            this.combo_gen.TabIndex = 2;
             this.combo_gen.SelectionChangeCommitted += new System.EventHandler(this.combo_gen_SelectionChangeCommitted);
             // 
             // label4
@@ -123,11 +127,12 @@
             // 
             // combo_modelo
             // 
+            this.combo_modelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_modelo.FormattingEnabled = true;
             this.combo_modelo.Location = new System.Drawing.Point(79, 164);
             this.combo_modelo.Name = "combo_modelo";
             this.combo_modelo.Size = new System.Drawing.Size(162, 21);
-            this.combo_modelo.TabIndex = 7;
+            this.combo_modelo.TabIndex = 3;
             // 
             // lbl_precio_venta
             // 
@@ -144,7 +149,7 @@
             this.txt_precio_venta.MaxLength = 18;
             this.txt_precio_venta.Name = "txt_precio_venta";
             this.txt_precio_venta.Size = new System.Drawing.Size(104, 20);
-            this.txt_precio_venta.TabIndex = 9;
+            this.txt_precio_venta.TabIndex = 5;
             // 
             // lbl_año
             // 
@@ -188,7 +193,7 @@
             this.txt_año_modelo.MaxLength = 4;
             this.txt_año_modelo.Name = "txt_año_modelo";
             this.txt_año_modelo.Size = new System.Drawing.Size(60, 20);
-            this.txt_año_modelo.TabIndex = 14;
+            this.txt_año_modelo.TabIndex = 7;
             // 
             // txt_km
             // 
@@ -196,7 +201,7 @@
             this.txt_km.MaxLength = 10;
             this.txt_km.Name = "txt_km";
             this.txt_km.Size = new System.Drawing.Size(104, 20);
-            this.txt_km.TabIndex = 15;
+            this.txt_km.TabIndex = 8;
             // 
             // txt_potencia_hp
             // 
@@ -214,14 +219,14 @@
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(383, 140);
-            this.txt_descripcion.TabIndex = 17;
+            this.txt_descripcion.TabIndex = 10;
             // 
             // btn_register
             // 
             this.btn_register.Location = new System.Drawing.Point(279, 484);
             this.btn_register.Name = "btn_register";
             this.btn_register.Size = new System.Drawing.Size(75, 23);
-            this.btn_register.TabIndex = 18;
+            this.btn_register.TabIndex = 11;
             this.btn_register.Text = "Registrar";
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
@@ -231,7 +236,7 @@
             this.btn_exit.Location = new System.Drawing.Point(387, 484);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
-            this.btn_exit.TabIndex = 19;
+            this.btn_exit.TabIndex = 12;
             this.btn_exit.Text = "Salir";
             this.btn_exit.UseVisualStyleBackColor = true;
             // 
@@ -250,7 +255,7 @@
             this.txt_potencia_cv.MaxLength = 5;
             this.txt_potencia_cv.Name = "txt_potencia_cv";
             this.txt_potencia_cv.Size = new System.Drawing.Size(60, 20);
-            this.txt_potencia_cv.TabIndex = 21;
+            this.txt_potencia_cv.TabIndex = 9;
             this.txt_potencia_cv.TextChanged += new System.EventHandler(this.txt_potencia_cv_TextChanged);
             // 
             // lbl_cv
@@ -268,7 +273,7 @@
             this.txt_patente.MaxLength = 7;
             this.txt_patente.Name = "txt_patente";
             this.txt_patente.Size = new System.Drawing.Size(104, 20);
-            this.txt_patente.TabIndex = 23;
+            this.txt_patente.TabIndex = 4;
             // 
             // lbl_patente
             // 
@@ -296,7 +301,7 @@
             this.txt_precio_compra.MaxLength = 18;
             this.txt_precio_compra.Name = "txt_precio_compra";
             this.txt_precio_compra.Size = new System.Drawing.Size(104, 20);
-            this.txt_precio_compra.TabIndex = 27;
+            this.txt_precio_compra.TabIndex = 6;
             // 
             // lbl_precio_compra
             // 
