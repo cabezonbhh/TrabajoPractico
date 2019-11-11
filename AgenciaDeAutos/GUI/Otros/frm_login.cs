@@ -34,21 +34,8 @@ namespace AgenciaDeAutos
                     Form main = new frm_main_admin(txtUser.Text);
                     main.ShowDialog();
                 }
-                else
-                {
-                    if (service.ValidarUsuario(txtUser.Text, txtPass.Text).Perfil.IdPerfil == 1)
-                    {
-                        Form main = new frm_main_gerencial();
-                        main.ShowDialog();
-                    }
-                    else
-                    {
-                        Form main = new frm_main_normal();
-                        main.ShowDialog();
-                    }
-                        
-                }
-                
+ 
+               
             }
             else
             {

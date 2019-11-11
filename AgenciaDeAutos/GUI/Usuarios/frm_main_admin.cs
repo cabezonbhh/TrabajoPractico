@@ -1,5 +1,6 @@
 ﻿using AgenciaDeAutos.Business;
 using AgenciaDeAutos.GUI.Clientes;
+using AgenciaDeAutos.GUI.Reports;
 using AgenciaDeAutos.GUI.Unidades;
 using AgenciaDeAutos.GUI.Usuarios;
 using AgenciaDeAutos.GUI.Vehiculos;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -116,8 +118,7 @@ namespace AgenciaDeAutos.GUI.Otros
 
         private void btn_gerencial_Click(object sender, EventArgs e)
         {
-            Form main2 = new frm_main_gerencial();
-            main2.ShowDialog();           
+                 
         }
 
         private void btn_cliente_Click(object sender, EventArgs e)
@@ -180,6 +181,16 @@ namespace AgenciaDeAutos.GUI.Otros
                 Form aux = new frm_edit_unidad(seleccionada);
                 aux.ShowDialog();
             }
+        }
+
+        private void btn_entregas_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"T:\Programacion\C#\TrabajoPractico\Otros\entregas.pbix");
+        }
+
+        private void btn_gerencial_rep_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"T:\Programacion\C#\TrabajoPractico\Otros\gerencia.pbix");
         }
     }
 }

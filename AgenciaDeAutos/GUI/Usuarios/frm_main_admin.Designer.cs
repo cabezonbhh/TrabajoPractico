@@ -39,7 +39,6 @@
             this.btn_new_user = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_main = new System.Windows.Forms.Button();
-            this.btn_gerencial = new System.Windows.Forms.Button();
             this.btn_cliente = new System.Windows.Forms.Button();
             this.pic_user_on = new System.Windows.Forms.PictureBox();
             this.btn_unid = new System.Windows.Forms.Button();
@@ -53,6 +52,8 @@
             this.btn_delete_uni = new System.Windows.Forms.Button();
             this.txt_filter_name = new System.Windows.Forms.TextBox();
             this.lbl_name_uni = new System.Windows.Forms.Label();
+            this.btn_entregas = new System.Windows.Forms.Button();
+            this.btn_gerencial_rep = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user_on)).BeginInit();
@@ -158,23 +159,13 @@
             // 
             // btn_main
             // 
-            this.btn_main.Location = new System.Drawing.Point(413, 21);
+            this.btn_main.Location = new System.Drawing.Point(516, 21);
             this.btn_main.Name = "btn_main";
             this.btn_main.Size = new System.Drawing.Size(75, 40);
             this.btn_main.TabIndex = 6;
             this.btn_main.Text = "Menu Principal";
             this.btn_main.UseVisualStyleBackColor = true;
             this.btn_main.Click += new System.EventHandler(this.btn_main_Click);
-            // 
-            // btn_gerencial
-            // 
-            this.btn_gerencial.Location = new System.Drawing.Point(505, 21);
-            this.btn_gerencial.Name = "btn_gerencial";
-            this.btn_gerencial.Size = new System.Drawing.Size(75, 40);
-            this.btn_gerencial.TabIndex = 7;
-            this.btn_gerencial.Text = "Menu gerencial";
-            this.btn_gerencial.UseVisualStyleBackColor = true;
-            this.btn_gerencial.Click += new System.EventHandler(this.btn_gerencial_Click);
             // 
             // btn_cliente
             // 
@@ -291,12 +282,34 @@
             this.lbl_name_uni.TabIndex = 39;
             this.lbl_name_uni.Text = "Modelo";
             // 
+            // btn_entregas
+            // 
+            this.btn_entregas.Location = new System.Drawing.Point(354, 22);
+            this.btn_entregas.Name = "btn_entregas";
+            this.btn_entregas.Size = new System.Drawing.Size(75, 40);
+            this.btn_entregas.TabIndex = 40;
+            this.btn_entregas.Text = "Unidades a entregar";
+            this.btn_entregas.UseVisualStyleBackColor = true;
+            this.btn_entregas.Click += new System.EventHandler(this.btn_entregas_Click);
+            // 
+            // btn_gerencial_rep
+            // 
+            this.btn_gerencial_rep.Location = new System.Drawing.Point(435, 21);
+            this.btn_gerencial_rep.Name = "btn_gerencial_rep";
+            this.btn_gerencial_rep.Size = new System.Drawing.Size(75, 40);
+            this.btn_gerencial_rep.TabIndex = 41;
+            this.btn_gerencial_rep.Text = "Estadisticas";
+            this.btn_gerencial_rep.UseVisualStyleBackColor = true;
+            this.btn_gerencial_rep.Click += new System.EventHandler(this.btn_gerencial_rep_Click);
+            // 
             // frm_main_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(790, 699);
+            this.Controls.Add(this.btn_gerencial_rep);
+            this.Controls.Add(this.btn_entregas);
             this.Controls.Add(this.lbl_name_uni);
             this.Controls.Add(this.txt_filter_name);
             this.Controls.Add(this.btn_delete_uni);
@@ -305,7 +318,6 @@
             this.Controls.Add(this.btn_unid);
             this.Controls.Add(this.pic_user_on);
             this.Controls.Add(this.btn_cliente);
-            this.Controls.Add(this.btn_gerencial);
             this.Controls.Add(this.btn_main);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_userOn);
@@ -336,7 +348,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_perfil;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_main;
-        private System.Windows.Forms.Button btn_gerencial;
         private System.Windows.Forms.Button btn_cliente;
         private System.Windows.Forms.PictureBox pic_user_on;
         private System.Windows.Forms.Button btn_unid;
@@ -350,5 +361,7 @@
         private System.Windows.Forms.Button btn_delete_uni;
         private System.Windows.Forms.TextBox txt_filter_name;
         private System.Windows.Forms.Label lbl_name_uni;
+        private System.Windows.Forms.Button btn_entregas;
+        private System.Windows.Forms.Button btn_gerencial_rep;
     }
 }
