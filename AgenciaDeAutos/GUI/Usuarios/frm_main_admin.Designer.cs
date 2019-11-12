@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main_admin));
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
             this.col_id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -321,10 +322,11 @@
             this.Controls.Add(this.btn_main);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_userOn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frm_main_admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_main_admin";
+            this.Text = "Administrador";
             this.Load += new System.EventHandler(this.frm_main_admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);

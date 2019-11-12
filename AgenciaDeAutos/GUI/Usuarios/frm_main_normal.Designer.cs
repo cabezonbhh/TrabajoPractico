@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main_normal));
             this.menu_main = new System.Windows.Forms.MenuStrip();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionNegocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,26 +63,26 @@
             // gestionNegocioToolStripMenuItem
             // 
             this.gestionNegocioToolStripMenuItem.Name = "gestionNegocioToolStripMenuItem";
-            this.gestionNegocioToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.gestionNegocioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gestionNegocioToolStripMenuItem.Text = "Nuevo cliente";
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
             // btn_brands
             // 
             this.btn_brands.Location = new System.Drawing.Point(103, 214);
             this.btn_brands.Name = "btn_brands";
-            this.btn_brands.Size = new System.Drawing.Size(75, 23);
+            this.btn_brands.Size = new System.Drawing.Size(75, 46);
             this.btn_brands.TabIndex = 1;
             this.btn_brands.Text = "Fabricantes";
             this.btn_brands.UseVisualStyleBackColor = true;
@@ -91,7 +92,7 @@
             // 
             this.btn_sale.Location = new System.Drawing.Point(338, 214);
             this.btn_sale.Name = "btn_sale";
-            this.btn_sale.Size = new System.Drawing.Size(75, 23);
+            this.btn_sale.Size = new System.Drawing.Size(75, 46);
             this.btn_sale.TabIndex = 2;
             this.btn_sale.Text = "Ventas";
             this.btn_sale.UseVisualStyleBackColor = true;
@@ -101,7 +102,7 @@
             // 
             this.btn_postVenta.Location = new System.Drawing.Point(571, 214);
             this.btn_postVenta.Name = "btn_postVenta";
-            this.btn_postVenta.Size = new System.Drawing.Size(75, 23);
+            this.btn_postVenta.Size = new System.Drawing.Size(75, 46);
             this.btn_postVenta.TabIndex = 3;
             this.btn_postVenta.Text = "Post venta";
             this.btn_postVenta.UseVisualStyleBackColor = true;
@@ -116,10 +117,11 @@
             this.Controls.Add(this.btn_sale);
             this.Controls.Add(this.btn_brands);
             this.Controls.Add(this.menu_main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu_main;
             this.Name = "frm_main_normal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_main";
+            this.Text = "Principal";
             this.menu_main.ResumeLayout(false);
             this.menu_main.PerformLayout();
             this.ResumeLayout(false);

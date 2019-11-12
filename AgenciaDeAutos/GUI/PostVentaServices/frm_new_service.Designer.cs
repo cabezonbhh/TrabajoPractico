@@ -129,6 +129,7 @@
             this.txt_detalles_realizados.Name = "txt_detalles_realizados";
             this.txt_detalles_realizados.Size = new System.Drawing.Size(670, 121);
             this.txt_detalles_realizados.TabIndex = 5;
+            this.txt_detalles_realizados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_detalles_realizados_KeyPress);
             // 
             // lbl_precio
             // 

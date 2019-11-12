@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_venta));
             this.lbl_dni = new System.Windows.Forms.Label();
             this.txt_dni = new System.Windows.Forms.TextBox();
             this.lbl_name_cliente = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.txt_dni.Size = new System.Drawing.Size(100, 20);
             this.txt_dni.TabIndex = 1;
             this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
+            this.txt_dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dni_KeyPress);
             // 
             // lbl_name_cliente
             // 
@@ -95,6 +97,7 @@
             // 
             this.txt_name.Location = new System.Drawing.Point(262, 42);
             this.txt_name.Name = "txt_name";
+            this.txt_name.ReadOnly = true;
             this.txt_name.Size = new System.Drawing.Size(178, 20);
             this.txt_name.TabIndex = 4;
             // 
@@ -102,6 +105,7 @@
             // 
             this.txt_lastName.Location = new System.Drawing.Point(499, 42);
             this.txt_lastName.Name = "txt_lastName";
+            this.txt_lastName.ReadOnly = true;
             this.txt_lastName.Size = new System.Drawing.Size(178, 20);
             this.txt_lastName.TabIndex = 5;
             // 
@@ -172,6 +176,7 @@
             // 
             this.txt_total_peso.Location = new System.Drawing.Point(577, 410);
             this.txt_total_peso.Name = "txt_total_peso";
+            this.txt_total_peso.ReadOnly = true;
             this.txt_total_peso.Size = new System.Drawing.Size(100, 20);
             this.txt_total_peso.TabIndex = 7;
             // 
@@ -197,6 +202,7 @@
             // 
             this.txt_total_dolar.Location = new System.Drawing.Point(577, 460);
             this.txt_total_dolar.Name = "txt_total_dolar";
+            this.txt_total_dolar.ReadOnly = true;
             this.txt_total_dolar.Size = new System.Drawing.Size(100, 20);
             this.txt_total_dolar.TabIndex = 10;
             // 
@@ -206,7 +212,7 @@
             this.btn_delete.Location = new System.Drawing.Point(44, 344);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(75, 23);
-            this.btn_delete.TabIndex = 11;
+            this.btn_delete.TabIndex = 2;
             this.btn_delete.Text = "quitar";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -222,11 +228,12 @@
             // 
             // txt_cotizacion
             // 
-            this.txt_cotizacion.Enabled = false;
             this.txt_cotizacion.Location = new System.Drawing.Point(577, 362);
             this.txt_cotizacion.Name = "txt_cotizacion";
+            this.txt_cotizacion.ReadOnly = true;
             this.txt_cotizacion.Size = new System.Drawing.Size(100, 20);
             this.txt_cotizacion.TabIndex = 12;
+            this.txt_cotizacion.TextChanged += new System.EventHandler(this.txt_cotizacion_TextChanged);
             // 
             // btn_new_venta
             // 
@@ -235,7 +242,7 @@
             this.btn_new_venta.Location = new System.Drawing.Point(472, 506);
             this.btn_new_venta.Name = "btn_new_venta";
             this.btn_new_venta.Size = new System.Drawing.Size(89, 23);
-            this.btn_new_venta.TabIndex = 14;
+            this.btn_new_venta.TabIndex = 4;
             this.btn_new_venta.Text = "Confirmar";
             this.btn_new_venta.UseVisualStyleBackColor = true;
             this.btn_new_venta.Click += new System.EventHandler(this.btn_new_venta_Click);
@@ -245,7 +252,7 @@
             this.btn_salir.Location = new System.Drawing.Point(588, 506);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(89, 23);
-            this.btn_salir.TabIndex = 15;
+            this.btn_salir.TabIndex = 5;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
@@ -255,7 +262,7 @@
             this.dtp_fechaEntrega.Location = new System.Drawing.Point(262, 362);
             this.dtp_fechaEntrega.Name = "dtp_fechaEntrega";
             this.dtp_fechaEntrega.Size = new System.Drawing.Size(200, 20);
-            this.dtp_fechaEntrega.TabIndex = 16;
+            this.dtp_fechaEntrega.TabIndex = 3;
             // 
             // lbl_fecha_entrega
             // 
@@ -289,9 +296,10 @@
             this.Controls.Add(this.lbl_name_cliente);
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.lbl_dni);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_venta";
+            this.Text = "Venta";
             this.Load += new System.EventHandler(this.frm_venta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_details)).EndInit();
             this.ResumeLayout(false);

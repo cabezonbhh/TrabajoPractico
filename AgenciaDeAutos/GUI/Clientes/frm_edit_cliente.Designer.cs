@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_edit_cliente));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.txt_mobile = new System.Windows.Forms.TextBox();
@@ -48,26 +47,13 @@
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_dni_warning = new System.Windows.Forms.Label();
             this.check_dni = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 288);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(463, 269);
-            this.dataGridView1.TabIndex = 49;
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(18, 563);
+            this.btn_save.Location = new System.Drawing.Point(325, 283);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.Size = new System.Drawing.Size(75, 22);
             this.btn_save.TabIndex = 48;
             this.btn_save.Text = "Guardar";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -76,9 +62,9 @@
             // btn_exit
             // 
             this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_exit.Location = new System.Drawing.Point(406, 563);
+            this.btn_exit.Location = new System.Drawing.Point(406, 283);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_exit.Size = new System.Drawing.Size(75, 22);
             this.btn_exit.TabIndex = 47;
             this.btn_exit.Text = "Salir";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -91,6 +77,7 @@
             this.txt_mobile.Name = "txt_mobile";
             this.txt_mobile.Size = new System.Drawing.Size(181, 20);
             this.txt_mobile.TabIndex = 46;
+            this.txt_mobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mobile_KeyPress);
             // 
             // txt_phone
             // 
@@ -99,6 +86,7 @@
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(181, 20);
             this.txt_phone.TabIndex = 45;
+            this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
             // 
             // txt_nro
             // 
@@ -107,6 +95,7 @@
             this.txt_nro.Name = "txt_nro";
             this.txt_nro.Size = new System.Drawing.Size(104, 20);
             this.txt_nro.TabIndex = 44;
+            this.txt_nro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nro_KeyPress);
             // 
             // txt_address
             // 
@@ -116,6 +105,7 @@
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(413, 45);
             this.txt_address.TabIndex = 43;
+            this.txt_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_address_KeyPress);
             // 
             // txt_dni
             // 
@@ -125,6 +115,7 @@
             this.txt_dni.Size = new System.Drawing.Size(102, 20);
             this.txt_dni.TabIndex = 42;
             this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
+            this.txt_dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dni_KeyPress);
             // 
             // txt_lastName
             // 
@@ -133,6 +124,7 @@
             this.txt_lastName.Name = "txt_lastName";
             this.txt_lastName.Size = new System.Drawing.Size(181, 20);
             this.txt_lastName.TabIndex = 41;
+            this.txt_lastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_lastName_KeyPress);
             // 
             // txt_name
             // 
@@ -141,6 +133,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(181, 20);
             this.txt_name.TabIndex = 40;
+            this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // lbl_dni
             // 
@@ -230,10 +223,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_exit;
-            this.ClientSize = new System.Drawing.Size(503, 599);
+            this.ClientSize = new System.Drawing.Size(503, 336);
             this.Controls.Add(this.check_dni);
             this.Controls.Add(this.lbl_dni_warning);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.txt_mobile);
@@ -251,19 +243,17 @@
             this.Controls.Add(this.lbl_lastName);
             this.Controls.Add(this.lbl_name);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_edit_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frm_edit_cliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.TextBox txt_mobile;

@@ -57,7 +57,7 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(73, 353);
+            this.btn_save.Location = new System.Drawing.Point(291, 355);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 31;
@@ -310,6 +310,7 @@
             this.Controls.Add(this.lbl_lastName);
             this.Controls.Add(this.lbl_name);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_nuevo_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta cliente";

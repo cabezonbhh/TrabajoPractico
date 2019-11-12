@@ -270,5 +270,10 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
             txt_total_peso.Clear();
             dgv_detalles.Rows.Clear();
         }
+
+        private void txt_detalles_realizados_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main_unidades));
             this.gpBox_filters = new System.Windows.Forms.GroupBox();
             this.lbl_precio_hasta = new System.Windows.Forms.Label();
             this.lbl_precio_desde = new System.Windows.Forms.Label();
@@ -237,7 +238,6 @@
             this.combo_fabricante.Size = new System.Drawing.Size(121, 21);
             this.combo_fabricante.TabIndex = 0;
             this.combo_fabricante.SelectionChangeCommitted += new System.EventHandler(this.combo_fabricante_SelectionChangeCommitted);
-
             // 
             // lbl_cv
             // 
@@ -499,9 +499,10 @@
             this.Controls.Add(this.txt_precio_dolar);
             this.Controls.Add(this.txt_cv);
             this.Controls.Add(this.txt_km);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_main_unidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_main_unidades";
+            this.Text = "Stock unidades";
             this.Load += new System.EventHandler(this.frm_main_unidades_Load);
             this.gpBox_filters.ResumeLayout(false);
             this.gpBox_filters.PerformLayout();

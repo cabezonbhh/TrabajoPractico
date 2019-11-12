@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,8 +51,14 @@ namespace AgenciaDeAutos.GUI.Vehiculos
             }
             try
             {
+                Image theImage = Image.FromFile("C: /Users/Franco/Dropbox/AgenciaDeAutos/Iconos/"+logo+".ico");
+                Bitmap theBitmap = new Bitmap(theImage, new Size(48,48));
+                IntPtr Hicon = theBitmap.GetHicon();// Get an Hicon for myBitmap.
+                Icon newIcon = Icon.FromHandle(Hicon);// Create a new icon from the handle
+                this.Icon = newIcon;
                 pic_logo.Image = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Logos/" + logo+".png");
                 BackgroundImage = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Fondos/" + logo +" ("+i+")" + ".jpg");
+                this.Text = logo.ToString();
             }
             catch(System.IO.FileNotFoundException)
             {
@@ -68,19 +75,17 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         private void frm_modelo_Load(object sender, EventArgs e)
         {
             support.cargarComboSerie(combo_serie,fabricante);
+            
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult resultado = MessageBox.Show("Desea salir?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
                 this.Dispose();
         }
 
-        private void btn_stock_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
         public void cargarGrilla(string nombre)
         {
             int serie, generacion;;
@@ -101,28 +106,47 @@ namespace AgenciaDeAutos.GUI.Vehiculos
 
         private void combo_serie_SelectedIndexChanged(object sender, EventArgs e)
         {
-            limpiar();         
+            dgv_stock_unidades.Rows.Clear();
         }
 
         private void combo_generacion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            limpiar();
+            dgv_stock_unidades.Rows.Clear();
         }
-
         private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            limpiar();
+            dgv_stock_unidades.Rows.Clear();
         }
+
 
         private void combo_serie_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            dgv_stock_unidades.Rows.Clear();
             support.cargarComboGeneracion(combo_generacion, Convert.ToInt32(combo_serie.SelectedValue));
+        }
+        
+
+        private void combo_generacion_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            support.cargarComboModelo(combo_modelo, fabricante,
+                                           Convert.ToInt32(combo_serie.SelectedValue.ToString()),
+                                           Convert.ToInt32(combo_generacion.SelectedValue.ToString())
+                                        );
+        }
+
+        private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            cargarGrilla(combo_modelo.Text);
         }
         private void limpiar()
         {
             dgv_stock_unidades.Rows.Clear();
-            txt_precio_dolar.Clear();
+        }
 
+        private void btn_iniciar_venta_Click(object sender, EventArgs e)
+        {
+            Form aux = new frm_main_unidades();
+            aux.ShowDialog();
         }
     }
 }

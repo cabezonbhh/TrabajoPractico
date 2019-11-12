@@ -175,9 +175,44 @@ namespace AgenciaDeAutos.GUI.Clientes
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult resultado = MessageBox.Show("Desea salir y cancelar la edicion?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
                 this.Dispose();
+        }
+
+        private void txt_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloLetras(sender,e);
+        }
+
+        private void txt_lastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloLetras(sender, e);
+        }
+
+        private void txt_dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloNumeros(sender, e);
+        }
+
+        private void txt_address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloLetrasNumerosConEspacio(sender, e);
+        }
+
+        private void txt_nro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloNumeros(sender, e);
+        }
+
+        private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloNumeros(sender, e);
+        }
+
+        private void txt_mobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloNumeros(sender, e);
         }
     }
 }

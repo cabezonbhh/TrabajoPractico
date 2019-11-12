@@ -136,6 +136,7 @@
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.dgv_clientes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "main_cliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de clientes";

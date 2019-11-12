@@ -521,6 +521,7 @@
             this.btn_salir.TabIndex = 1;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // frm_main_service
             // 

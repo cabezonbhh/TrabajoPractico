@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_edit_unidad));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_register = new System.Windows.Forms.Button();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -248,6 +249,7 @@
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_register);
             this.Controls.Add(this.txt_descripcion);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_edit_unidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificar unidad";

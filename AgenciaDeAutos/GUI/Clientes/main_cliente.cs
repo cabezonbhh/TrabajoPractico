@@ -82,7 +82,7 @@ namespace AgenciaDeAutos.GUI.Clientes
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult resultado = MessageBox.Show("Desea salir?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
                 this.Dispose();
         }

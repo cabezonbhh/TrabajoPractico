@@ -48,6 +48,23 @@ namespace AgenciaDeAutos.Support
             else
                 e.Handled = true;
         }
+        public void soloLetrasNumerosConEspacio(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsControl(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsSymbol(e.KeyChar))
+                e.Handled = true;
+            else if (char.IsSeparator(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsWhiteSpace(e.KeyChar))
+                e.Handled = false;
+            else if (char.IsLetter(e.KeyChar))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
         public void soloLetras(object sender, System.Windows.Forms.KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar))

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_new_unidad));
             this.combo_fab = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -150,6 +151,7 @@
             this.txt_precio_venta.Name = "txt_precio_venta";
             this.txt_precio_venta.Size = new System.Drawing.Size(104, 20);
             this.txt_precio_venta.TabIndex = 5;
+            this.txt_precio_venta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_venta_KeyPress);
             // 
             // lbl_año
             // 
@@ -194,6 +196,7 @@
             this.txt_año_modelo.Name = "txt_año_modelo";
             this.txt_año_modelo.Size = new System.Drawing.Size(60, 20);
             this.txt_año_modelo.TabIndex = 7;
+            this.txt_año_modelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_año_modelo_KeyPress);
             // 
             // txt_km
             // 
@@ -202,6 +205,7 @@
             this.txt_km.Name = "txt_km";
             this.txt_km.Size = new System.Drawing.Size(104, 20);
             this.txt_km.TabIndex = 8;
+            this.txt_km.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_km_KeyPress);
             // 
             // txt_potencia_hp
             // 
@@ -209,6 +213,7 @@
             this.txt_potencia_hp.Location = new System.Drawing.Point(358, 254);
             this.txt_potencia_hp.MaxLength = 5;
             this.txt_potencia_hp.Name = "txt_potencia_hp";
+            this.txt_potencia_hp.ReadOnly = true;
             this.txt_potencia_hp.Size = new System.Drawing.Size(60, 20);
             this.txt_potencia_hp.TabIndex = 16;
             // 
@@ -239,6 +244,7 @@
             this.btn_exit.TabIndex = 12;
             this.btn_exit.Text = "Salir";
             this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // lbl_hp
             // 
@@ -257,6 +263,7 @@
             this.txt_potencia_cv.Size = new System.Drawing.Size(60, 20);
             this.txt_potencia_cv.TabIndex = 9;
             this.txt_potencia_cv.TextChanged += new System.EventHandler(this.txt_potencia_cv_TextChanged);
+            this.txt_potencia_cv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_potencia_cv_KeyPress);
             // 
             // lbl_cv
             // 
@@ -274,6 +281,7 @@
             this.txt_patente.Name = "txt_patente";
             this.txt_patente.Size = new System.Drawing.Size(104, 20);
             this.txt_patente.TabIndex = 4;
+            this.txt_patente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_patente_KeyPress);
             // 
             // lbl_patente
             // 
@@ -302,6 +310,7 @@
             this.txt_precio_compra.Name = "txt_precio_compra";
             this.txt_precio_compra.Size = new System.Drawing.Size(104, 20);
             this.txt_precio_compra.TabIndex = 6;
+            this.txt_precio_compra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precio_compra_KeyPress);
             // 
             // lbl_precio_compra
             // 
@@ -345,9 +354,10 @@
             this.Controls.Add(this.combo_serie);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.combo_fab);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_new_unidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Unidades";
+            this.Text = "Nueva unidad";
             this.Load += new System.EventHandler(this.frm_new_unidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -292,5 +292,10 @@ namespace AgenciaDeAutos.GUI.PostVentaServices
             Form aux = new frm_detalle_pv(Convert.ToInt32(dgv_pv_interno.CurrentRow.Cells[0].Value.ToString()), unidadSeleccionada);
             aux.ShowDialog();
         }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

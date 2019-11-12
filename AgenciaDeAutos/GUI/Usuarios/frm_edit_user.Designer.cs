@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_edit_user));
             this.btn_save = new System.Windows.Forms.Button();
             this.lbl_info_pass = new System.Windows.Forms.Label();
             this.lbl_info_name = new System.Windows.Forms.Label();
@@ -196,9 +197,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_edit_user";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_edit_user";
+            this.Text = "Editar usuario";
             this.Load += new System.EventHandler(this.frm_edit_user_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

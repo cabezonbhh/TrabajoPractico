@@ -149,6 +149,7 @@
             // 
             // btn_salir
             // 
+            this.btn_salir.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_salir.Location = new System.Drawing.Point(674, 498);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(75, 23);
@@ -165,6 +166,8 @@
             this.ClientSize = new System.Drawing.Size(766, 533);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.tab_fabricantes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_menu_fabricantes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fabricantes";

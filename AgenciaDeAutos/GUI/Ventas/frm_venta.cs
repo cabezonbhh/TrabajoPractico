@@ -151,5 +151,15 @@ namespace AgenciaDeAutos.GUI.Ventas
             if (resultado == DialogResult.Yes)
                 this.Visible = false;
         }
+
+        private void txt_dni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Support.Support.GetSupport().soloNumeros(sender,e);
+        }
+
+        private void txt_cotizacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

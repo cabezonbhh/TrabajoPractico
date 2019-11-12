@@ -36,17 +36,8 @@
             this.lbl_serie = new System.Windows.Forms.Label();
             this.lbl_generacion = new System.Windows.Forms.Label();
             this.lbl_modelo = new System.Windows.Forms.Label();
-            this.btn_stock = new System.Windows.Forms.Button();
+            this.btn_iniciar_venta = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.txt_precio_dolar = new System.Windows.Forms.TextBox();
-            this.lbl_precio_dolar = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_precio_arg = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_cotizacion = new System.Windows.Forms.Label();
-            this.txt_cotizacion = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
@@ -56,7 +47,6 @@
             this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
@@ -97,6 +87,7 @@
             this.combo_modelo.Size = new System.Drawing.Size(178, 21);
             this.combo_modelo.TabIndex = 4;
             this.combo_modelo.SelectedIndexChanged += new System.EventHandler(this.combo_modelo_SelectedIndexChanged);
+            this.combo_modelo.SelectionChangeCommitted += new System.EventHandler(this.combo_modelo_SelectionChangeCommitted);
             // 
             // combo_generacion
             // 
@@ -106,6 +97,7 @@
             this.combo_generacion.Size = new System.Drawing.Size(178, 21);
             this.combo_generacion.TabIndex = 5;
             this.combo_generacion.SelectedIndexChanged += new System.EventHandler(this.combo_generacion_SelectedIndexChanged);
+            this.combo_generacion.SelectionChangeCommitted += new System.EventHandler(this.combo_generacion_SelectionChangeCommitted);
             // 
             // lbl_serie
             // 
@@ -137,18 +129,20 @@
             this.lbl_modelo.TabIndex = 8;
             this.lbl_modelo.Text = "Modelo:";
             // 
-            // btn_stock
+            // btn_iniciar_venta
             // 
-            this.btn_stock.Location = new System.Drawing.Point(306, 360);
-            this.btn_stock.Name = "btn_stock";
-            this.btn_stock.Size = new System.Drawing.Size(132, 23);
-            this.btn_stock.TabIndex = 11;
-            this.btn_stock.Text = "Stock en existencia";
-            this.btn_stock.UseVisualStyleBackColor = true;
-            this.btn_stock.Click += new System.EventHandler(this.btn_stock_Click);
+            this.btn_iniciar_venta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_iniciar_venta.Location = new System.Drawing.Point(306, 542);
+            this.btn_iniciar_venta.Name = "btn_iniciar_venta";
+            this.btn_iniciar_venta.Size = new System.Drawing.Size(132, 53);
+            this.btn_iniciar_venta.TabIndex = 11;
+            this.btn_iniciar_venta.Text = "Iniciar Venta";
+            this.btn_iniciar_venta.UseVisualStyleBackColor = true;
+            this.btn_iniciar_venta.Click += new System.EventHandler(this.btn_iniciar_venta_Click);
             // 
             // btn_back
             // 
+            this.btn_back.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_back.Location = new System.Drawing.Point(1248, 694);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
@@ -156,87 +150,6 @@
             this.btn_back.Text = "Atras";
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
-            // txt_precio_dolar
-            // 
-            this.txt_precio_dolar.Location = new System.Drawing.Point(107, 11);
-            this.txt_precio_dolar.Name = "txt_precio_dolar";
-            this.txt_precio_dolar.Size = new System.Drawing.Size(133, 20);
-            this.txt_precio_dolar.TabIndex = 13;
-            // 
-            // lbl_precio_dolar
-            // 
-            this.lbl_precio_dolar.AutoSize = true;
-            this.lbl_precio_dolar.Location = new System.Drawing.Point(1, 14);
-            this.lbl_precio_dolar.Name = "lbl_precio_dolar";
-            this.lbl_precio_dolar.Size = new System.Drawing.Size(85, 13);
-            this.lbl_precio_dolar.TabIndex = 14;
-            this.lbl_precio_dolar.Text = "Precio Sugerido:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 16;
-            // 
-            // txt_precio_arg
-            // 
-            this.txt_precio_arg.Location = new System.Drawing.Point(107, 37);
-            this.txt_precio_arg.Name = "txt_precio_arg";
-            this.txt_precio_arg.Size = new System.Drawing.Size(133, 20);
-            this.txt_precio_arg.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(246, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "$ USD";
-            // 
-            // lbl_cotizacion
-            // 
-            this.lbl_cotizacion.AutoSize = true;
-            this.lbl_cotizacion.Location = new System.Drawing.Point(27, 66);
-            this.lbl_cotizacion.Name = "lbl_cotizacion";
-            this.lbl_cotizacion.Size = new System.Drawing.Size(59, 13);
-            this.lbl_cotizacion.TabIndex = 19;
-            this.lbl_cotizacion.Text = "Cotizacion:";
-            // 
-            // txt_cotizacion
-            // 
-            this.txt_cotizacion.Location = new System.Drawing.Point(107, 66);
-            this.txt_cotizacion.Name = "txt_cotizacion";
-            this.txt_cotizacion.Size = new System.Drawing.Size(133, 20);
-            this.txt_cotizacion.TabIndex = 20;
-            this.txt_cotizacion.TextChanged += new System.EventHandler(this.txt_cotizacion_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(246, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "$ ARS";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txt_precio_arg);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.txt_precio_dolar);
-            this.panel1.Controls.Add(this.txt_cotizacion);
-            this.panel1.Controls.Add(this.lbl_precio_dolar);
-            this.panel1.Controls.Add(this.lbl_cotizacion);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(485, 505);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(301, 100);
-            this.panel1.TabIndex = 22;
             // 
             // panel2
             // 
@@ -246,7 +159,7 @@
             this.panel2.Controls.Add(this.lbl_modelo);
             this.panel2.Controls.Add(this.combo_serie);
             this.panel2.Controls.Add(this.lbl_generacion);
-            this.panel2.Location = new System.Drawing.Point(485, 360);
+            this.panel2.Location = new System.Drawing.Point(306, 387);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
@@ -307,22 +220,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_back;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.dgv_stock_unidades);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_back);
-            this.Controls.Add(this.btn_stock);
+            this.Controls.Add(this.btn_iniciar_venta);
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.pic_vehiculo);
+            this.MaximizeBox = false;
             this.Name = "frm_modelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_modelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -341,17 +253,8 @@
         private System.Windows.Forms.Label lbl_serie;
         private System.Windows.Forms.Label lbl_generacion;
         private System.Windows.Forms.Label lbl_modelo;
-        private System.Windows.Forms.Button btn_stock;
+        private System.Windows.Forms.Button btn_iniciar_venta;
         private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.TextBox txt_precio_dolar;
-        private System.Windows.Forms.Label lbl_precio_dolar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_precio_arg;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_cotizacion;
-        private System.Windows.Forms.TextBox txt_cotizacion;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgv_stock_unidades;

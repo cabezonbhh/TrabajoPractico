@@ -177,5 +177,41 @@ namespace AgenciaDeAutos.GUI.Unidades
             combo_modelo.SelectedIndex = -1;
         }
 
+        private void txt_patente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloLetrasNumeros(sender, e);
+        }
+
+        private void txt_precio_venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender, e);
+        }
+
+        private void txt_precio_compra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender, e);
+        }
+
+        private void txt_año_modelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender, e);
+        }
+
+        private void txt_km_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender, e);
+        }
+
+        private void txt_potencia_cv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            support.soloNumeros(sender, e);
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Desea cancelar? ", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (resultado == DialogResult.Yes)
+                this.Visible = false;
+        }
     }
 }

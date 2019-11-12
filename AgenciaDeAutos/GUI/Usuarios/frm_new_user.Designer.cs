@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_new_user));
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_pass = new System.Windows.Forms.Label();
             this.lbl_profile = new System.Windows.Forms.Label();
@@ -149,6 +150,7 @@
             this.Controls.Add(this.lbl_profile);
             this.Controls.Add(this.lbl_pass);
             this.Controls.Add(this.lbl_name);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_new_user";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
