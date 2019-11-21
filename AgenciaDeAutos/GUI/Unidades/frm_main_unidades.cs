@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,16 +26,8 @@ namespace AgenciaDeAutos.GUI.Unidades
             InitializeComponent();
             support = Support.Support.GetSupport();
             service = new UnidadService();
-            pic_unidad.BackColor = Color.Transparent;         
-            try
-            {
-                //pic_unidad.Image = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Logos/" + logo + ".png");
-              
-            }
-            catch (System.IO.FileNotFoundException)
-            {
-                pic_unidad.Image = (Image)Resources.NoImage;
-            }
+            pic_unidad.BackColor = Color.Transparent;
+            //pic_unidad.Image = (Image)Resources.NoImage;
         }
 
 
@@ -77,12 +70,14 @@ namespace AgenciaDeAutos.GUI.Unidades
                     venta.Show();
                     venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
                     dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
+                    pic_unidad.Image = (Image)Resources.errorUnidad;
                 }
                 else
                 {
                    venta.addDetail(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
-                    venta.Visible = true;
+                   venta.Visible = true;
                    dgv_stock_unidades.Rows.RemoveAt(dgv_stock_unidades.CurrentRow.Index);
+                    pic_unidad.Image = (Image)Resources.errorUnidad;
                 }
             }
         }
@@ -118,19 +113,39 @@ namespace AgenciaDeAutos.GUI.Unidades
 
         private void dgv_stock_unidades_CurrentCellChanged(object sender, EventArgs e)
         {
+            int id;
             if (dgv_stock_unidades.CurrentRow != null)
             {
                 Unidad unidad = service.getUnidadPorId(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
                 cargarDatos(unidad);
+                id = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString());
+                try
+                { 
+                        pic_unidad.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/StockUnidades/" + id +".jpg"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    pic_unidad.Image = (Image)Resources.errorUnidadBig;
+                }
             }
         }
 
         private void dgv_stock_unidades_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int id;
             if (dgv_stock_unidades.CurrentRow != null)
             {
                 Unidad unidad = service.getUnidadPorId(Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString()));
                 cargarDatos(unidad);
+                id = Convert.ToInt32(dgv_stock_unidades.CurrentRow.Cells["col_id_unidad"].Value.ToString());
+                try
+                {
+                    pic_unidad.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/StockUnidades/" + id + ".jpg"));
+                }
+                catch (System.IO.FileNotFoundException)
+                {
+                    pic_unidad.Image = (Image)Resources.errorUnidadBig;
+                }
             }
         }
 
@@ -179,13 +194,22 @@ namespace AgenciaDeAutos.GUI.Unidades
 
         private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            dgv_stock_unidades.Rows.Clear();
-            txt_precio_dolar.Clear();
-            txt_km.Clear();
-            txt_cv.Clear();
-            txt_descripcion.Clear();
-            txt_precio_dolar.Clear();
             cargarGrilla(combo_modelo.Text);
+        }
+
+        private void dgv_stock_unidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void combo_fabricante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

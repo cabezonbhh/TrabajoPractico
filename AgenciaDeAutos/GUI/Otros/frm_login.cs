@@ -18,6 +18,7 @@ namespace AgenciaDeAutos
     {
         private Support.Support supp;
         private UsuarioService service;
+        private string pass="";
         public frm_login()
         {
             service = new UsuarioService();
@@ -58,6 +59,17 @@ namespace AgenciaDeAutos
             DialogResult resultado = MessageBox.Show("Desea cancelar", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (resultado == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
         }
     }
 }

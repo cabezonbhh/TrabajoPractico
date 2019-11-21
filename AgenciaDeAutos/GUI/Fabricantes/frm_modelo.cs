@@ -20,9 +20,12 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         private int fabricante;
         private UnidadService service;
         private Support.Support support = null;
+        private string logo = "";
         public frm_modelo(string logo, string titulo)
         {
             InitializeComponent();
+            this.logo = logo;
+            service = new UnidadService();
             pic_logo.BackColor = Color.Transparent;
             support = Support.Support.GetSupport();
             Random random = new Random();
@@ -51,19 +54,20 @@ namespace AgenciaDeAutos.GUI.Vehiculos
             }
             try
             {
-                Image theImage = Image.FromFile("C: /Users/Franco/Dropbox/AgenciaDeAutos/Iconos/"+logo+".ico");
+                Image theImage = Image.FromFile(Path.Combine(Application.StartupPath, "Iconos /"+logo+".ico"));
                 Bitmap theBitmap = new Bitmap(theImage, new Size(48,48));
                 IntPtr Hicon = theBitmap.GetHicon();// Get an Hicon for myBitmap.
                 Icon newIcon = Icon.FromHandle(Hicon);// Create a new icon from the handle
                 this.Icon = newIcon;
-                pic_logo.Image = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Logos/" + logo+".png");
-                BackgroundImage = Image.FromFile("C:/Users/Franco/Dropbox/AgenciaDeAutos/Imagenes/Fondos/" + logo +" ("+i+")" + ".jpg");
+                pic_logo.Image = Image.FromFile(Path.Combine(Application.StartupPath,"Imagenes/Logos/" + logo +".png"));
+                BackgroundImage = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/Fondos/" + logo + " (" + i + ")" + ".jpg"));
                 this.Text = logo.ToString();
+                
             }
             catch(System.IO.FileNotFoundException)
             {
-                pic_vehiculo.Image = (Image)Resources.NoImage;
-                BackgroundImage = (Image)Resources.NoImage;
+                pic_rear.Image = (Image)Resources.Image;
+                BackgroundImage = (Image)Resources.Image;
             }
         }
 
@@ -107,15 +111,31 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         private void combo_serie_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();
+            combo_generacion.SelectedIndex = -1;
         }
 
         private void combo_generacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();
+            combo_modelo.SelectedIndex = -1;
+
         }
         private void combo_modelo_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgv_stock_unidades.Rows.Clear();
+            cargarGrilla(combo_modelo.Text);
+            try
+            {
+                pic_front.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/Modelos/Front/" + logo + "/" + combo_serie.Text + "/" + combo_generacion.Text + combo_modelo.Text + ".jpg"));
+                pic_rear.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/Modelos/Rear/" + logo + "/" + combo_serie.Text + "/" + combo_generacion.Text + combo_modelo.Text + ".jpg"));
+
+
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                pic_front.Image = (Image)Resources.NoImage;
+                pic_rear.Image = (Image)Resources.NoImage;
+            }
         }
 
 
@@ -137,6 +157,18 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         private void combo_modelo_SelectionChangeCommitted(object sender, EventArgs e)
         {
             cargarGrilla(combo_modelo.Text);
+            try
+            {
+                pic_front.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/Modelos/Front/" + logo + "/" + combo_serie.Text + "/" + combo_generacion.Text + combo_modelo.Text + ".jpg"));
+                pic_rear.Image = Image.FromFile(Path.Combine(Application.StartupPath, "Imagenes/Modelos/Rear/" + logo + "/" + combo_serie.Text + "/" + combo_generacion.Text + combo_modelo.Text + ".jpg"));
+
+
+            }
+            catch (System.IO.FileNotFoundException)
+            {
+                pic_front.Image = (Image)Resources.NoImage;
+                pic_rear.Image = (Image)Resources.NoImage;
+            }
         }
         private void limpiar()
         {
@@ -147,6 +179,17 @@ namespace AgenciaDeAutos.GUI.Vehiculos
         {
             Form aux = new frm_main_unidades();
             aux.ShowDialog();
+        }
+
+        private void combo_serie_SelectedValueChanged(object sender, EventArgs e)
+        {
+            dgv_stock_unidades.Rows.Clear();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

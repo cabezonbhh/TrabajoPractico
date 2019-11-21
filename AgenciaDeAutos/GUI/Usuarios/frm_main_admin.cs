@@ -185,7 +185,7 @@ namespace AgenciaDeAutos.GUI.Otros
 
         private void btn_entregas_Click(object sender, EventArgs e)
         {
-            Process.Start(@"C:\Users\Franco\Dropbox\AgenciaDeAutos\Reportes\entregas.pbix");
+            Process.Start(@"T:\Programacion\C#\TrabajoPractico\Otros\entregas.pbix");
             Form aux = new frm_entrega_unidades();
             aux.Show();
         }

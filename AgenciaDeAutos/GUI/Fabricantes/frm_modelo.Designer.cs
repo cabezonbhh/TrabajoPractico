@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pic_vehiculo = new System.Windows.Forms.PictureBox();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.combo_serie = new System.Windows.Forms.ComboBox();
             this.combo_modelo = new System.Windows.Forms.ComboBox();
             this.combo_generacion = new System.Windows.Forms.ComboBox();
@@ -39,45 +37,31 @@
             this.btn_iniciar_venta = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_stock_unidades = new System.Windows.Forms.DataGridView();
             this.col_fabricante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_generacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_añoModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.pic_front = new System.Windows.Forms.PictureBox();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.pic_rear = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_front)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_rear)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic_vehiculo
-            // 
-            this.pic_vehiculo.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
-            this.pic_vehiculo.Location = new System.Drawing.Point(843, 21);
-            this.pic_vehiculo.Name = "pic_vehiculo";
-            this.pic_vehiculo.Size = new System.Drawing.Size(480, 320);
-            this.pic_vehiculo.TabIndex = 0;
-            this.pic_vehiculo.TabStop = false;
-            // 
-            // pic_logo
-            // 
-            this.pic_logo.Location = new System.Drawing.Point(43, 21);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(180, 180);
-            this.pic_logo.TabIndex = 1;
-            this.pic_logo.TabStop = false;
             // 
             // combo_serie
             // 
             this.combo_serie.FormattingEnabled = true;
-            this.combo_serie.Location = new System.Drawing.Point(107, 13);
+            this.combo_serie.Location = new System.Drawing.Point(107, 12);
             this.combo_serie.Name = "combo_serie";
             this.combo_serie.Size = new System.Drawing.Size(178, 21);
             this.combo_serie.TabIndex = 3;
             this.combo_serie.SelectedIndexChanged += new System.EventHandler(this.combo_serie_SelectedIndexChanged);
             this.combo_serie.SelectionChangeCommitted += new System.EventHandler(this.combo_serie_SelectionChangeCommitted);
+            this.combo_serie.SelectedValueChanged += new System.EventHandler(this.combo_serie_SelectedValueChanged);
             // 
             // combo_modelo
             // 
@@ -132,7 +116,7 @@
             // btn_iniciar_venta
             // 
             this.btn_iniciar_venta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_iniciar_venta.Location = new System.Drawing.Point(306, 542);
+            this.btn_iniciar_venta.Location = new System.Drawing.Point(693, 371);
             this.btn_iniciar_venta.Name = "btn_iniciar_venta";
             this.btn_iniciar_venta.Size = new System.Drawing.Size(132, 53);
             this.btn_iniciar_venta.TabIndex = 11;
@@ -159,20 +143,10 @@
             this.panel2.Controls.Add(this.lbl_modelo);
             this.panel2.Controls.Add(this.combo_serie);
             this.panel2.Controls.Add(this.lbl_generacion);
-            this.panel2.Location = new System.Drawing.Point(306, 387);
+            this.panel2.Location = new System.Drawing.Point(38, 213);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(301, 128);
             this.panel2.TabIndex = 23;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
-            this.pictureBox1.Location = new System.Drawing.Point(306, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(480, 320);
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
             // 
             // dgv_stock_unidades
             // 
@@ -185,12 +159,12 @@
             this.col_modelo,
             this.col_generacion,
             this.col_añoModelo});
-            this.dgv_stock_unidades.Location = new System.Drawing.Point(843, 360);
+            this.dgv_stock_unidades.Location = new System.Drawing.Point(843, 371);
             this.dgv_stock_unidades.Name = "dgv_stock_unidades";
             this.dgv_stock_unidades.ReadOnly = true;
             this.dgv_stock_unidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_stock_unidades.Size = new System.Drawing.Size(480, 315);
-            this.dgv_stock_unidades.TabIndex = 35;
+            this.dgv_stock_unidades.TabIndex = 36;
             // 
             // col_fabricante
             // 
@@ -216,6 +190,33 @@
             this.col_añoModelo.Name = "col_añoModelo";
             this.col_añoModelo.ReadOnly = true;
             // 
+            // pic_front
+            // 
+            this.pic_front.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pic_front.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
+            this.pic_front.Location = new System.Drawing.Point(345, 21);
+            this.pic_front.Name = "pic_front";
+            this.pic_front.Size = new System.Drawing.Size(480, 320);
+            this.pic_front.TabIndex = 24;
+            this.pic_front.TabStop = false;
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.Location = new System.Drawing.Point(43, 21);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(180, 180);
+            this.pic_logo.TabIndex = 1;
+            this.pic_logo.TabStop = false;
+            // 
+            // pic_rear
+            // 
+            this.pic_rear.Image = global::AgenciaDeAutos.Properties.Resources.NoImage;
+            this.pic_rear.Location = new System.Drawing.Point(843, 21);
+            this.pic_rear.Name = "pic_rear";
+            this.pic_rear.Size = new System.Drawing.Size(480, 320);
+            this.pic_rear.TabIndex = 0;
+            this.pic_rear.TabStop = false;
+            // 
             // frm_modelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,29 +224,29 @@
             this.CancelButton = this.btn_back;
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.dgv_stock_unidades);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pic_front);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_iniciar_venta);
             this.Controls.Add(this.pic_logo);
-            this.Controls.Add(this.pic_vehiculo);
+            this.Controls.Add(this.pic_rear);
             this.MaximizeBox = false;
             this.Name = "frm_modelo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_modelo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_vehiculo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stock_unidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_front)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_rear)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pic_vehiculo;
+        private System.Windows.Forms.PictureBox pic_rear;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.ComboBox combo_serie;
         private System.Windows.Forms.ComboBox combo_modelo;
@@ -256,7 +257,7 @@
         private System.Windows.Forms.Button btn_iniciar_venta;
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_front;
         private System.Windows.Forms.DataGridView dgv_stock_unidades;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fabricante;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_modelo;

@@ -24,6 +24,7 @@ namespace AgenciaDeAutos
         private DBHelper()
         {
             string_conexion = pc;
+
         }
 
         public static DBHelper getDBHelper()

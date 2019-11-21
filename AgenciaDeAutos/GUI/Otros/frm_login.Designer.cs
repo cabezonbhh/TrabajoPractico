@@ -37,6 +37,8 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lbl_warning_name = new System.Windows.Forms.Label();
             this.lbl_warning_pass = new System.Windows.Forms.Label();
+            this.pic_hide_pass = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_hide_pass)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_in
@@ -93,6 +95,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(247, 20);
             this.txtPass.TabIndex = 7;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.validarContraseña);
             // 
             // lbl_warning_name
@@ -111,13 +114,22 @@
             this.lbl_warning_pass.Size = new System.Drawing.Size(0, 13);
             this.lbl_warning_pass.TabIndex = 9;
             // 
+            // pic_hide_pass
+            // 
+            this.pic_hide_pass.Location = new System.Drawing.Point(336, 87);
+            this.pic_hide_pass.Name = "pic_hide_pass";
+            this.pic_hide_pass.Size = new System.Drawing.Size(24, 24);
+            this.pic_hide_pass.TabIndex = 10;
+            this.pic_hide_pass.TabStop = false;
+            // 
             // frm_login
             // 
             this.AcceptButton = this.btn_in;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(349, 176);
+            this.ClientSize = new System.Drawing.Size(379, 176);
+            this.Controls.Add(this.pic_hide_pass);
             this.Controls.Add(this.lbl_warning_pass);
             this.Controls.Add(this.lbl_warning_name);
             this.Controls.Add(this.txtPass);
@@ -132,6 +144,8 @@
             this.Name = "frm_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar sesion";
+            this.Load += new System.EventHandler(this.frm_login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_hide_pass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,6 +161,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lbl_warning_name;
         private System.Windows.Forms.Label lbl_warning_pass;
+        private System.Windows.Forms.PictureBox pic_hide_pass;
     }
 }
 

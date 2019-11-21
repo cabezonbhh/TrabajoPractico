@@ -327,6 +327,9 @@
     <None Include="Resources\icons8_retro_car_48px_1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Image.png" />
+    <None Include="Resources\errorUnidad.png" />
+    <None Include="Resources\errorUnidadBig.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
